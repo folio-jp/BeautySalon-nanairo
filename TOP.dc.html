@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BeautySalon nanairo｜年齢も環境も制限のない、美しさへ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="non-hero-ux.css" rel="stylesheet" />
+<link rel="preload" as="image" href="assets/hero-complete-pc.png" media="(min-width:1200px)" />
+<link rel="preload" as="image" href="assets/hero-complete-tablet-1.png" media="(min-width:768px) and (max-width:1199px)" />
+<link rel="preload" as="image" href="assets/hero-complete-mobile-1.png" media="(max-width:767px)" />
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: #FBFAF6; color: #171512; font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  * { box-sizing: border-box; }
+  img { max-width: 100%; }
+  a { color: #171512; text-decoration: none; }
+  a:hover { color: #8A6E3A; }
+  ::selection { background: #E8E1D0; }
+  @keyframes nanairoLogoIn { from { opacity: 0; transform: scale(.82); } to { opacity: 1; transform: scale(1); } }
+  @media (prefers-reduced-motion: reduce) { [data-logo] { animation: none !important; opacity: 1 !important; transform: none !important; } }
+  @keyframes nanairoLineDraw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  .visually-hidden { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; white-space: nowrap !important; border: 0 !important; }
+  [data-hero] { position: relative; overflow: hidden; background: #fff; }
+  .hero__art { position: relative; display: none; width: 100%; }
+  .hero__image { display: block; width: 100%; height: auto; max-width: none; }
+  .hero__slider { position: relative; width: 100%; background: #fff; }
+  .hero__art--pc .hero__slider { aspect-ratio: 1774 / 887; }
+  .hero__art--tablet .hero__slider { aspect-ratio: 1086 / 1448; }
+  .hero__art--mobile .hero__slider { aspect-ratio: 941 / 1672; }
+  @keyframes nanairoHeroWave { from { -webkit-mask-position: 0 50%; mask-position: 0 50%; } to { -webkit-mask-position: 0 -100%; mask-position: 0 -100%; } }
+  .hero__slider.is-entering {
+    -webkit-mask-image: url("assets/hero-wave-mask.png");
+    mask-image: url("assets/hero-wave-mask.png");
+    -webkit-mask-position: 0 200%; mask-position: 0 200%;
+    -webkit-mask-size: 100% 200%; mask-size: 100% 200%;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    transition: -webkit-mask-position 1.5s ease .5s, mask-position 1.5s ease .5s;
+  }
+  .hero__slider.is-entering.is-ready { -webkit-mask-position: 0 50%; mask-position: 0 50%; }
+  .hero__slide { position: absolute; inset: 0; z-index: 1; display: block; overflow: hidden; opacity: 1; pointer-events: none; transition: opacity .3s ease; }
+  .hero__slide.is-active { z-index: 3; }
+  .hero__slide.is-top { z-index: 99; }
+  .hero__slide.is-entering { opacity: 0; }
+  .hero__slide.is-leaving .hero__image {
+    -webkit-mask-image: url("assets/hero-wave-mask.png");
+    mask-image: url("assets/hero-wave-mask.png");
+    -webkit-mask-position: 0 50%; mask-position: 0 50%;
+    -webkit-mask-size: 100% 200%; mask-size: 100% 200%;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    animation: nanairoHeroWave 1.5s ease both;
+  }
+  .hero__art--pc { display: block; }
+  .hero__header-mask { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
+  .hero__header-mask span { position: absolute; display: block; background: #fff; }
+  .hero__header-mask-logo { top: 0; left: 0; width: 12.5%; height: 22%; }
+  .hero__header-mask-nav { top: 0; right: 0; width: 40%; height: 8.5%; }
+  .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 30; display: flex; align-items: flex-start; justify-content: space-between; gap: clamp(10px,2vw,32px); padding: clamp(20px,2.65vw,26px) clamp(18px,3.55vw,64px) 0 clamp(28px,2.7vw,44px); pointer-events: none; }
+  .site-header__logo, .site-header__nav, .site-header__menu { pointer-events: auto; }
+  .site-header__logo { display: block; flex: none; }
+  .site-header__logo img { display: block; width: clamp(86px,9.35vw,166px); height: auto; }
+  .site-header__nav { display: flex; align-items: center; gap: clamp(16px,3.25vw,58px); font-family: "Cormorant Garamond", serif; font-size: clamp(10px,.98vw,17px); letter-spacing: .14em; font-weight: 400; color: #81796E; }
+  .site-header__nav a { padding: 8px 0; color: inherit; }
+  .site-header__menu { display: none; border: 0; padding: 0; background: transparent; color: #81796E; cursor: pointer; }
+  .site-header__menu-lines { display: flex; width: 42px; flex-direction: column; gap: 8px; }
+  .site-header__menu-lines i { display: block; height: 1px; background: currentColor; }
+  .site-header__menu-label { display: block; margin-top: 9px; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .16em; }
+  .site-header a:focus-visible, .site-header button:focus-visible { outline: 2px solid #81796E; outline-offset: 4px; }
+  [data-hero-menu-panel][aria-hidden="true"] { display: none; }
+  [data-hero-menu-panel] { position: fixed; inset: 0; z-index: 110; display: flex; flex-direction: column; justify-content: center; padding: 24px clamp(28px,9vw,54px); background: rgba(255,255,255,.98); }
+  [data-hero-menu-panel] nav { display: flex; flex-direction: column; gap: 22px; font-family: "Cormorant Garamond", serif; font-size: 28px; letter-spacing: .14em; }
+  [data-hero-menu-close] { position: absolute; top: 24px; right: 24px; border: 0; padding: 10px; background: transparent; font-family: "Cormorant Garamond", serif; font-size: 16px; letter-spacing: .12em; color: #81796E; cursor: pointer; }
+  @media (prefers-reduced-motion: reduce) { .hero__slider, .hero__slide, .hero__slide .hero__image { transition: none !important; animation: none !important; -webkit-mask-image: none !important; mask-image: none !important; } }
+  @media (min-width: 768px) {
+    .site-header { position: fixed; align-items: center; gap: clamp(12px,2vw,32px); padding: clamp(12px,1.5vw,22px) clamp(16px,3.2vw,52px); background: rgba(255,255,255,.94); transition: transform .64s cubic-bezier(.22,.61,.36,1),background .5s ease,padding .5s cubic-bezier(.22,.61,.36,1); }
+    .site-header__logo { margin-left: clamp(4px,2.4vw,44px); }
+    .site-header__logo img { width: clamp(78px,6.6vw,108px); }
+    .site-header__nav { gap: clamp(10px,1.8vw,34px); font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif; font-size: clamp(9.5px,.78vw,11.5px); letter-spacing: .18em; }
+    .site-header__nav a { padding: 12px 2px; }
+    .site-header__nav a:last-child { padding: 11px clamp(12px,1.4vw,20px); border: 1px solid #CFC8B8; }
+  }
+  @media (min-width: 768px) and (max-width: 1199px) {
+    .hero__art--pc { display: none; }
+    .hero__art--tablet { display: block; }
+    .hero__header-mask-logo { width: 100%; height: 9%; }
+    .hero__header-mask-nav { display: none; }
+  }
+  @media (max-width: 767px) {
+    .hero__art--pc { display: none; }
+    .hero__art--mobile { display: block; }
+    .hero__header-mask-logo { width: 100%; height: 8.5%; }
+    .hero__header-mask-nav { display: none; }
+    .site-header { padding: clamp(10px,3.2vw,16px) clamp(14px,4.5vw,20px) 0; }
+    .site-header__logo img { width: clamp(72px,20vw,86px); }
+    .site-header__nav { display: none; }
+    .site-header__menu { display: block; }
+  }
+</style>
+</helmet>
+
+<div style="position:relative;background:#FBFAF6;">
+
+<section data-screen-label="01 HERO" data-hero="">
+  <h1 class="visually-hidden">年齢も環境も制限のない、美しさへ</h1>
+
+  <div class="hero__art hero__art--pc">
+    <div class="hero__slider" data-hero-slider="">
+      <picture class="hero__slide is-active" data-hero-slide="0"><img class="hero__image" src="assets/hero-complete-pc.png" width="1774" height="887" alt="" aria-hidden="true" /></picture>
+      <picture class="hero__slide" data-hero-slide="1"><img class="hero__image" src="assets/hero-complete-pc-2.png" width="1774" height="887" alt="" aria-hidden="true" decoding="async" /></picture>
+      <picture class="hero__slide" data-hero-slide="2"><img class="hero__image" src="assets/hero-complete-pc-3.png" width="1774" height="887" alt="" aria-hidden="true" decoding="async" /></picture>
+      <picture class="hero__slide" data-hero-slide="3"><img class="hero__image" src="assets/hero-complete-pc-4.png" width="1774" height="887" alt="" aria-hidden="true" decoding="async" /></picture>
+    </div>
+  </div>
+
+  <div class="hero__art hero__art--tablet">
+    <div class="hero__slider" data-hero-slider="">
+      <picture class="hero__slide is-active" data-hero-slide="0"><img class="hero__image" src="assets/hero-complete-tablet-1.png" width="1086" height="1448" alt="" aria-hidden="true" /></picture>
+      <picture class="hero__slide" data-hero-slide="1"><img class="hero__image" src="assets/hero-complete-tablet-2.png" width="1086" height="1448" alt="" aria-hidden="true" decoding="async" /></picture>
+      <picture class="hero__slide" data-hero-slide="2"><img class="hero__image" src="assets/hero-complete-tablet-3.png" width="1086" height="1448" alt="" aria-hidden="true" decoding="async" /></picture>
+      <picture class="hero__slide" data-hero-slide="3"><img class="hero__image" src="assets/hero-complete-tablet-4.png" width="1086" height="1448" alt="" aria-hidden="true" decoding="async" /></picture>
+    </div>
+  </div>
+
+  <div class="hero__art hero__art--mobile">
+    <div class="hero__slider" data-hero-slider="">
+      <picture class="hero__slide is-active" data-hero-slide="0"><img class="hero__image" src="assets/hero-complete-mobile-1.png" width="941" height="1672" alt="" aria-hidden="true" /></picture>
+      <picture class="hero__slide" data-hero-slide="1"><img class="hero__image" src="assets/hero-complete-mobile-2.png" width="941" height="1672" alt="" aria-hidden="true" decoding="async" /></picture>
+      <picture class="hero__slide" data-hero-slide="2"><img class="hero__image" src="assets/hero-complete-mobile-3.png" width="941" height="1672" alt="" aria-hidden="true" decoding="async" /></picture>
+      <picture class="hero__slide" data-hero-slide="3"><img class="hero__image" src="assets/hero-complete-mobile-4.png" width="941" height="1672" alt="" aria-hidden="true" decoding="async" /></picture>
+    </div>
+  </div>
+
+  <div class="hero__header-mask" aria-hidden="true"><span class="hero__header-mask-logo"></span><span class="hero__header-mask-nav"></span></div>
+
+  <header class="site-header" data-header="">
+    <a class="site-header__logo" href="TOP.dc.html" aria-label="BeautySalon nanairo トップへ"><img data-logo="" src="assets/logo-circle.webp" width="560" height="560" alt="BeautySalon nanairo 正式ロゴ" /></a>
+    <nav class="site-header__nav" aria-label="グローバルナビゲーション">
+      <a href="SERVICES.dc.html">SERVICES</a>
+      <a href="SALONS.dc.html">SALONS</a>
+      <a href="ABOUT.dc.html">ABOUT</a>
+      <a href="RESERVE.dc.html">RESERVE</a>
+    </nav>
+    <button class="site-header__menu" type="button" data-hero-menu-toggle="" aria-expanded="false" aria-controls="hero-mobile-menu"><span class="site-header__menu-lines" aria-hidden="true"><i></i><i></i><i></i></span><span class="site-header__menu-label">MENU</span><span class="visually-hidden">メニューを開く</span></button>
+  </header>
+
+  <div id="hero-mobile-menu" data-hero-menu-panel="" aria-hidden="true" style="display:none;">
+    <button type="button" data-hero-menu-close="" aria-label="メニューを閉じる">CLOSE</button>
+    <nav aria-label="モバイルナビゲーション">
+      <a href="SERVICES.dc.html">SERVICES</a>
+      <a href="SALONS.dc.html">SALONS</a>
+      <a href="ABOUT.dc.html">ABOUT</a>
+      <a href="RESERVE.dc.html">RESERVE</a>
+    </nav>
+  </div>
+</section>
+
+<section data-screen-label="01b HERO INTRO" style="padding:clamp(34px,4.4vw,72px) clamp(18px,4vw,72px) clamp(30px,4vw,64px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(20px,3vw,56px);">
+  <p data-reveal="body" style="margin:0;max-width:480px;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.05;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">大分・椎迫と片島の2つの拠点から、<br />エステ、ネイル、まつ毛、アイブロウ、メンズ美容、ジャグアタトゥーまで。<br />一人ひとりの「なりたい」に寄り添う、nanairoのトータルビューティー。</p>
+  <div data-reveal="body" data-delay="55" style="display:flex;flex-wrap:wrap;gap:clamp(10px,1.2vw,16px);opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">
+    <a href="SERVICES.dc.html" data-arrow="" style="display:inline-flex;align-items:center;gap:14px;padding:15px clamp(18px,1.8vw,26px);border:1px solid #171512;font-size:clamp(11.5px,0.9vw,13px);letter-spacing:0.08em;">施術から探す<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+    <a href="SALONS.dc.html" data-arrow="" style="display:inline-flex;align-items:center;gap:14px;padding:15px clamp(18px,1.8vw,26px);border:1px solid #D5CEBE;font-size:clamp(11.5px,0.9vw,13px);letter-spacing:0.08em;">店舗から探す<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+  </div>
+</section>
+
+<section class="ux-section ux-section--tint" data-screen-label="NANAIRO AT A GLANCE">
+  <div class="ux-shell ux-summary">
+    <div>
+      <p class="ux-kicker">NANAIRO AT A GLANCE</p>
+      <h2 class="ux-title">2つの拠点、5つの美容カテゴリー。</h2>
+      <p class="ux-lead">nanairoは、大分市の椎迫・片島に複数の専門サロンを展開するトータルビューティーグループです。施術からでも、通いやすい拠点からでも選べます。</p>
+      <div class="ux-actions">
+        <a class="ux-btn ux-btn--primary" href="SERVICES.dc.html">受けたい施術から探す</a>
+        <a class="ux-btn" href="SALONS.dc.html">2拠点と専門サロンを比較する</a>
+      </div>
+    </div>
+    <div class="ux-quick-grid" aria-label="施術と対応拠点の早見表">
+      <div class="ux-quick-item"><strong>エステティック</strong><span>痩身・小顔・フェイシャル・脱毛・バストケア</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span><span class="ux-tag">片島</span></div></div>
+      <div class="ux-quick-item"><strong>ネイル</strong><span>ワンカラー・マグネット・アート・フット</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span><span class="ux-tag">片島</span></div></div>
+      <div class="ux-quick-item"><strong>まつ毛・アイブロウ</strong><span>まつ毛パーマ・エクステ・眉スタイリング</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span><span class="ux-tag">片島</span></div></div>
+      <div class="ux-quick-item"><strong>メンズ美容</strong><span>男性の肌・身体・身だしなみをトータルケア</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span></div></div>
+      <div class="ux-quick-item"><strong>ジャグアタトゥー</strong><span>約2週間楽しめるオーダーボディアート</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span><span class="ux-tag">片島</span></div></div>
+      <div class="ux-quick-item"><strong>予約までの流れ</strong><span>施術を選ぶ → 店舗を確認 → 空席・クーポンを見る</span><a class="ux-inline-link" href="RESERVE.dc.html">予約先を選ぶ</a></div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="02 ABOUT nanairo" style="padding:clamp(66px,9vw,140px) clamp(18px,3.2vw,52px);">
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(30px,4vw,80px);">
+    <div style="flex:0 0 auto;width:clamp(140px,14vw,220px);">
+      <p data-reveal="label" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">ABOUT nanairo</p>
+    </div>
+    <div style="flex:1 1 420px;min-width:0;">
+      <h2 style="margin:0 0 clamp(30px,3.6vw,56px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(24px,3.1vw,48px);line-height:1.42;letter-spacing:0.01em;">
+        <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">美しさを、</span></span>
+        <span style="display:block;overflow:hidden;"><span data-reveal="line" data-delay="75" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">ひとつの選択肢にしない。</span></span>
+      </h2>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(18px,2.6vw,42px);">
+        <figure data-reveal="image" style="flex:1 1 320px;margin:0;position:relative;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:4/3;background:#F1EEE7;">
+          <img src="assets/esthetic-facial.webp" width="768" height="558" alt="フェイシャル施術中の肌に密着したジェルパック" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:58% 46%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
+        </figure>
+        <div style="flex:0 1 300px;display:flex;flex-direction:column;gap:clamp(16px,2vw,28px);padding-top:clamp(0px,3vw,52px);">
+          <figure data-reveal="image" data-delay="100" style="margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:3/4;background:#F1EEE7;">
+            <img src="assets/nail-3.webp" width="470" height="632" alt="ラメとパーツをあしらったピンクベージュのネイル" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 42%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
+          </figure>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.4vw,64px);margin-top:clamp(28px,3.4vw,52px);">
+        <figure data-reveal="image" data-delay="55" style="flex:0 0 auto;width:clamp(128px,13vw,196px);margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:1/1;background:#F1EEE7;">
+          <img src="assets/jagua-decollete.webp" width="472" height="470" alt="デコルテに描かれた月と星のジャグアタトゥー" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:52% 62%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
+        </figure>
+        <div style="flex:1 1 320px;min-width:0;">
+          <p data-reveal="body" style="margin:0 0 clamp(22px,2.6vw,34px);font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.15;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">肌を整えたい日も、身体を変えたいときも、<br />指先や目元を彩りたいときも。<br /><br />BeautySalon nanairoは、<br />エステ、痩身、小顔、フェイシャル、脱毛、バストケア、ネイル、まつ毛、アイブロウ、メンズ美容、ジャグアタトゥーまで、幅広い美容を展開するトータルビューティーサロングループです。<br /><br />そのときの自分に合う美容を、<br />もっと自由に選べる場所へ。</p>
+          <a href="ABOUT.dc.html" data-arrow="" data-reveal="body" data-delay="55" style="display:inline-flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid #171512;font-size:clamp(11.5px,0.9vw,13px);letter-spacing:0.08em;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">nanairoについて<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="03 SERVICES" data-services="" style="padding:clamp(66px,9vw,140px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(22px,3vw,56px);margin-bottom:clamp(38px,5vw,80px);">
+    <div>
+      <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">SERVICES</p>
+      <h2 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(26px,3.4vw,52px);line-height:1.34;">
+        <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">施術から探す</span></span>
+      </h2>
+    </div>
+    <p data-reveal="body" style="margin:0;max-width:360px;font-size:clamp(12px,0.98vw,14px);line-height:2.05;color:#6D6759;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">気になる美容から、<br />あなたに合うサービスと店舗をお選びいただけます。</p>
+  </div>
+
+  <div data-service-list="" style="border-top:1px solid #E6E2D9;">
+    <a href="ESTHETIC.dc.html" data-service-row="" data-img="assets/esthetic-machine.webp" data-alt="腹部に装着された脂肪冷却系の施術機器" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">01</span>
+      <span style="flex:1 1 240px;min-width:0;">
+        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;letter-spacing:0.01em;transition:transform .6s cubic-bezier(.22,.61,.36,1);">ESTHETIC</span>
+        <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">エステティック</span>
+      </span>
+      <span style="flex:0 1 300px;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;padding-top:8px;">
+        <span>痩身・ボディ</span><span>小顔・フェイシャル</span><span>脱毛</span><span>バストケア</span>
+      </span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW ESTHETIC<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+    </a>
+
+    <a href="NAIL.dc.html" data-service-row="" data-img="assets/nail-2.webp" data-alt="オーロラのようにきらめくミルキーホワイトのネイル" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">02</span>
+      <span style="flex:1 1 240px;min-width:0;">
+        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">NAIL</span>
+        <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">ネイル</span>
+      </span>
+      <span style="flex:0 1 300px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;padding-top:8px;">ワンカラーからトレンドデザイン、<br />フット、長さ出しまで。</span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW NAIL<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+    </a>
+
+    <a href="EYE.dc.html" data-service-row="" data-img="assets/lash-perm-1.webp" data-alt="まつ毛パーマで自然に立ち上がった目元" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">03</span>
+      <span style="flex:1 1 240px;min-width:0;">
+        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">EYE</span>
+        <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">アイ</span>
+      </span>
+      <span style="flex:0 1 300px;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;padding-top:8px;">
+        <span>まつ毛パーマ</span><span>まつ毛エクステ</span><span>アイブロウ</span>
+      </span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW EYE<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+    </a>
+
+    <a href="MENS-BEAUTY.dc.html" data-service-row="" data-img="assets/mens-face.webp" data-alt="メンズフェイシャル前後のフェイスラインの変化" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">04</span>
+      <span style="flex:1 1 240px;min-width:0;">
+        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">MEN'S BEAUTY</span>
+        <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">メンズ美容</span>
+      </span>
+      <span style="flex:0 1 300px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;padding-top:8px;">フェイシャル、肌質ケア、痩身、脱毛、<br />爪ケア、眉毛スタイリングまで。</span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW MEN'S BEAUTY<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+    </a>
+
+    <a href="JAGUA-TATTOO.dc.html" data-service-row="" data-img="assets/jagua-arm.webp" data-alt="二の腕に描かれた月と星のジャグアタトゥー" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">05</span>
+      <span style="flex:1 1 240px;min-width:0;">
+        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">JAGUA TATTOO</span>
+        <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">ジャグアタトゥー</span>
+      </span>
+      <span style="flex:0 1 300px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;padding-top:8px;">約2週間楽しめる、<br />オーダーデザインのボディアート。</span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW JAGUA TATTOO<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+    </a>
+  </div>
+
+  <div data-service-mobile="" style="display:none;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:clamp(10px,2vw,18px);margin-top:clamp(22px,3vw,32px);">
+    <figure style="margin:0;"><span style="display:block;overflow:hidden;aspect-ratio:3/4;background:#F1EEE7;"><img src="assets/esthetic-machine.webp" width="742" height="550" alt="脂肪冷却系の施術機器｜エステティック" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:52% 50%;" /></span><figcaption style="margin-top:8px;font-size:10.5px;letter-spacing:0.16em;color:#8A8376;">ESTHETIC</figcaption></figure>
+    <figure style="margin:0;"><span style="display:block;overflow:hidden;aspect-ratio:3/4;background:#F1EEE7;"><img src="assets/nail-2.webp" width="462" height="624" alt="オーロラのようにきらめくネイル｜ネイル" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 45%;" /></span><figcaption style="margin-top:8px;font-size:10.5px;letter-spacing:0.16em;color:#8A8376;">NAIL</figcaption></figure>
+    <figure style="margin:0;"><span style="display:block;overflow:hidden;aspect-ratio:3/4;background:#F1EEE7;"><img src="assets/lash-perm-1.webp" width="436" height="324" alt="まつ毛パーマの目元｜アイ" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;" /></span><figcaption style="margin-top:8px;font-size:10.5px;letter-spacing:0.16em;color:#8A8376;">EYE</figcaption></figure>
+    <figure style="margin:0;"><span style="display:block;overflow:hidden;aspect-ratio:3/4;background:#F1EEE7;"><img src="assets/mens-face.webp" width="480" height="398" alt="メンズフェイシャルのフェイスライン｜メンズ美容" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 45%;" /></span><figcaption style="margin-top:8px;font-size:10.5px;letter-spacing:0.16em;color:#8A8376;">MEN'S</figcaption></figure>
+    <figure style="margin:0;"><span style="display:block;overflow:hidden;aspect-ratio:3/4;background:#F1EEE7;"><img src="assets/jagua-arm.webp" width="476" height="470" alt="二の腕のジャグアタトゥー｜ジャグアタトゥー" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:38% 45%;" /></span><figcaption style="margin-top:8px;font-size:10.5px;letter-spacing:0.16em;color:#8A8376;">JAGUA</figcaption></figure>
+  </div>
+</section>
+
+<section data-screen-label="04 SALONS" style="padding:clamp(66px,9vw,140px) clamp(18px,3.2vw,52px) clamp(40px,5vw,80px);border-top:1px solid #E6E2D9;background:#F7F5EF;">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(22px,3vw,56px);margin-bottom:clamp(38px,5vw,84px);">
+    <div>
+      <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">SALONS</p>
+      <h2 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(26px,3.4vw,52px);line-height:1.34;">
+        <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">店舗から探す</span></span>
+      </h2>
+    </div>
+    <p data-reveal="body" style="margin:0;max-width:360px;font-size:clamp(12px,0.98vw,14px);line-height:2.05;color:#6D6759;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">nanairoの美容サービスは、<br />大分市内の椎迫・片島、2つの拠点で展開しています。</p>
+  </div>
+
+  <div data-salon-block="" style="display:flex;flex-wrap:wrap;gap:clamp(26px,3.4vw,64px);padding-bottom:clamp(48px,6vw,104px);">
+    <div data-salon-sticky="" style="flex:0 1 260px;min-width:0;">
+      <p style="margin:0 0 14px;font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);color:#9C9585;">01</p>
+      <p data-reveal="label" style="margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,40px);letter-spacing:0.06em;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">SHIIZAKO</p>
+      <p style="margin:0;font-family:'Shippori Mincho',serif;font-size:clamp(17px,1.5vw,23px);letter-spacing:0.08em;">椎迫</p>
+    </div>
+    <div style="flex:1 1 460px;min-width:0;">
+      <figure data-reveal="image" style="margin:0 0 clamp(22px,2.6vw,36px);overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:16/10;background:#EDE9E1;">
+        <img src="assets/salon-room.webp" width="784" height="560" alt="間接照明の施術ルーム｜nanairoのサロンイメージ" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 58%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
+      </figure>
+      <p style="margin:0 0 clamp(22px,2.6vw,34px);font-size:11px;letter-spacing:0.04em;color:#9C9585;line-height:1.9;">※写真はnanairoブランドのサロンイメージです。</p>
+      <p data-reveal="body" style="margin:0 0 clamp(20px,2.4vw,30px);font-size:clamp(12px,0.98vw,14px);line-height:2;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">大分市椎迫1-4組 NEXT美丘壱番館</p>
+      <p style="margin:0 0 12px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.2em;color:#8A8376;">SERVICES</p>
+      <ul style="margin:0 0 clamp(26px,3vw,40px);padding:0;list-style:none;border-top:1px solid #E0DBD0;">
+        <li style="padding:14px 0;border-bottom:1px solid #E0DBD0;font-size:clamp(12px,0.98vw,14px);color:#2A2723;">BeautySalon nanairo 顧問医師認定サロン</li>
+        <li style="padding:14px 0;border-bottom:1px solid #E0DBD0;font-size:clamp(12px,0.98vw,14px);color:#2A2723;">NAIL&amp;EYE nanairo</li>
+        <li style="padding:14px 0;border-bottom:1px solid #E0DBD0;font-size:clamp(12px,0.98vw,14px);color:#2A2723;">MEN'S美容サロン nanairo</li>
+        <li style="padding:14px 0;border-bottom:1px solid #E0DBD0;font-size:clamp(12px,0.98vw,14px);color:#2A2723;">ジャグアタトゥー</li>
+      </ul>
+      <a href="SALONS.dc.html#shiizako" data-arrow="" style="display:inline-flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid #171512;font-size:clamp(11.5px,0.9vw,13px);letter-spacing:0.08em;">椎迫のサービスを見る<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+    </div>
+  </div>
+
+  <div data-salon-block="" style="display:flex;flex-wrap:wrap;gap:clamp(26px,3.4vw,64px);border-top:1px solid #E0DBD0;padding-top:clamp(44px,5.4vw,96px);">
+    <div data-salon-sticky="" style="flex:0 1 260px;min-width:0;">
+      <p style="margin:0 0 14px;font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);color:#9C9585;">02</p>
+      <p data-reveal="label" style="margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,40px);letter-spacing:0.06em;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">KATASHIMA</p>
+      <p style="margin:0;font-family:'Shippori Mincho',serif;font-size:clamp(17px,1.5vw,23px);letter-spacing:0.08em;">片島</p>
+    </div>
+    <div style="flex:1 1 460px;min-width:0;display:flex;flex-wrap:wrap;gap:clamp(24px,3vw,52px);">
+      <div style="flex:1 1 260px;min-width:0;">
+        <p data-reveal="body" style="margin:0 0 clamp(20px,2.4vw,30px);font-size:clamp(12px,0.98vw,14px);line-height:2;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">大分市片島59-1</p>
+        <p style="margin:0 0 12px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.2em;color:#8A8376;">SERVICES</p>
+        <ul style="margin:0 0 clamp(26px,3vw,40px);padding:0;list-style:none;border-top:1px solid #E0DBD0;">
+          <li style="padding:14px 0;border-bottom:1px solid #E0DBD0;font-size:clamp(12px,0.98vw,14px);color:#2A2723;">nanairo＋ nail &amp; eyelash</li>
+          <li style="padding:14px 0;border-bottom:1px solid #E0DBD0;font-size:clamp(12px,0.98vw,14px);color:#2A2723;">ダイエット痩身&amp;小顔フェイシャル nanairo 下郡店</li>
+          <li style="padding:14px 0;border-bottom:1px solid #E0DBD0;font-size:clamp(12px,0.98vw,14px);color:#2A2723;">ジャグアタトゥー</li>
+        </ul>
+        <a href="SALONS.dc.html#katashima" data-arrow="" style="display:inline-flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid #171512;font-size:clamp(11.5px,0.9vw,13px);letter-spacing:0.08em;">片島のサービスを見る<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+      </div>
+      <figure style="flex:0 1 230px;margin:0;">
+        <span data-reveal="image" data-delay="55" style="display:block;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:3/4;background:#EDE9E1;">
+        <img src="assets/nail-1.webp" width="476" height="638" alt="ヌーディカラーに仕上げたネイルとポリッシュボトル" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 44%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
+        </span>
+        <figcaption style="margin-top:10px;font-size:11px;letter-spacing:0.04em;color:#9C9585;">取り扱いサービスのイメージ</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="05 OUR PHILOSOPHY" data-phil-outer="" style="padding:clamp(66px,9vw,140px) 0 clamp(56px,7vw,120px);border-top:1px solid #E6E2D9;">
+  <div data-phil-sticky="">
+    <div style="padding:0 clamp(18px,3.2vw,52px);margin-bottom:clamp(34px,4.4vw,64px);">
+      <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">OUR PHILOSOPHY</p>
+      <h2 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(24px,3.1vw,46px);line-height:1.36;">
+        <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">nanairoが大切にしていること</span></span>
+      </h2>
+    </div>
+    <div data-phil-track="" style="display:flex;flex-direction:column;gap:clamp(20px,3vw,40px);padding:0 clamp(18px,3.2vw,52px);">
+      <article data-phil-card="" style="flex:0 0 auto;border-top:1px solid #171512;padding-top:clamp(20px,2.4vw,32px);">
+        <p style="margin:0 0 clamp(18px,2.2vw,30px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);color:#9C9585;">01</p>
+        <p style="margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.2vw,34px);letter-spacing:0.03em;">Total Beauty</p>
+        <p style="margin:0 0 clamp(16px,2vw,26px);font-size:clamp(11px,0.85vw,12px);letter-spacing:0.16em;color:#8A8376;">TOTAL BEAUTY</p>
+        <p style="margin:0;font-size:clamp(12px,0.98vw,14px);line-height:2.1;color:#57524A;">一つの美容だけではなく、<br />そのときの自分に必要な美容を選べる場所であること。</p>
+      </article>
+      <article data-phil-card="" style="flex:0 0 auto;border-top:1px solid #C9C2B2;padding-top:clamp(20px,2.4vw,32px);">
+        <p style="margin:0 0 clamp(18px,2.2vw,30px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);color:#9C9585;">02</p>
+        <p style="margin:0 0 10px;font-family:'Shippori Mincho',serif;font-size:clamp(22px,2.2vw,34px);letter-spacing:0.04em;">結果重視</p>
+        <p style="margin:0 0 clamp(16px,2vw,26px);font-size:clamp(11px,0.85vw,12px);letter-spacing:0.16em;color:#8A8376;">RESULT ORIENTED</p>
+        <p style="margin:0;font-size:clamp(12px,0.98vw,14px);line-height:2.1;color:#57524A;">一人ひとりの目的や悩みに合わせ、<br />それぞれの専門領域から美容を提案すること。</p>
+      </article>
+      <article data-phil-card="" style="flex:0 0 auto;border-top:1px solid #C9C2B2;padding-top:clamp(20px,2.4vw,32px);">
+        <p style="margin:0 0 clamp(18px,2.2vw,30px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);color:#9C9585;">03</p>
+        <p style="margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.2vw,34px);letter-spacing:0.03em;">Beauty for Everyone</p>
+        <p style="margin:0 0 clamp(16px,2vw,26px);font-size:clamp(11px,0.85vw,12px);letter-spacing:0.16em;color:#8A8376;">BEAUTY FOR EVERYONE</p>
+        <p style="margin:0;font-size:clamp(12px,0.98vw,14px);line-height:2.1;color:#57524A;">年齢や環境、美容経験にとらわれず、<br />美容をもっと身近なものにすること。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section data-screen-label="06 RESERVATION" data-reservation="" style="position:relative;padding:clamp(72px,10vw,150px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;overflow:hidden;">
+  <div data-res-image="" style="position:absolute;top:50%;right:clamp(18px,6vw,120px);transform:translateY(-50%);width:clamp(180px,20vw,300px);aspect-ratio:3/4;overflow:hidden;opacity:0;transition:opacity .7s ease;pointer-events:none;background:#F1EEE7;">
+    <img data-res-img="" src="assets/lash-perm-2.webp" width="428" height="324" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.04);transition:transform .58s cubic-bezier(.22,1,.36,1);" />
+  </div>
+  <div style="position:relative;z-index:2;">
+    <p data-reveal="label" style="margin:0 0 clamp(20px,2.4vw,32px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">RESERVATION</p>
+    <h2 style="margin:0 0 clamp(24px,3vw,44px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(30px,4.4vw,70px);line-height:1.24;">
+      <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">ご予約</span></span>
+    </h2>
+    <p data-reveal="body" style="margin:0 0 clamp(34px,4vw,60px);max-width:420px;font-size:clamp(12px,0.98vw,14px);line-height:2.05;color:#6D6759;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">受けたい施術と店舗を選んで、<br />それぞれの予約ページへお進みください。</p>
+    <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #E0DBD0;max-width:720px;">
+      <a href="SERVICES.dc.html" data-res-row="" data-img="assets/lash-perm-2.webp" data-alt="まつ毛パーマで立ち上がった目元" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(20px,2.4vw,32px) 0;border-bottom:1px solid #E0DBD0;font-family:'Shippori Mincho',serif;font-size:clamp(19px,2.1vw,32px);letter-spacing:0.03em;">施術から探す<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.4vw,22px);transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+      <a href="SALONS.dc.html" data-res-row="" data-img="assets/salon-lounge.webp" data-alt="ショーケースとソファのある待合スペース" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(20px,2.4vw,32px) 0;border-bottom:1px solid #E0DBD0;font-family:'Shippori Mincho',serif;font-size:clamp(19px,2.1vw,32px);letter-spacing:0.03em;">店舗から探す<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.4vw,22px);transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+      <a href="RESERVE.dc.html" data-arrow="" style="display:inline-flex;align-items:center;gap:14px;margin-top:clamp(28px,3.4vw,48px);padding:16px clamp(22px,2.2vw,34px);border:1px solid #171512;align-self:flex-start;font-size:clamp(11.5px,0.9vw,13px);letter-spacing:0.1em;">予約する<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+    </div>
+  </div>
+</section>
+
+<footer data-screen-label="FOOTER" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px) clamp(28px,3vw,44px);background:#F7F5EF;border-top:1px solid #E6E2D9;">
+  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(28px,4vw,64px);">
+    <div>
+      <h2 style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px,6.4vw,110px);line-height:0.98;letter-spacing:0.01em;">
+        <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">BeautySalon</span></span>
+        <span style="display:block;overflow:hidden;"><span data-reveal="line" data-delay="85" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">nanairo</span></span>
+      </h2>
+      <p data-reveal="body" style="margin:0;font-family:'Shippori Mincho',serif;font-size:clamp(13px,1.1vw,16px);letter-spacing:0.04em;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">年齢も環境も制限のない、美しさへ。</p>
+    </div>
+    <figure data-reveal="image" data-delay="55" style="flex:0 1 260px;margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:1/1;background:#EDE9E1;">
+      <img src="assets/jagua-decollete.webp" width="472" height="470" alt="デコルテに描かれた星と月のジャグアタトゥー" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:48% 55%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
+    </figure>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,80px);margin-top:clamp(44px,5.4vw,90px);padding-top:clamp(24px,2.6vw,36px);border-top:1px solid #E0DBD0;">
+    <nav aria-label="フッターナビゲーション" style="display:flex;flex-wrap:wrap;gap:14px 32px;font-size:clamp(10.5px,0.85vw,12px);letter-spacing:0.16em;">
+      <a href="SERVICES.dc.html" data-underline="" style="padding:6px 0;">SERVICES</a>
+      <a href="SALONS.dc.html" data-underline="" style="padding:6px 0;">SALONS</a>
+      <a href="ABOUT.dc.html" data-underline="" style="padding:6px 0;">ABOUT</a>
+      <a href="RESERVE.dc.html" data-underline="" style="padding:6px 0;">RESERVE</a>
+    </nav>
+    <nav aria-label="SNS" style="display:flex;flex-wrap:wrap;gap:14px 32px;font-size:clamp(10.5px,0.85vw,12px);letter-spacing:0.16em;">
+      <a href="https://www.instagram.com/smile_nanairo" target="_blank" rel="noopener" data-underline="" style="padding:6px 0;">Instagram</a>
+      <a href="https://lin.ee/6MWwoSh" target="_blank" rel="noopener" data-underline="" style="padding:6px 0;">LINE</a>
+    </nav>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:clamp(28px,3vw,44px);font-size:11px;letter-spacing:0.08em;color:#8A8376;">
+    <span>運営：株式会社nanairo</span>
+    <span>© nanairo</span>
+  </div>
+</footer>
+
+<div data-mask="" aria-hidden="true" style="position:fixed;inset:0;z-index:120;background:#F3EFE6;clip-path:inset(0 0 100% 0);transition:clip-path .28s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:center;pointer-events:none;">
+  <span data-mask-label="" style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,44px);letter-spacing:0.22em;color:#2A2723;opacity:0;transition:opacity .16s ease;"></span>
+</div>
+
+<div data-float="" aria-hidden="true" style="position:fixed;top:0;left:0;z-index:70;width:clamp(180px,17vw,260px);aspect-ratio:3/4;overflow:hidden;pointer-events:none;opacity:0;transform:translate3d(-50%,-50%,0) scale(.85);transition:opacity .5s ease,transform .55s cubic-bezier(.22,.61,.36,1);background:#F1EEE7;">
+  <img data-float-img="" src="assets/esthetic-machine.webp" width="742" height="550" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;" />
+</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;floatingImage&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;motion&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;full&quot;,&quot;subtle&quot;,&quot;off&quot;],&quot;default&quot;:&quot;full&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const motion = this.props.motion ?? 'full';
+    this.reduce = reduce || motion === 'off';
+    this.cleanups = [];
+    this.initReveal();
+    this.initHeader();
+    this.initHeroSlider();
+    this.initHeroMenu();
+    this.initServices();
+    this.initReservation();
+    this.initPhilosophy();
+    this.initArrows();
+    this.initTransition();
+  }
+
+  componentWillUnmount() { (this.cleanups || []).forEach(fn => fn()); }
+
+  /* ---------- REVEAL ---------- */
+  show(el) {
+    if (el.dataset.shown) return;
+    el.dataset.shown = '1';
+    const isHero = !!el.closest('[data-screen-label$="HERO"], [data-hero]');
+    const rawDelay = parseInt(el.dataset.delay || '0', 10);
+    const d = this.reduce ? 0 : (isHero ? rawDelay : Math.min(rawDelay, 60));
+    const type = el.dataset.reveal;
+    if (!isHero && !this.reduce) {
+      const motionEase = 'cubic-bezier(.22,1,.36,1)';
+      if (type === 'label') el.style.transition = `clip-path .48s ${motionEase}`;
+      else if (type === 'line') el.style.transition = `transform .52s ${motionEase}`;
+      else if (type === 'image') {
+        el.style.transition = `clip-path .62s ${motionEase}`;
+        const image = el.querySelector('img');
+        if (image) image.style.transition = `transform .66s ${motionEase}`;
+      } else el.style.transition = `opacity .45s ease, transform .45s ${motionEase}`;
+    }
+    setTimeout(() => {
+      if (type === 'label') el.style.clipPath = 'inset(0 0 0 0)';
+      else if (type === 'line') el.style.transform = 'translateY(0)';
+      else if (type === 'image') {
+        el.style.clipPath = 'inset(0 0 0% 0)';
+        const img = el.querySelector('img');
+        if (img) img.style.transform = 'scale(1)';
+      } else { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; }
+    }, d);
+  }
+
+  initReveal() {
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (this.reduce) { els.forEach(el => { el.style.transition = 'none'; this.show(el); }); return; }
+    const heroEls = els.filter(el => el.closest('[data-screen-label$="HERO"], [data-hero]'));
+    const contentEls = els.filter(el => !el.closest('[data-screen-label$="HERO"], [data-hero]'));
+    els.forEach(el => { const r = el.getBoundingClientRect(); if (r.top < window.innerHeight * 0.96 && r.bottom > 0) this.show(el); });
+    const reveal = (io, entries) => entries.forEach(e => { if (e.isIntersecting) { this.show(e.target); io.unobserve(e.target); } });
+    const heroIo = new IntersectionObserver(entries => reveal(heroIo, entries), { rootMargin: '0px 0px -12% 0px', threshold: 0.08 });
+    const contentIo = new IntersectionObserver(entries => reveal(contentIo, entries), { rootMargin: '0px 0px 5% 0px', threshold: 0.01 });
+    heroEls.forEach(el => { if (!el.dataset.shown) heroIo.observe(el); });
+    contentEls.forEach(el => { if (!el.dataset.shown) contentIo.observe(el); });
+    const contentSafety = setTimeout(() => contentEls.forEach(el => this.show(el)), 1200);
+    const heroSafety = setTimeout(() => heroEls.forEach(el => this.show(el)), 6000);
+    this.cleanups.push(() => { heroIo.disconnect(); contentIo.disconnect(); clearTimeout(contentSafety); clearTimeout(heroSafety); });
+  }
+
+  /* ---------- HEADER ---------- */
+  initHeader() {
+    const header = document.querySelector('[data-header]');
+    if (!header || window.innerWidth < 768) return;
+    let last = window.scrollY, ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY, past = y > 220;
+        header.style.background = past ? 'rgba(255,255,255,0.82)' : 'rgba(255,255,255,0.94)';
+        header.style.backdropFilter = past ? 'blur(6px)' : 'none';
+        header.style.padding = past ? 'clamp(8px,1vw,14px) clamp(16px,3.2vw,52px)' : '';
+        if (y > last + 8 && y > 260) header.style.transform = 'translateY(-100%)';
+        else if (y < last - 6) header.style.transform = 'translateY(0)';
+        last = y;
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    this.cleanups.push(() => window.removeEventListener('scroll', onScroll));
+  }
+
+  /* ---------- HERO SLIDER ---------- */
+  initHeroSlider() {
+    const sliders = Array.from(document.querySelectorAll('[data-hero-slider]'));
+    const slideSets = sliders.map(slider => Array.from(slider.querySelectorAll('[data-hero-slide]')));
+    const slideCount = slideSets.length ? Math.min(...slideSets.map(slides => slides.length)) : 0;
+    if (!sliders.length || slideCount < 2) return;
+    if (window.__nanairoHeroSliderCleanup) window.__nanairoHeroSliderCleanup();
+
+    const staticTime = 4800;
+    const transitionTime = 1500;
+    let currentSlide = 0;
+    let timer = null;
+    let transitionTimer = null;
+    let fadeAnimations = [];
+    let disposed = false;
+
+    const showSlide = next => {
+      slideSets.forEach(slides => {
+        const outgoing = slides[currentSlide];
+        const incoming = slides[next];
+        outgoing.classList.remove('is-active');
+        outgoing.classList.add('is-top', 'is-leaving');
+        incoming.classList.add('is-active');
+        if (!this.reduce) fadeAnimations.push(incoming.animate(
+          [{ opacity: 0 }, { opacity: 1 }],
+          { duration: 300, easing: 'ease', fill: 'both' }
+        ));
+      });
+      currentSlide = next;
+
+      transitionTimer = setTimeout(() => {
+        fadeAnimations.forEach(animation => animation.cancel());
+        fadeAnimations = [];
+        slideSets.forEach(slides => {
+          slides.forEach((slide, index) => {
+            slide.classList.toggle('is-active', index === currentSlide);
+            slide.classList.toggle('is-top', index === currentSlide);
+            slide.classList.remove('is-entering', 'is-leaving');
+          });
+        });
+        transitionTimer = null;
+        schedule();
+      }, transitionTime);
+    };
+    const nextSlide = () => showSlide((currentSlide + 1) % slideCount);
+    const stop = () => {
+      if (timer) clearTimeout(timer);
+      if (transitionTimer) clearTimeout(transitionTimer);
+      fadeAnimations.forEach(animation => animation.cancel());
+      fadeAnimations = [];
+      timer = null;
+      transitionTimer = null;
+    };
+    const schedule = () => {
+      if (this.reduce || document.visibilityState === 'hidden' || timer || transitionTimer) return;
+      timer = setTimeout(() => {
+        timer = null;
+        nextSlide();
+      }, staticTime);
+    };
+    const start = () => {
+      stop();
+      slideSets.forEach(slides => slides.forEach((slide, index) => {
+        slide.classList.toggle('is-active', index === currentSlide);
+        slide.classList.toggle('is-top', index === currentSlide);
+        slide.classList.remove('is-entering', 'is-leaving');
+      }));
+      schedule();
+    };
+    const onVisibility = () => document.visibilityState === 'hidden' ? stop() : start();
+    const cleanup = () => {
+      disposed = true;
+      stop();
+      document.removeEventListener('visibilitychange', onVisibility);
+      if (window.__nanairoHeroSliderCleanup === cleanup) delete window.__nanairoHeroSliderCleanup;
+    };
+
+    sliders.forEach(slider => {
+      if (this.reduce) return;
+      slider.classList.add('is-entering');
+      requestAnimationFrame(() => slider.classList.add('is-ready'));
+    });
+    document.addEventListener('visibilitychange', onVisibility);
+    window.__nanairoHeroSliderCleanup = cleanup;
+    const images = slideSets.flatMap(slides => slides.map(slide => slide.querySelector('img'))).filter(Boolean);
+    Promise.all(images.map(img => img.complete ? Promise.resolve() : new Promise(resolve => {
+      img.addEventListener('load', resolve, { once: true });
+      img.addEventListener('error', resolve, { once: true });
+    }))).then(() => { if (!disposed) start(); });
+    this.cleanups.push(cleanup);
+  }
+
+  /* ---------- HERO MENU ---------- */
+  initHeroMenu() {
+    const toggle = document.querySelector('[data-hero-menu-toggle]');
+    const panel = document.querySelector('[data-hero-menu-panel]');
+    const closeButton = document.querySelector('[data-hero-menu-close]');
+    if (!toggle || !panel || !closeButton) return;
+    panel.style.display = 'none';
+    panel.setAttribute('aria-hidden', 'true');
+    toggle.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+    const setOpen = open => {
+      panel.style.display = open ? 'flex' : 'none';
+      panel.setAttribute('aria-hidden', String(!open));
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (open) closeButton.focus();
+      else toggle.focus();
+    };
+    const open = () => setOpen(true);
+    const close = () => setOpen(false);
+    const onKey = e => { if (e.key === 'Escape' && panel.getAttribute('aria-hidden') === 'false') close(); };
+    toggle.addEventListener('click', open);
+    closeButton.addEventListener('click', close);
+    window.addEventListener('keydown', onKey);
+    this.cleanups.push(() => {
+      toggle.removeEventListener('click', open);
+      closeButton.removeEventListener('click', close);
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+    });
+  }
+
+  /* ---------- SERVICES ---------- */
+  initServices() {
+    const rows = Array.from(document.querySelectorAll('[data-service-row]'));
+    const float = document.querySelector('[data-float]');
+    const floatImg = document.querySelector('[data-float-img]');
+    const mobileGrid = document.querySelector('[data-service-mobile]');
+    const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches && window.innerWidth >= 1000;
+    const enabled = fine && !this.reduce && (this.props.floatingImage ?? true);
+    if (!enabled) {
+      if (float) float.style.display = 'none';
+      if (mobileGrid) mobileGrid.style.display = 'grid';
+    }
+    if (!rows.length) return;
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = null, active = false;
+    const loop = () => {
+      cx += (tx - cx) * 0.12; cy += (ty - cy) * 0.12;
+      if (float) float.style.transform = `translate3d(${cx - 0}px,${cy}px,0) translate(-50%,-50%) scale(${active ? 1 : 0.85})`;
+      raf = requestAnimationFrame(loop);
+    };
+    const onMove = e => { tx = e.clientX + 130; ty = e.clientY; };
+    rows.forEach(row => {
+      const enter = () => {
+        rows.forEach(r => { r.style.opacity = r === row ? '1' : '0.32'; });
+        const en = row.querySelector('[data-service-en]');
+        if (en) en.style.transform = 'translateX(18px)';
+        const mark = row.querySelector('[data-arrow-mark]');
+        if (mark) mark.style.transform = 'translate(5px,-5px)';
+        if (enabled && float && floatImg) {
+          floatImg.src = row.dataset.img;
+          floatImg.alt = row.dataset.alt || '';
+          active = true;
+          float.style.opacity = '1';
+        }
+      };
+      const leave = () => {
+        rows.forEach(r => { r.style.opacity = '1'; });
+        const en = row.querySelector('[data-service-en]');
+        if (en) en.style.transform = 'translateX(0)';
+        const mark = row.querySelector('[data-arrow-mark]');
+        if (mark) mark.style.transform = 'translate(0,0)';
+        if (enabled && float) { active = false; float.style.opacity = '0'; }
+      };
+      row.addEventListener('mouseenter', enter);
+      row.addEventListener('mouseleave', leave);
+      row.addEventListener('focus', enter);
+      row.addEventListener('blur', leave);
+      this.cleanups.push(() => {
+        row.removeEventListener('mouseenter', enter);
+        row.removeEventListener('mouseleave', leave);
+        row.removeEventListener('focus', enter);
+        row.removeEventListener('blur', leave);
+      });
+    });
+    if (enabled) {
+      window.addEventListener('mousemove', onMove, { passive: true });
+      raf = requestAnimationFrame(loop);
+      this.cleanups.push(() => { window.removeEventListener('mousemove', onMove); cancelAnimationFrame(raf); });
+    }
+  }
+
+  /* ---------- RESERVATION HOVER IMAGE ---------- */
+  initReservation() {
+    const wrap = document.querySelector('[data-res-image]');
+    const img = document.querySelector('[data-res-img]');
+    const rows = Array.from(document.querySelectorAll('[data-res-row]'));
+    if (!wrap || !img || !rows.length) return;
+    const fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+    rows.forEach(row => {
+      const enter = () => {
+        const mark = row.querySelector('[data-arrow-mark]');
+        if (mark) mark.style.transform = 'translate(12px,-12px)';
+        if (!fine || this.reduce) return;
+        img.src = row.dataset.img;
+        img.alt = row.dataset.alt || '';
+        wrap.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+      };
+      const leave = () => {
+        const mark = row.querySelector('[data-arrow-mark]');
+        if (mark) mark.style.transform = 'translate(0,0)';
+        if (!fine || this.reduce) return;
+        wrap.style.opacity = '0';
+        img.style.transform = 'scale(1.04)';
+      };
+      row.addEventListener('mouseenter', enter);
+      row.addEventListener('mouseleave', leave);
+      this.cleanups.push(() => { row.removeEventListener('mouseenter', enter); row.removeEventListener('mouseleave', leave); });
+    });
+  }
+
+  /* ---------- PHILOSOPHY : horizontal on desktop ---------- */
+  initPhilosophy() {
+    const outer = document.querySelector('[data-phil-outer]');
+    const sticky = document.querySelector('[data-phil-sticky]');
+    const track = document.querySelector('[data-phil-track]');
+    if (!outer || !sticky || !track) return;
+    const cards = Array.from(track.querySelectorAll('[data-phil-card]'));
+    let onScroll = null, active = false;
+    const setDesktop = () => {
+      active = true;
+      outer.style.height = '280vh';
+      outer.style.paddingBottom = '0';
+      sticky.style.position = 'sticky';
+      sticky.style.top = '0';
+      sticky.style.height = '100svh';
+      sticky.style.display = 'flex';
+      sticky.style.flexDirection = 'column';
+      sticky.style.justifyContent = 'center';
+      sticky.style.overflow = 'hidden';
+      track.style.flexDirection = 'row';
+      track.style.gap = 'clamp(24px,3vw,56px)';
+      track.style.willChange = 'transform';
+      cards.forEach(c => { c.style.width = 'min(42vw,520px)'; c.style.transition = 'opacity .6s ease, transform .6s cubic-bezier(.22,.61,.36,1)'; });
+      onScroll = () => {
+        const r = outer.getBoundingClientRect();
+        const total = outer.offsetHeight - window.innerHeight;
+        const p = Math.min(1, Math.max(0, -r.top / (total || 1)));
+        const maxX = Math.max(0, track.scrollWidth - window.innerWidth + 60);
+        track.style.transform = `translate3d(${-maxX * p}px,0,0)`;
+        const center = window.innerWidth / 2;
+        cards.forEach(c => {
+          const b = c.getBoundingClientRect();
+          const near = Math.abs(b.left + b.width / 2 - center) < b.width * 0.75;
+          c.style.opacity = near ? '1' : '0.45';
+          c.style.transform = near ? 'scale(1)' : 'scale(.965)';
+        });
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    };
+    const reset = () => {
+      active = false;
+      if (onScroll) { window.removeEventListener('scroll', onScroll); onScroll = null; }
+      outer.style.height = '';
+      sticky.style.position = '';
+      sticky.style.top = '';
+      sticky.style.height = '';
+      sticky.style.overflow = '';
+      track.style.flexDirection = 'column';
+      track.style.transform = 'none';
+      cards.forEach(c => { c.style.width = ''; c.style.opacity = '1'; c.style.transform = 'none'; });
+    };
+    const check = () => {
+      const desktop = window.innerWidth >= 1024 && !this.reduce;
+      if (desktop && !active) setDesktop();
+      else if (!desktop && active) reset();
+      else if (active && onScroll) onScroll();
+    };
+    check();
+    window.addEventListener('resize', check);
+    this.cleanups.push(() => { window.removeEventListener('resize', check); if (onScroll) window.removeEventListener('scroll', onScroll); });
+  }
+
+  /* ---------- ARROWS / UNDERLINES ---------- */
+  initArrows() {
+    document.querySelectorAll('[data-arrow]').forEach(a => {
+      const mark = a.querySelector('[data-arrow-mark]');
+      const enter = () => { if (mark) mark.style.transform = 'translate(6px,-6px)'; };
+      const leave = () => { if (mark) mark.style.transform = 'translate(0,0)'; };
+      a.addEventListener('mouseenter', enter);
+      a.addEventListener('mouseleave', leave);
+      this.cleanups.push(() => { a.removeEventListener('mouseenter', enter); a.removeEventListener('mouseleave', leave); });
+    });
+    document.querySelectorAll('[data-underline]').forEach(a => {
+      a.style.backgroundImage = 'linear-gradient(#171512,#171512)';
+      a.style.backgroundRepeat = 'no-repeat';
+      a.style.backgroundSize = '0% 1px';
+      a.style.backgroundPosition = '0 100%';
+      a.style.transition = 'background-size .45s cubic-bezier(.22,.61,.36,1), color .3s ease';
+      const enter = () => { a.style.backgroundSize = '100% 1px'; };
+      const leave = () => { a.style.backgroundSize = '0% 1px'; };
+      a.addEventListener('mouseenter', enter);
+      a.addEventListener('mouseleave', leave);
+      this.cleanups.push(() => { a.removeEventListener('mouseenter', enter); a.removeEventListener('mouseleave', leave); });
+    });
+  }
+
+  /* ---------- PAGE TRANSITION ---------- */
+  initTransition() {
+    const mask = document.querySelector('[data-mask]');
+    const label = document.querySelector('[data-mask-label]');
+    if (!mask) return;
+    const maskTransition = mask.style.transition;
+    let isTransitioning = false;
+    let fallbackTimer = 0;
+    let endHandler = null;
+    const reset = () => {
+      clearTimeout(fallbackTimer);
+      if (endHandler) mask.removeEventListener('transitionend', endHandler);
+      endHandler = null;
+      isTransitioning = false;
+      mask.style.transition = 'none';
+      mask.style.clipPath = 'inset(0 0 100% 0)';
+      if (label) label.style.opacity = '0';
+      void mask.offsetWidth;
+      mask.style.transition = maskTransition;
+    };
+    const onClick = e => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const target = e.target instanceof Element ? e.target : e.target.parentElement;
+      const a = target && target.closest ? target.closest('a') : null;
+      if (!a) return;
+      const href = a.getAttribute('href') || '';
+      if (!href || a.hasAttribute('download') || (a.target && a.target.toLowerCase() !== '_self')) return;
+      let destination;
+      try { destination = new URL(href, window.location.href); } catch (_) { return; }
+      if (destination.origin !== window.location.origin || !destination.pathname.endsWith('.dc.html')) return;
+      if (destination.pathname === window.location.pathname && destination.search === window.location.search) return;
+      if (this.reduce) return;
+      e.preventDefault();
+      if (isTransitioning) return;
+      isTransitioning = true;
+      const name = (a.dataset.nav || a.textContent || '').trim().replace(/[↗\s]+$/, '').toUpperCase();
+      if (label) { label.textContent = name.slice(0, 26); label.style.opacity = '1'; }
+      const navigate = () => {
+        if (!isTransitioning) return;
+        clearTimeout(fallbackTimer);
+        if (endHandler) mask.removeEventListener('transitionend', endHandler);
+        endHandler = null;
+        window.location.assign(destination.href);
+      };
+      endHandler = event => {
+        if (event.target !== mask || event.propertyName !== 'clip-path') return;
+        navigate();
+      };
+      mask.addEventListener('transitionend', endHandler);
+      mask.style.clipPath = 'inset(0 0 0 0)';
+      fallbackTimer = setTimeout(navigate, 330);
+    };
+    document.addEventListener('click', onClick);
+    const onShow = () => reset();
+    window.addEventListener('pageshow', onShow);
+    this.cleanups.push(() => { reset(); document.removeEventListener('click', onClick); window.removeEventListener('pageshow', onShow); });
+  }
+
+  renderVals() { return {}; }
+}
+
+</script>
+</body>
+</html>

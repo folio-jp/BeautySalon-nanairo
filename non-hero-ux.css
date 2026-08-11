@@ -1,0 +1,181 @@
+/* Non-HERO information design layer. Every selector is scoped to content added after HERO. */
+:root {
+  --ux-ink: #201d19;
+  --ux-copy: #514c43;
+  --ux-muted: #7c7468;
+  --ux-line: #ded8cc;
+  --ux-paper: #fbfaf6;
+  --ux-tint: #f4f0e8;
+  --ux-accent: #8a6e3a;
+}
+
+.ux-section {
+  padding: clamp(46px, 6vw, 86px) clamp(18px, 3.2vw, 52px);
+  border-top: 1px solid var(--ux-line);
+  background: var(--ux-paper);
+  color: var(--ux-ink);
+}
+.ux-section--tint { background: var(--ux-tint); }
+.ux-shell { width: min(1180px, 100%); margin-inline: auto; }
+.ux-kicker {
+  margin: 0 0 10px;
+  color: var(--ux-muted);
+  font: 500 11px/1.4 "Zen Kaku Gothic New", sans-serif;
+  letter-spacing: .19em;
+}
+.ux-title {
+  margin: 0;
+  font: 400 clamp(24px, 3.1vw, 46px)/1.45 "Shippori Mincho", serif;
+  letter-spacing: .035em;
+}
+.ux-lead {
+  max-width: 720px;
+  margin: 16px 0 0;
+  color: var(--ux-copy);
+  font-size: clamp(15px, 1.15vw, 17px);
+  line-height: 1.9;
+}
+.ux-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.95fr);
+  gap: clamp(26px, 5vw, 76px);
+  align-items: start;
+}
+.ux-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--ux-ink);
+}
+.ux-quick-item {
+  min-width: 0;
+  padding: 18px 16px 18px 0;
+  border-bottom: 1px solid var(--ux-line);
+}
+.ux-quick-item:nth-child(even) { padding-left: 22px; border-left: 1px solid var(--ux-line); }
+.ux-quick-item strong {
+  display: block;
+  margin-bottom: 7px;
+  font: 400 17px/1.55 "Shippori Mincho", serif;
+}
+.ux-quick-item span { color: var(--ux-copy); font-size: 14px; line-height: 1.75; }
+.ux-tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.ux-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 4px 10px;
+  border: 1px solid #cbc3b4;
+  color: #5c554a;
+  font-size: 11px;
+  line-height: 1.35;
+  letter-spacing: .06em;
+}
+.ux-service-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 32px;
+  background: var(--ux-line);
+  border: 1px solid var(--ux-line);
+}
+.ux-service-card {
+  display: flex;
+  min-height: 210px;
+  padding: 22px 18px;
+  flex-direction: column;
+  background: var(--ux-paper);
+  color: var(--ux-ink);
+  transition: background .25s ease, color .25s ease;
+}
+.ux-service-card:hover { background: #eee8dc; color: var(--ux-ink); }
+.ux-service-card small { color: var(--ux-muted); font-size: 10px; letter-spacing: .17em; }
+.ux-service-card h3 { margin: 18px 0 9px; font: 400 21px/1.4 "Shippori Mincho", serif; }
+.ux-service-card p { margin: 0; color: var(--ux-copy); font-size: 14px; line-height: 1.75; }
+.ux-service-card b { margin-top: auto; padding-top: 22px; font-size: 12px; font-weight: 400; letter-spacing: .06em; }
+.ux-location-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 3vw, 38px); margin-top: 30px; }
+.ux-location-card { padding: clamp(22px, 3vw, 36px); border: 1px solid var(--ux-line); background: var(--ux-paper); }
+.ux-location-card h3 { margin: 0 0 8px; font: 400 clamp(21px, 2vw, 29px)/1.45 "Shippori Mincho", serif; }
+.ux-location-card > p { margin: 0; color: var(--ux-copy); font-size: 14px; line-height: 1.8; }
+.ux-location-card ul { margin: 20px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ux-line); }
+.ux-location-card li { padding: 12px 0; border-bottom: 1px solid var(--ux-line); font-size: 14px; line-height: 1.65; }
+.ux-salon-stack { display: grid; gap: clamp(22px, 3vw, 38px); margin: 32px 0 42px; }
+.ux-salon-card { padding: clamp(24px, 3.4vw, 44px); border: 1px solid var(--ux-line); background: #fff; }
+.ux-salon-head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(220px, .7fr); gap: 24px; align-items: end; }
+.ux-salon-head h3 { margin: 0; font: 400 clamp(21px, 2.25vw, 32px)/1.45 "Shippori Mincho", serif; }
+.ux-salon-head p { margin: 10px 0 0; color: var(--ux-copy); font-size: 15px; line-height: 1.8; }
+.ux-salon-meta { text-align: right; color: var(--ux-muted); font-size: 12px; line-height: 1.75; }
+.ux-menu { margin-top: 28px; }
+.ux-menu-label { margin: 0 0 10px; color: var(--ux-muted); font-size: 10px; font-weight: 500; letter-spacing: .19em; }
+.ux-menu-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ux-ink); }
+.ux-menu-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--ux-line); }
+.ux-menu-row span { font-size: 15px; line-height: 1.65; }
+.ux-menu-row b { white-space: nowrap; font-size: 15px; font-weight: 400; line-height: 1.65; }
+.ux-note { margin: 13px 0 0; color: var(--ux-muted); font-size: 12px; line-height: 1.7; }
+.ux-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+.ux-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid var(--ux-ink);
+  color: var(--ux-ink);
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: .045em;
+  transition: background .25s ease, color .25s ease;
+}
+.ux-btn:hover, .ux-btn--primary { background: var(--ux-ink); color: #fff; }
+.ux-btn--primary:hover { background: var(--ux-accent); border-color: var(--ux-accent); color: #fff; }
+.ux-inline-link { display: inline-flex; margin-top: 22px; padding-bottom: 7px; border-bottom: 1px solid var(--ux-ink); font-size: 13px; }
+.ux-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 28px; background: var(--ux-line); border: 1px solid var(--ux-line); }
+.ux-flow > div { padding: 22px; background: var(--ux-paper); }
+.ux-flow b { display: block; margin-bottom: 8px; color: var(--ux-muted); font-size: 11px; font-weight: 500; letter-spacing: .16em; }
+.ux-flow strong { font: 400 18px/1.55 "Shippori Mincho", serif; }
+#shiizako, #katashima { scroll-margin-top: 118px; }
+footer[data-screen-label="FOOTER"] nav a {
+  min-height: 38px;
+  font-size: 12px !important;
+  line-height: 1.5;
+}
+main[data-screen-label="RESERVE NAVIGATOR"] button,
+main[data-screen-label="RESERVE NAVIGATOR"] a { min-height: 48px; }
+main[data-screen-label="RESERVE NAVIGATOR"] [data-step] > p,
+main[data-screen-label="RESERVE NAVIGATOR"] [data-salon-brand] { font-size: 13px !important; }
+[data-screen-label="AVAILABLE SALONS"] { display: none; }
+
+/* Existing non-HERO content: denser spacing and immediately readable body copy. */
+[data-screen-label$="HERO"] ~ section:not([data-screen-label="01b HERO INTRO"]) {
+  padding-top: clamp(48px, 6.2vw, 88px) !important;
+  padding-bottom: clamp(48px, 6.2vw, 88px) !important;
+}
+[data-screen-label$="HERO"] ~ section [data-reveal="body"] {
+  font-size: clamp(15px, 1.1vw, 16.5px) !important;
+  line-height: 1.9 !important;
+  color: var(--ux-copy) !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media (max-width: 900px) {
+  .ux-summary, .ux-salon-head { grid-template-columns: 1fr; }
+  .ux-salon-meta { text-align: left; }
+  .ux-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ux-service-card:last-child { grid-column: 1 / -1; min-height: 170px; }
+}
+@media (max-width: 640px) {
+  .ux-section { padding: 40px 16px; }
+  .ux-title { font-size: 25px; }
+  .ux-lead { font-size: 15px; line-height: 1.85; }
+  .ux-quick-grid, .ux-location-grid, .ux-service-grid, .ux-flow { grid-template-columns: 1fr; }
+  .ux-quick-item, .ux-quick-item:nth-child(even) { padding: 15px 0; border-left: 0; }
+  .ux-service-card, .ux-service-card:last-child { min-height: 0; grid-column: auto; }
+  .ux-menu-row { grid-template-columns: 1fr; gap: 2px; }
+  .ux-menu-row b { color: var(--ux-copy); }
+  .ux-actions { display: grid; }
+  .ux-btn { width: 100%; min-height: 52px; }
+  footer[data-screen-label="FOOTER"] nav { gap: 8px 22px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ux-service-card, .ux-btn { transition: none; }
+}

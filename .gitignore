@@ -1,0 +1,8 @@
+.DS_Store
+.thumbnail
+
+# Local review/export artifacts (not required by the website)
+BeautySalon-nanairo_ChatGPT-analysis_2026-08-11/
+BeautySalon-nanairo_ChatGPT-analysis_2026-08-11.zip
+screens/
+uploads/
