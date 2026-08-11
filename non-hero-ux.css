@@ -1,181 +1,735 @@
-/* Non-HERO information design layer. Every selector is scoped to content added after HERO. */
+/*
+ * nanairo editorial direction — content after HERO only.
+ * HERO sections and their descendants are deliberately outside every selector.
+ */
 :root {
-  --ux-ink: #201d19;
-  --ux-copy: #514c43;
-  --ux-muted: #7c7468;
-  --ux-line: #ded8cc;
-  --ux-paper: #fbfaf6;
-  --ux-tint: #f4f0e8;
-  --ux-accent: #8a6e3a;
+  --ux-ink: #24201c;
+  --ux-copy: #565047;
+  --ux-muted: #8a8073;
+  --ux-line: rgba(67, 57, 46, .17);
+  --ux-paper: #fcfaf5;
+  --ux-soft: #f3eee5;
+  --ux-milk: #f8f4ed;
+  --ux-night: #2c2823;
+  --ux-gold: #9b7d4b;
+  --ux-gutter: clamp(20px, 4.4vw, 72px);
+  --ux-wide: min(1320px, calc(100vw - (var(--ux-gutter) * 2)));
+  --ux-serif: "Shippori Mincho", serif;
+  --ux-roman: "Cormorant Garamond", serif;
+  --ux-sans: "Zen Kaku Gothic New", sans-serif;
+}
+
+/* ---------- Shared editorial field ---------- */
+:where(section, main, footer)[data-screen-label]:not([data-screen-label$="HERO"]):not([data-screen-label="01 HERO"]) {
+  position: relative;
+  isolation: isolate;
+  color: var(--ux-ink);
+  overflow: clip;
+}
+
+section[data-screen-label]:not([data-screen-label$="HERO"]):not([data-screen-label="01 HERO"]):not([data-screen-label="01b HERO INTRO"]),
+main[data-screen-label="RESERVE NAVIGATOR"] {
+  padding-top: clamp(78px, 10vw, 160px) !important;
+  padding-bottom: clamp(78px, 10vw, 160px) !important;
+  padding-left: var(--ux-gutter) !important;
+  padding-right: var(--ux-gutter) !important;
+  border-top: 0 !important;
 }
 
 .ux-section {
-  padding: clamp(46px, 6vw, 86px) clamp(18px, 3.2vw, 52px);
-  border-top: 1px solid var(--ux-line);
-  background: var(--ux-paper);
+  background: var(--ux-paper) !important;
   color: var(--ux-ink);
+  border: 0 !important;
 }
-.ux-section--tint { background: var(--ux-tint); }
-.ux-shell { width: min(1180px, 100%); margin-inline: auto; }
+
+.ux-section--tint { background: var(--ux-soft) !important; }
+.ux-shell { width: var(--ux-wide); margin-inline: auto; }
+
 .ux-kicker {
-  margin: 0 0 10px;
+  margin: 0 0 clamp(20px, 2.8vw, 38px);
   color: var(--ux-muted);
-  font: 500 11px/1.4 "Zen Kaku Gothic New", sans-serif;
-  letter-spacing: .19em;
+  font: 400 clamp(10px, .76vw, 12px)/1.4 var(--ux-sans);
+  letter-spacing: .18em;
 }
+
 .ux-title {
+  max-width: 12em;
   margin: 0;
-  font: 400 clamp(24px, 3.1vw, 46px)/1.45 "Shippori Mincho", serif;
-  letter-spacing: .035em;
+  font: 400 clamp(34px, 5vw, 76px)/1.28 var(--ux-serif);
+  letter-spacing: -.01em;
 }
+
 .ux-lead {
-  max-width: 720px;
-  margin: 16px 0 0;
+  max-width: 42em;
+  margin: clamp(22px, 3vw, 42px) 0 0;
   color: var(--ux-copy);
-  font-size: clamp(15px, 1.15vw, 17px);
-  line-height: 1.9;
+  font: 300 clamp(14px, 1.06vw, 17px)/2.05 var(--ux-sans);
 }
+
+section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"] {
+  color: var(--ux-copy) !important;
+  font-size: clamp(14px, 1.06vw, 17px) !important;
+  line-height: 2.08 !important;
+}
+
+section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="label"] {
+  color: var(--ux-muted) !important;
+  font-size: clamp(10px, .78vw, 12px) !important;
+  letter-spacing: .2em !important;
+}
+
+section[data-screen-label]:not([data-screen-label$="HERO"]) h2,
+footer[data-screen-label="FOOTER"] h2 {
+  text-wrap: balance;
+}
+
+section[data-screen-label]:not([data-screen-label$="HERO"]) figure,
+footer[data-screen-label="FOOTER"] figure {
+  border-radius: 0 !important;
+}
+
+section[data-screen-label]:not([data-screen-label$="HERO"]) figure img,
+footer[data-screen-label="FOOTER"] figure img {
+  filter: saturate(.86) contrast(.98);
+}
+
+/* nanairo's quiet spectrum: one restrained, logo-derived colour atmosphere */
+.ux-section--tint::after,
+section[data-screen-label$="QUICK GUIDE"]::after,
+section[data-screen-label="SALON COMPARISON"]::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: min(42vw, 580px);
+  aspect-ratio: 1;
+  right: -12vw;
+  top: -18%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 35% 38%, rgba(238, 202, 207, .32), transparent 37%),
+    radial-gradient(circle at 65% 48%, rgba(187, 219, 216, .28), transparent 40%),
+    radial-gradient(circle at 47% 70%, rgba(226, 213, 164, .22), transparent 38%);
+  filter: blur(42px);
+  opacity: .7;
+  pointer-events: none;
+}
+
+/* ---------- Links and actions: typography first ---------- */
+.ux-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px clamp(22px, 3vw, 48px);
+  margin-top: clamp(26px, 3.2vw, 46px);
+}
+
+.ux-btn,
+.ux-inline-link {
+  position: relative;
+  display: inline-flex;
+  width: auto;
+  min-height: 0;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 7px 0 10px;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  background: transparent !important;
+  color: var(--ux-ink) !important;
+  font: 400 clamp(11.5px, .9vw, 13px)/1.5 var(--ux-sans);
+  letter-spacing: .055em;
+  transition: color .35s ease, padding .45s cubic-bezier(.22, 1, .36, 1) !important;
+}
+
+.ux-btn::after { content: "→"; margin-left: 18px; font-family: var(--ux-roman); font-size: 1.2em; }
+.ux-btn[target="_blank"]::after { content: "↗"; }
+.ux-btn:hover,
+.ux-btn--primary:hover,
+.ux-inline-link:hover { padding-left: 8px; color: var(--ux-gold) !important; }
+
+.ux-btn--primary {
+  color: var(--ux-ink) !important;
+  border-bottom-width: 2px !important;
+  font-weight: 500;
+}
+
+section[data-screen-label]:not([data-screen-label$="HERO"]) a[href$=".dc.html"] [data-arrow-mark] { display: none !important; }
+section[data-screen-label]:not([data-screen-label$="HERO"]) a[href$=".dc.html"][data-arrow]::after {
+  content: "→";
+  margin-left: 16px;
+  font-family: var(--ux-roman);
+  transition: transform .45s cubic-bezier(.22, 1, .36, 1);
+}
+section[data-screen-label]:not([data-screen-label$="HERO"]) a[href$=".dc.html"][data-arrow]:hover::after { transform: translateX(7px); }
+
+section[data-screen-label]:not([data-screen-label$="HERO"]) a[target="_blank"][style*="border:1px"],
+main[data-screen-label="RESERVE NAVIGATOR"] a[target="_blank"],
+main[data-screen-label="RESERVE NAVIGATOR"] a[href^="tel:"] {
+  width: auto !important;
+  padding: 8px 0 10px !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+  background: transparent !important;
+  transition: color .35s ease, transform .45s cubic-bezier(.22, 1, .36, 1) !important;
+}
+section[data-screen-label]:not([data-screen-label$="HERO"]) a[target="_blank"][style*="border:1px"]:hover,
+main[data-screen-label="RESERVE NAVIGATOR"] a[target="_blank"]:hover { color: var(--ux-gold) !important; transform: translateX(5px); }
+
+/* ---------- TOP: bridge from HERO ---------- */
+section[data-screen-label="01b HERO INTRO"] {
+  min-height: clamp(240px, 30vw, 430px);
+  padding: clamp(58px, 8vw, 120px) var(--ux-gutter) clamp(70px, 9vw, 136px) !important;
+  align-items: flex-end !important;
+  background: var(--ux-paper);
+}
+
+section[data-screen-label="01b HERO INTRO"] > p {
+  max-width: 42em !important;
+  font-size: clamp(14px, 1.04vw, 16px) !important;
+  line-height: 2.15 !important;
+}
+
+section[data-screen-label="01b HERO INTRO"] > div a {
+  padding: 8px 0 10px !important;
+  border: 0 !important;
+  border-bottom: 1px solid currentColor !important;
+}
+
+section[data-screen-label="NANAIRO AT A GLANCE"] {
+  min-height: 760px;
+  display: grid;
+  align-items: center;
+}
+
+section[data-screen-label="NANAIRO AT A GLANCE"]::before {
+  content: "02  /  05";
+  position: absolute;
+  z-index: -1;
+  left: var(--ux-gutter);
+  bottom: -0.11em;
+  color: rgba(83, 70, 55, .055);
+  font: 300 clamp(130px, 20vw, 330px)/.8 var(--ux-roman);
+  letter-spacing: -.05em;
+  white-space: nowrap;
+}
+
 .ux-summary {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.95fr);
-  gap: clamp(26px, 5vw, 76px);
+  grid-template-columns: minmax(260px, .8fr) minmax(0, 1.55fr);
+  gap: clamp(54px, 9vw, 150px);
   align-items: start;
 }
+
 .ux-quick-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 1px solid var(--ux-ink);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(34px, 4vw, 66px) clamp(26px, 3.4vw, 54px);
+  border: 0 !important;
+  counter-reset: quick;
 }
+
 .ux-quick-item {
+  position: relative;
   min-width: 0;
-  padding: 18px 16px 18px 0;
-  border-bottom: 1px solid var(--ux-line);
+  padding: 42px 0 0 !important;
+  border: 0 !important;
+  counter-increment: quick;
 }
-.ux-quick-item:nth-child(even) { padding-left: 22px; border-left: 1px solid var(--ux-line); }
+
+.ux-quick-item::before {
+  content: "0" counter(quick);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--ux-gold);
+  font: 400 12px/1 var(--ux-roman);
+  letter-spacing: .14em;
+}
+
+.ux-quick-item::after {
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 0;
+  width: 32px;
+  height: 1px;
+  background: var(--ux-gold);
+  opacity: .55;
+}
+
 .ux-quick-item strong {
   display: block;
-  margin-bottom: 7px;
-  font: 400 17px/1.55 "Shippori Mincho", serif;
+  margin: 0 0 12px;
+  font: 400 clamp(17px, 1.45vw, 23px)/1.5 var(--ux-serif);
 }
-.ux-quick-item span { color: var(--ux-copy); font-size: 14px; line-height: 1.75; }
-.ux-tag-list { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
-.ux-tag {
-  display: inline-flex;
-  align-items: center;
-  min-height: 28px;
-  padding: 4px 10px;
-  border: 1px solid #cbc3b4;
-  color: #5c554a;
-  font-size: 11px;
-  line-height: 1.35;
-  letter-spacing: .06em;
-}
-.ux-service-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1px;
-  margin-top: 32px;
-  background: var(--ux-line);
-  border: 1px solid var(--ux-line);
-}
-.ux-service-card {
-  display: flex;
-  min-height: 210px;
-  padding: 22px 18px;
-  flex-direction: column;
-  background: var(--ux-paper);
-  color: var(--ux-ink);
-  transition: background .25s ease, color .25s ease;
-}
-.ux-service-card:hover { background: #eee8dc; color: var(--ux-ink); }
-.ux-service-card small { color: var(--ux-muted); font-size: 10px; letter-spacing: .17em; }
-.ux-service-card h3 { margin: 18px 0 9px; font: 400 21px/1.4 "Shippori Mincho", serif; }
-.ux-service-card p { margin: 0; color: var(--ux-copy); font-size: 14px; line-height: 1.75; }
-.ux-service-card b { margin-top: auto; padding-top: 22px; font-size: 12px; font-weight: 400; letter-spacing: .06em; }
-.ux-location-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(18px, 3vw, 38px); margin-top: 30px; }
-.ux-location-card { padding: clamp(22px, 3vw, 36px); border: 1px solid var(--ux-line); background: var(--ux-paper); }
-.ux-location-card h3 { margin: 0 0 8px; font: 400 clamp(21px, 2vw, 29px)/1.45 "Shippori Mincho", serif; }
-.ux-location-card > p { margin: 0; color: var(--ux-copy); font-size: 14px; line-height: 1.8; }
-.ux-location-card ul { margin: 20px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--ux-line); }
-.ux-location-card li { padding: 12px 0; border-bottom: 1px solid var(--ux-line); font-size: 14px; line-height: 1.65; }
-.ux-salon-stack { display: grid; gap: clamp(22px, 3vw, 38px); margin: 32px 0 42px; }
-.ux-salon-card { padding: clamp(24px, 3.4vw, 44px); border: 1px solid var(--ux-line); background: #fff; }
-.ux-salon-head { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(220px, .7fr); gap: 24px; align-items: end; }
-.ux-salon-head h3 { margin: 0; font: 400 clamp(21px, 2.25vw, 32px)/1.45 "Shippori Mincho", serif; }
-.ux-salon-head p { margin: 10px 0 0; color: var(--ux-copy); font-size: 15px; line-height: 1.8; }
-.ux-salon-meta { text-align: right; color: var(--ux-muted); font-size: 12px; line-height: 1.75; }
-.ux-menu { margin-top: 28px; }
-.ux-menu-label { margin: 0 0 10px; color: var(--ux-muted); font-size: 10px; font-weight: 500; letter-spacing: .19em; }
-.ux-menu-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ux-ink); }
-.ux-menu-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--ux-line); }
-.ux-menu-row span { font-size: 15px; line-height: 1.65; }
-.ux-menu-row b { white-space: nowrap; font-size: 15px; font-weight: 400; line-height: 1.65; }
-.ux-note { margin: 13px 0 0; color: var(--ux-muted); font-size: 12px; line-height: 1.7; }
-.ux-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
-.ux-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 12px 18px;
-  border: 1px solid var(--ux-ink);
-  color: var(--ux-ink);
-  font-size: 13px;
-  line-height: 1.45;
-  letter-spacing: .045em;
-  transition: background .25s ease, color .25s ease;
-}
-.ux-btn:hover, .ux-btn--primary { background: var(--ux-ink); color: #fff; }
-.ux-btn--primary:hover { background: var(--ux-accent); border-color: var(--ux-accent); color: #fff; }
-.ux-inline-link { display: inline-flex; margin-top: 22px; padding-bottom: 7px; border-bottom: 1px solid var(--ux-ink); font-size: 13px; }
-.ux-flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; margin-top: 28px; background: var(--ux-line); border: 1px solid var(--ux-line); }
-.ux-flow > div { padding: 22px; background: var(--ux-paper); }
-.ux-flow b { display: block; margin-bottom: 8px; color: var(--ux-muted); font-size: 11px; font-weight: 500; letter-spacing: .16em; }
-.ux-flow strong { font: 400 18px/1.55 "Shippori Mincho", serif; }
-#shiizako, #katashima { scroll-margin-top: 118px; }
-footer[data-screen-label="FOOTER"] nav a {
-  min-height: 38px;
-  font-size: 12px !important;
-  line-height: 1.5;
-}
-main[data-screen-label="RESERVE NAVIGATOR"] button,
-main[data-screen-label="RESERVE NAVIGATOR"] a { min-height: 48px; }
-main[data-screen-label="RESERVE NAVIGATOR"] [data-step] > p,
-main[data-screen-label="RESERVE NAVIGATOR"] [data-salon-brand] { font-size: 13px !important; }
-[data-screen-label="AVAILABLE SALONS"] { display: none; }
 
-/* Existing non-HERO content: denser spacing and immediately readable body copy. */
-[data-screen-label$="HERO"] ~ section:not([data-screen-label="01b HERO INTRO"]) {
-  padding-top: clamp(48px, 6.2vw, 88px) !important;
-  padding-bottom: clamp(48px, 6.2vw, 88px) !important;
+.ux-quick-item > span { color: var(--ux-copy); font-size: clamp(12px, .9vw, 14px); line-height: 1.9; }
+
+/* tags become quiet classification text, never chips */
+.ux-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 18px;
 }
-[data-screen-label$="HERO"] ~ section [data-reveal="body"] {
-  font-size: clamp(15px, 1.1vw, 16.5px) !important;
-  line-height: 1.9 !important;
-  color: var(--ux-copy) !important;
+
+.ux-tag {
+  display: inline;
+  min-height: 0;
+  padding: 0;
+  border: 0 !important;
+  color: var(--ux-muted);
+  font-size: 11px;
+  line-height: 1.7;
+  letter-spacing: .08em;
+}
+
+.ux-tag:not(:last-child)::after { content: " / "; margin-inline: 7px; color: rgba(74, 62, 49, .34); }
+
+/* TOP photographic chapters */
+section[data-screen-label="02 ABOUT nanairo"] { background: var(--ux-paper) !important; }
+section[data-screen-label="02 ABOUT nanairo"] > div { width: var(--ux-wide); margin-inline: auto; }
+section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/esthetic-facial.webp"]) { flex-basis: min(54vw, 720px) !important; }
+section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/nail-3.webp"]) { flex-basis: auto !important; width: min(22vw, 320px); transform: translateY(clamp(28px, 6vw, 90px)); }
+section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/jagua-decollete.webp"]) { flex-basis: auto !important; width: clamp(150px, 17vw, 250px) !important; transform: translateX(clamp(0px, 5vw, 72px)); }
+
+section[data-screen-label="03 SERVICES"] { background: var(--ux-milk) !important; }
+section[data-screen-label="03 SERVICES"] > div { width: var(--ux-wide); margin-inline: auto; }
+section[data-screen-label="03 SERVICES"] [data-service-list] { border: 0 !important; }
+section[data-screen-label="03 SERVICES"] [data-service-row] {
+  position: relative;
+  width: 94%;
+  padding: clamp(30px, 3.6vw, 56px) 0 !important;
+  border: 0 !important;
+}
+section[data-screen-label="03 SERVICES"] [data-service-row]:nth-child(even) { margin-left: 6%; }
+section[data-screen-label="03 SERVICES"] [data-service-row]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(66%, 740px);
+  height: 1px;
+  background: var(--ux-line);
+  transition: width .55s cubic-bezier(.22, 1, .36, 1), background .35s ease;
+}
+section[data-screen-label="03 SERVICES"] [data-service-row]:hover::after { width: 100%; background: rgba(155, 125, 75, .58); }
+section[data-screen-label="03 SERVICES"] [data-service-en] { font-size: clamp(38px, 6.2vw, 96px) !important; font-weight: 300; }
+section[data-screen-label="03 SERVICES"] > div:has(> figure) {
+  display: grid !important;
+  grid-template-columns: 1.25fr .72fr .96fr .66fr 1.08fr !important;
+  align-items: end;
+  gap: clamp(10px, 1.5vw, 24px) !important;
+}
+section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(even) { transform: translateY(clamp(24px, 4vw, 64px)); }
+
+section[data-screen-label="04 SALONS"] { background: var(--ux-paper) !important; }
+section[data-screen-label="04 SALONS"] > div { width: var(--ux-wide); margin-inline: auto; }
+section[data-screen-label="05 OUR PHILOSOPHY"] { background: var(--ux-soft) !important; }
+section[data-screen-label="05 OUR PHILOSOPHY"][data-phil-outer] {
+  height: auto !important;
+  padding-bottom: clamp(78px, 10vw, 160px) !important;
+}
+section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-sticky] {
+  position: relative !important;
+  top: auto !important;
+  height: auto !important;
+  display: block !important;
+  overflow: visible !important;
+}
+section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-track] {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(30px, 5vw, 84px) !important;
+  transform: none !important;
+}
+section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-card] {
+  width: auto !important;
+  min-height: 310px;
   opacity: 1 !important;
   transform: none !important;
 }
 
-@media (max-width: 900px) {
-  .ux-summary, .ux-salon-head { grid-template-columns: 1fr; }
-  .ux-salon-meta { text-align: left; }
-  .ux-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ux-service-card:last-child { grid-column: 1 / -1; min-height: 170px; }
+/* ---------- SERVICES: brand-book index ---------- */
+section[data-screen-label="SERVICE COMPARISON"] { min-height: 720px; display: grid; align-items: center; }
+.ux-service-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(32px, 4vw, 62px) clamp(22px, 3vw, 48px);
+  margin-top: clamp(58px, 7vw, 110px);
+  background: transparent;
+  border: 0 !important;
 }
+
+.ux-service-card {
+  position: relative;
+  grid-column: span 6;
+  display: flex;
+  min-height: 260px;
+  padding: 0 0 32px;
+  flex-direction: column;
+  background: transparent !important;
+  color: var(--ux-ink);
+  border-bottom: 1px solid var(--ux-line);
+  transition: transform .55s cubic-bezier(.22, 1, .36, 1), border-color .35s ease !important;
+}
+.ux-service-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 8px;
+  right: 0;
+  width: 38%;
+  height: 62%;
+  background: var(--ux-service-image) center / cover no-repeat;
+  border-radius: 52% 48% 46% 54% / 42% 55% 45% 58%;
+  filter: saturate(.72) contrast(.92) brightness(1.04);
+  opacity: .86;
+  transition: transform .64s cubic-bezier(.22, 1, .36, 1), filter .45s ease;
+}
+.ux-service-card:nth-child(1) { --ux-service-image: url("assets/esthetic-machine.webp"); }
+.ux-service-card:nth-child(2) { --ux-service-image: url("assets/nail-2.webp"); }
+.ux-service-card:nth-child(3) { --ux-service-image: url("assets/lash-perm-1.webp"); }
+.ux-service-card:nth-child(4) { --ux-service-image: url("assets/mens-face.webp"); }
+.ux-service-card:nth-child(5) { --ux-service-image: url("assets/jagua-arm.webp"); }
+.ux-service-card:nth-child(even)::before { top: auto; bottom: 30px; border-radius: 43% 57% 53% 47% / 57% 42% 58% 43%; }
+.ux-service-card > * { position: relative; z-index: 1; }
+.ux-service-card:nth-child(n + 3) { grid-column: span 4; min-height: 230px; }
+.ux-service-card:hover { transform: translateY(-8px); border-color: var(--ux-gold); background: transparent !important; }
+.ux-service-card:hover::before { transform: scale(1.035) rotate(.5deg); filter: saturate(.86) contrast(.96) brightness(1.02); }
+.ux-service-card small { color: var(--ux-gold); font: 400 11px/1.4 var(--ux-roman); letter-spacing: .16em; }
+.ux-service-card h3 { width: 64%; margin: auto 0 16px; font: 400 clamp(25px, 3.2vw, 48px)/1.3 var(--ux-serif); }
+.ux-service-card p { max-width: 58%; margin: 0; color: var(--ux-copy); font-size: 13px; line-height: 1.9; }
+.ux-service-card b { margin-top: 26px; padding: 0; font-size: 11.5px; font-weight: 400; letter-spacing: .06em; }
+
+section[data-screen-label="SERVICE INDEX"] { background: var(--ux-paper) !important; }
+section[data-screen-label="SERVICE INDEX"] > div { width: var(--ux-wide); margin-inline: auto; }
+section[data-screen-label="SERVICE INDEX"] [data-accordion] { border: 0 !important; }
+section[data-screen-label="SERVICE INDEX"] [data-acc-item] { border: 0 !important; position: relative; }
+section[data-screen-label="SERVICE INDEX"] [data-acc-item]::after {
+  content: "";
+  display: block;
+  width: min(78%, 980px);
+  height: 1px;
+  background: var(--ux-line);
+}
+section[data-screen-label="SERVICE INDEX"] [data-acc-item]:nth-child(even)::after { margin-left: auto; }
+section[data-screen-label="SERVICE INDEX"] [data-acc-head] { padding: clamp(30px, 4vw, 62px) 0 !important; }
+section[data-screen-label="SERVICE INDEX"] [data-acc-en] { font-size: clamp(34px, 5.4vw, 84px) !important; font-weight: 300; }
+
+/* ---------- Location guides ---------- */
+section[data-screen-label$="QUICK GUIDE"] { min-height: 650px; display: grid; align-items: center; background: var(--ux-soft) !important; }
+section[data-screen-label$="QUICK GUIDE"] .ux-summary { grid-template-columns: minmax(270px, .9fr) minmax(0, 1.4fr); }
+.ux-location-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(42px, 6vw, 90px); margin-top: 0; }
+.ux-location-card {
+  position: relative;
+  padding: clamp(34px, 4vw, 62px) 0 0;
+  border: 0 !important;
+  background: transparent !important;
+  counter-increment: location;
+}
+.ux-location-grid { counter-reset: location; }
+.ux-location-card::before {
+  content: "0" counter(location);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: var(--ux-gold);
+  font: 400 12px/1 var(--ux-roman);
+  letter-spacing: .16em;
+}
+.ux-location-card h3 { margin: 0 0 12px; font: 400 clamp(27px, 3vw, 48px)/1.35 var(--ux-serif); }
+.ux-location-card > p { min-height: 3.6em; margin: 0; color: var(--ux-copy); font-size: 13px; line-height: 1.8; }
+.ux-location-card ul { margin: 26px 0 0; padding: 0; list-style: none; border: 0 !important; }
+.ux-location-card li { padding: 9px 0; border: 0 !important; font-size: 13px; line-height: 1.7; }
+
+/* ---------- Concept and image chapters ---------- */
+section[data-screen-label="CONCEPT"] { background: var(--ux-paper) !important; }
+section[data-screen-label="CONCEPT"] > div { width: var(--ux-wide); margin-inline: auto; gap: clamp(48px, 8vw, 140px) !important; align-items: center !important; }
+section[data-screen-label="CONCEPT"] figure { flex-basis: min(48vw, 650px) !important; }
+section[data-screen-label="CONCEPT"] > div:nth-of-type(even) figure { order: 2; }
+
+section[data-screen-label$="MENU"],
+section[data-screen-label="MENU"],
+section[data-screen-label="DESIGN"] { background: var(--ux-milk) !important; }
+section[data-screen-label$="MENU"] > div,
+section[data-screen-label="MENU"] > div,
+section[data-screen-label="DESIGN"] > div { width: var(--ux-wide); margin-inline: auto; }
+
+section[data-screen-label$="MENU"] [data-menu-row],
+section[data-screen-label="MENU"] [data-menu-row] {
+  position: relative;
+  border: 0 !important;
+}
+section[data-screen-label$="MENU"] [data-menu-row]::after,
+section[data-screen-label="MENU"] [data-menu-row]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: min(72%, 660px);
+  height: 1px;
+  background: var(--ux-line);
+  transition: width .5s cubic-bezier(.22, 1, .36, 1);
+}
+section[data-screen-label$="MENU"] [data-menu-row]:nth-child(even)::after,
+section[data-screen-label="MENU"] [data-menu-row]:nth-child(even)::after { left: auto; right: 0; }
+section[data-screen-label$="MENU"] [data-menu-row]:hover::after,
+section[data-screen-label="MENU"] [data-menu-row]:hover::after { width: 100%; }
+
+/* Previously hidden support content is restored and art-directed. */
+section[data-screen-label="AVAILABLE SALONS"] { display: block !important; background: var(--ux-paper) !important; }
+section[data-screen-label="AVAILABLE SALONS"] > div { width: var(--ux-wide); margin-inline: auto; }
+section[data-screen-label="AVAILABLE SALONS"] > div:has(figure) { gap: clamp(32px, 5vw, 80px) !important; align-items: start !important; }
+section[data-screen-label="AVAILABLE SALONS"] figure { min-height: 300px; }
+section[data-screen-label="AVAILABLE SALONS"] figure:nth-of-type(even) { margin-top: clamp(40px, 7vw, 110px) !important; }
+
+/* ---------- SALONS: open catalog, not cards/tables ---------- */
+section[data-screen-label="SALON COMPARISON"] { min-height: 650px; display: grid; align-items: center; background: var(--ux-soft) !important; }
+section[data-screen-label="SALON COMPARISON"] .ux-title { max-width: 9em; }
+section[data-screen-label="SALON COMPARISON"] .ux-location-card { min-height: 260px; }
+
+section[data-salon-chapter] { background: var(--ux-paper) !important; }
+section[data-salon-chapter][data-screen-label="KATASHIMA"] { background: var(--ux-milk) !important; }
+section[data-salon-chapter] > div { width: var(--ux-wide); margin-inline: auto; gap: clamp(48px, 7vw, 120px) !important; }
+section[data-salon-chapter] [data-salon-sticky] { flex-basis: clamp(190px, 19vw, 280px) !important; }
+
+.ux-salon-stack {
+  display: grid;
+  gap: clamp(90px, 12vw, 180px);
+  margin: clamp(60px, 8vw, 120px) 0;
+  counter-reset: salon;
+}
+
+.ux-salon-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(250px, .82fr) minmax(0, 1.3fr);
+  gap: clamp(34px, 6vw, 96px);
+  padding: 0 0 clamp(40px, 5vw, 70px);
+  border: 0 !important;
+  background: transparent !important;
+  counter-increment: salon;
+}
+
+.ux-salon-card::before {
+  content: "0" counter(salon);
+  position: absolute;
+  top: -.7em;
+  right: 0;
+  color: rgba(76, 62, 47, .095);
+  font: 300 clamp(96px, 13vw, 190px)/1 var(--ux-roman);
+  pointer-events: none;
+}
+
+.ux-salon-head { display: block; position: relative; z-index: 1; }
+.ux-salon-head h3 { max-width: 13em; margin: 0; font: 400 clamp(25px, 3vw, 46px)/1.45 var(--ux-serif); }
+.ux-salon-head p { margin: 20px 0 0; color: var(--ux-copy); font-size: 14px; line-height: 2; }
+.ux-salon-meta { margin-top: 28px; text-align: left; color: var(--ux-muted); font-size: 11px; line-height: 1.9; }
+.ux-salon-card > .ux-tag-list { grid-column: 1; margin: -14px 0 0; align-self: end; }
+.ux-salon-card > .ux-menu { grid-column: 2; grid-row: 1 / span 3; position: relative; z-index: 1; margin: 0; }
+.ux-salon-card > .ux-actions { grid-column: 1; margin-top: 12px; }
+
+.ux-menu-label { margin: 0 0 32px; color: var(--ux-muted); font-size: 10px; font-weight: 400; letter-spacing: .16em; }
+.ux-menu-list { margin: 0; padding: 0; list-style: none; border: 0 !important; counter-reset: menu; }
+.ux-menu-row {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  gap: clamp(14px, 2vw, 28px);
+  align-items: baseline;
+  padding: 0 0 clamp(24px, 2.8vw, 38px);
+  border: 0 !important;
+  counter-increment: menu;
+}
+.ux-menu-row::before { content: "0" counter(menu); color: var(--ux-gold); font: 400 11px/1 var(--ux-roman); letter-spacing: .1em; }
+.ux-menu-row span { max-width: 34em; font: 400 clamp(14px, 1.08vw, 17px)/1.75 var(--ux-serif); }
+.ux-menu-row b { white-space: nowrap; color: var(--ux-ink); font: 400 clamp(16px, 1.35vw, 21px)/1.5 var(--ux-roman); letter-spacing: .03em; }
+.ux-note { margin: 8px 0 0 46px; color: var(--ux-muted); font-size: 11px; line-height: 1.8; }
+
+/* ---------- ABOUT structure and company ---------- */
+section[data-screen-label="BRAND STRUCTURE"] { background: var(--ux-soft) !important; }
+section[data-screen-label="BRAND STRUCTURE"] .ux-salon-stack { gap: clamp(28px, 4vw, 58px); }
+section[data-screen-label="BRAND STRUCTURE"] [data-stack-card] {
+  position: relative !important;
+  top: auto !important;
+  padding: clamp(26px, 3vw, 42px) 0 !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--ux-line) !important;
+  background: transparent !important;
+}
+section[data-screen-label="BRAND STRUCTURE"] [data-card] { width: clamp(110px, 12vw, 180px) !important; border-radius: 52% 48% 45% 55% / 48% 42% 58% 52%; }
+section[data-screen-label="OUR PHILOSOPHY"] { background: var(--ux-paper) !important; }
+section[data-screen-label="TOTAL BEAUTY"] { background: var(--ux-milk) !important; }
+section[data-screen-label="COMPANY"] { background: var(--ux-paper) !important; }
+section[data-screen-label="COMPANY"] dl { max-width: 980px !important; margin-left: auto !important; }
+section[data-screen-label="COMPANY"] [data-row] { padding: clamp(22px, 2.5vw, 34px) 0 !important; }
+section[data-screen-label="COMPANY"] [data-rule] { opacity: .45; }
+
+/* ---------- Reservation chapters ---------- */
+section[data-screen-label="RESERVATION"],
+section[data-screen-label="06 RESERVATION"] {
+  min-height: clamp(360px, 45vw, 650px);
+  display: grid;
+  align-items: center;
+  background: var(--ux-night) !important;
+  color: #f8f3ea !important;
+}
+section[data-screen-label="RESERVATION"]::before,
+section[data-screen-label="06 RESERVATION"]::before {
+  content: "reservation";
+  position: absolute;
+  z-index: -1;
+  left: -.04em;
+  bottom: -.22em;
+  color: rgba(255, 255, 255, .035);
+  font: 300 clamp(110px, 20vw, 310px)/1 var(--ux-roman);
+}
+section[data-screen-label="RESERVATION"] h2,
+section[data-screen-label="06 RESERVATION"] h2 { color: #f8f3ea !important; font-size: clamp(34px, 5vw, 78px) !important; }
+section[data-screen-label="RESERVATION"] p,
+section[data-screen-label="06 RESERVATION"] p { color: rgba(248, 243, 234, .68) !important; }
+section[data-screen-label="RESERVATION"] a,
+section[data-screen-label="06 RESERVATION"] a { color: #f8f3ea !important; border-color: rgba(248, 243, 234, .6) !important; background: transparent !important; }
+
+main[data-screen-label="RESERVE NAVIGATOR"] { min-height: 900px; background: var(--ux-paper); }
+main[data-screen-label="RESERVE NAVIGATOR"] > div { width: min(1120px, 100%) !important; gap: clamp(58px, 9vw, 140px) !important; }
+main[data-screen-label="RESERVE NAVIGATOR"] [data-step] { position: relative; }
+main[data-screen-label="RESERVE NAVIGATOR"] [data-step] > p:first-child { color: var(--ux-gold) !important; }
+main[data-screen-label="RESERVE NAVIGATOR"] [data-step] h2 { font-size: clamp(34px, 5vw, 72px) !important; line-height: 1.28 !important; }
+main[data-screen-label="RESERVE NAVIGATOR"] button[data-service],
+main[data-screen-label="RESERVE NAVIGATOR"] button[data-salon] {
+  padding: clamp(26px, 3vw, 44px) 0 !important;
+  border-bottom-color: var(--ux-line) !important;
+}
+main[data-screen-label="RESERVE NAVIGATOR"] [data-opt-en] { font-size: clamp(28px, 4vw, 58px) !important; font-weight: 300; }
+main[data-screen-label="RESERVE NAVIGATOR"] [data-booking] { border-top: 0 !important; }
+main[data-screen-label="RESERVE NAVIGATOR"] [data-booking] > div { gap: 12px clamp(24px, 3vw, 48px) !important; }
+
+/* ---------- Footer: final brand image ---------- */
+footer[data-screen-label="FOOTER"] {
+  padding: clamp(90px, 12vw, 180px) var(--ux-gutter) clamp(34px, 4vw, 58px) !important;
+  border: 0 !important;
+  background: var(--ux-soft) !important;
+}
+footer[data-screen-label="FOOTER"] > div { width: var(--ux-wide); margin-inline: auto; }
+footer[data-screen-label="FOOTER"] h2 { font-size: clamp(58px, 10vw, 160px) !important; line-height: .84 !important; letter-spacing: -.035em; }
+footer[data-screen-label="FOOTER"] figure { flex-basis: clamp(200px, 25vw, 390px) !important; border-radius: 52% 48% 46% 54% / 42% 46% 54% 58% !important; transform: translateY(clamp(18px, 5vw, 70px)); }
+footer[data-screen-label="FOOTER"] > div:nth-of-type(2) { border-top-color: rgba(62, 52, 41, .16) !important; }
+footer[data-screen-label="FOOTER"] nav { gap: 12px clamp(24px, 4vw, 70px) !important; }
+footer[data-screen-label="FOOTER"] nav a { min-height: 38px; font-size: 11px !important; line-height: 1.5; }
+
+/* ---------- Motion: quick, varied, purposeful ---------- */
+section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="label"] { transition-duration: .46s !important; }
+section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="line"] { transition-duration: .54s !important; }
+section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="image"] { transition-duration: .64s !important; }
+section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="image"] img { transition: transform .66s cubic-bezier(.22, 1, .36, 1) !important; }
+section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"] { transition-duration: .45s !important; }
+
+@media (hover: hover) and (pointer: fine) {
+  section[data-screen-label]:not([data-screen-label$="HERO"]) figure:hover img,
+  footer[data-screen-label="FOOTER"] figure:hover img { transform: scale(1.025) !important; }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 980px) {
+  .ux-summary,
+  section[data-screen-label$="QUICK GUIDE"] .ux-summary { grid-template-columns: 1fr; gap: 58px; }
+  .ux-title { max-width: 15em; }
+  .ux-quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ux-service-card,
+  .ux-service-card:nth-child(n + 3) { grid-column: span 6; }
+  .ux-service-card:last-child { grid-column: 4 / span 6; }
+  .ux-service-card::before { width: 42%; }
+  .ux-salon-card { grid-template-columns: 1fr; gap: 44px; }
+  .ux-salon-card > .ux-tag-list,
+  .ux-salon-card > .ux-menu,
+  .ux-salon-card > .ux-actions { grid-column: 1; grid-row: auto; }
+  .ux-salon-card::before { top: -.35em; }
+  section[data-salon-chapter] [data-salon-sticky] { flex-basis: 100% !important; }
+  section[data-screen-label="03 SERVICES"] > div:has(> figure) { grid-template-columns: repeat(5, 1fr) !important; }
+  section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-track] { grid-template-columns: 1fr; }
+  section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-card] { width: min(82%, 560px) !important; min-height: 0; }
+  section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-card]:nth-child(even) { margin-left: auto; }
+}
+
+/* ---------- Mobile: still editorial, never a repetitive card stack ---------- */
 @media (max-width: 640px) {
-  .ux-section { padding: 40px 16px; }
-  .ux-title { font-size: 25px; }
-  .ux-lead { font-size: 15px; line-height: 1.85; }
-  .ux-quick-grid, .ux-location-grid, .ux-service-grid, .ux-flow { grid-template-columns: 1fr; }
-  .ux-quick-item, .ux-quick-item:nth-child(even) { padding: 15px 0; border-left: 0; }
-  .ux-service-card, .ux-service-card:last-child { min-height: 0; grid-column: auto; }
-  .ux-menu-row { grid-template-columns: 1fr; gap: 2px; }
-  .ux-menu-row b { color: var(--ux-copy); }
-  .ux-actions { display: grid; }
-  .ux-btn { width: 100%; min-height: 52px; }
-  footer[data-screen-label="FOOTER"] nav { gap: 8px 22px !important; }
+  :root { --ux-gutter: 18px; }
+  section[data-screen-label]:not([data-screen-label$="HERO"]):not([data-screen-label="01 HERO"]):not([data-screen-label="01b HERO INTRO"]),
+  main[data-screen-label="RESERVE NAVIGATOR"] {
+    padding-top: 82px !important;
+    padding-bottom: 92px !important;
+  }
+  .ux-title { font-size: clamp(31px, 10vw, 44px); line-height: 1.34; }
+  .ux-lead { font-size: 14px; line-height: 2; }
+  .ux-summary { gap: 52px; }
+  .ux-quick-grid { grid-template-columns: 1fr 1fr; gap: 46px 22px; }
+  .ux-quick-item { padding-top: 36px !important; }
+  .ux-quick-item:nth-child(even) { transform: translateY(24px); }
+  .ux-quick-item strong { font-size: 16px; }
+  .ux-quick-item > span { font-size: 11.5px; }
+  section[data-screen-label="NANAIRO AT A GLANCE"] { min-height: 940px; }
+  section[data-screen-label="NANAIRO AT A GLANCE"]::before { font-size: 36vw; bottom: -.03em; }
+  section[data-screen-label="01b HERO INTRO"] { min-height: 400px; align-content: space-between; }
+  section[data-screen-label="01b HERO INTRO"] > div { width: 100%; gap: 12px 26px !important; }
+  section[data-screen-label="01b HERO INTRO"] > div a { flex: 1 1 130px; }
+  section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/esthetic-facial.webp"]) { flex-basis: 80vw !important; margin-right: 12vw !important; }
+  section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/nail-3.webp"]) { width: 58vw; margin-left: auto !important; transform: translateY(22px); }
+  section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/jagua-decollete.webp"]) { width: 38vw !important; transform: translateX(9vw); }
+  section[data-screen-label="03 SERVICES"] [data-service-row],
+  section[data-screen-label="03 SERVICES"] [data-service-row]:nth-child(even) { width: 100%; margin-left: 0; padding: 34px 0 !important; }
+  section[data-screen-label="03 SERVICES"] [data-service-row]::after { width: 72%; }
+  section[data-screen-label="03 SERVICES"] [data-service-en] { font-size: clamp(34px, 12vw, 54px) !important; }
+  section[data-screen-label="03 SERVICES"] > div:has(> figure) {
+    grid-template-columns: repeat(6, 1fr) !important;
+    gap: 8px !important;
+    align-items: start;
+  }
+  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure { grid-column: span 2; }
+  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(1),
+  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(4) { grid-column: span 3; }
+  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(even) { transform: translateY(28px); }
+  .ux-service-grid { gap: 50px 18px; }
+  .ux-service-card,
+  .ux-service-card:nth-child(n + 3),
+  .ux-service-card:last-child { grid-column: span 6; min-height: 230px; }
+  .ux-service-card:nth-child(even) { width: 88%; margin-left: auto; }
+  .ux-service-card h3 { font-size: 30px; }
+  .ux-service-card::before { width: 43%; height: 58%; opacity: .78; }
+  .ux-service-card h3 { width: 58%; }
+  .ux-service-card p { max-width: 56%; }
+  .ux-location-grid { grid-template-columns: 1fr; gap: 64px; }
+  .ux-location-card:nth-child(even) { width: 88%; margin-left: auto; }
+  section[data-screen-label="CONCEPT"] > div { gap: 50px !important; }
+  section[data-screen-label="CONCEPT"] figure { flex-basis: 76vw !important; }
+  section[data-screen-label="AVAILABLE SALONS"] > div:has(figure) { gap: 54px !important; }
+  section[data-screen-label="AVAILABLE SALONS"] figure { width: 82%; min-height: 260px; }
+  section[data-screen-label="AVAILABLE SALONS"] figure:nth-of-type(even) { width: 72%; margin: 48px 0 0 auto !important; }
+  .ux-salon-stack { gap: 110px; }
+  .ux-salon-card { gap: 38px; padding-bottom: 0; }
+  .ux-salon-card::before { font-size: 34vw; top: -.15em; }
+  .ux-salon-head h3 { font-size: clamp(25px, 8vw, 36px); }
+  .ux-menu-row { grid-template-columns: 26px minmax(0, 1fr); gap: 12px; padding-bottom: 28px; }
+  .ux-menu-row b { grid-column: 2; color: var(--ux-gold); font-size: 18px; }
+  .ux-note { margin-left: 38px; }
+  .ux-actions { display: flex; gap: 14px 28px; }
+  .ux-btn { width: auto; min-height: 0; }
+  section[data-screen-label="RESERVATION"],
+  section[data-screen-label="06 RESERVATION"] { min-height: 520px; }
+  section[data-screen-label="RESERVATION"]::before,
+  section[data-screen-label="06 RESERVATION"]::before { font-size: 31vw; bottom: -.05em; }
+  main[data-screen-label="RESERVE NAVIGATOR"] { min-height: 820px; }
+  main[data-screen-label="RESERVE NAVIGATOR"] [data-opt-en] { font-size: 30px !important; }
+  main[data-screen-label="RESERVE NAVIGATOR"] [data-booking] > div { display: grid !important; justify-items: start; }
+  footer[data-screen-label="FOOTER"] { padding-top: 100px !important; }
+  footer[data-screen-label="FOOTER"] h2 { font-size: 19vw !important; }
+  footer[data-screen-label="FOOTER"] figure { width: 56vw; margin-left: auto !important; transform: translateY(26px); }
 }
+
 @media (prefers-reduced-motion: reduce) {
-  .ux-service-card, .ux-btn { transition: none; }
+  .ux-service-card,
+  .ux-btn,
+  .ux-inline-link,
+  section[data-screen-label]:not([data-screen-label$="HERO"]) figure img { transition: none !important; }
 }
