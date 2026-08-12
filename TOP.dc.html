@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet" />
-<link href="non-hero-ux.css?v=20260812-locations" rel="stylesheet" />
+<link href="non-hero-ux.css?v=20260812-remove-sections" rel="stylesheet" />
 <link rel="preload" as="image" href="assets/hero-complete-pc.png" media="(min-width:1200px)" />
 <link rel="preload" as="image" href="assets/hero-complete-tablet-1.png" media="(min-width:768px) and (max-width:1199px)" />
 <link rel="preload" as="image" href="assets/hero-complete-mobile-1.png" media="(max-width:767px)" />
@@ -207,53 +207,6 @@
     </div>
   </div>
 
-  <div class="ux-shell top-glance top-glance--categories-only" aria-label="5つの美容カテゴリー">
-      <section class="top-glance__group top-glance__group--categories" aria-labelledby="glance-categories">
-        <div class="top-glance__index"><strong>05</strong><span id="glance-categories">BEAUTY CATEGORIES</span></div>
-        <ul class="top-glance__list">
-          <li>エステティック</li><li>ネイル</li><li>アイ</li><li>メンズ美容</li><li>ジャグアタトゥー</li>
-        </ul>
-      </section>
-      <div class="ux-actions top-glance__actions">
-        <a class="ux-inline-link" href="SERVICES.dc.html">受けたい施術から探す</a>
-        <a class="ux-inline-link" href="SALONS.dc.html">2拠点と専門サロンを比較する</a>
-      </div>
-  </div>
-</section>
-
-<section data-screen-label="02 ABOUT nanairo" style="padding:clamp(66px,9vw,140px) clamp(18px,3.2vw,52px);">
-  <div style="display:flex;flex-wrap:wrap;gap:clamp(30px,4vw,80px);">
-    <div style="flex:0 0 auto;width:clamp(140px,14vw,220px);">
-      <p data-reveal="label" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">ABOUT nanairo</p>
-    </div>
-    <div style="flex:1 1 420px;min-width:0;">
-      <h2 style="margin:0 0 clamp(30px,3.6vw,56px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(24px,3.1vw,48px);line-height:1.42;letter-spacing:0.01em;">
-        <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">美しさを、</span></span>
-        <span style="display:block;overflow:hidden;"><span data-reveal="line" data-delay="75" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">ひとつの選択肢にしない。</span></span>
-      </h2>
-
-      <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(18px,2.6vw,42px);">
-        <figure data-reveal="image" style="flex:1 1 320px;margin:0;position:relative;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:4/3;background:#F1EEE7;">
-          <img src="assets/esthetic-facial.webp" width="768" height="558" alt="フェイシャル施術中の肌に密着したジェルパック" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:58% 46%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-        </figure>
-        <div style="flex:0 1 300px;display:flex;flex-direction:column;gap:clamp(16px,2vw,28px);padding-top:clamp(0px,3vw,52px);">
-          <figure data-reveal="image" data-delay="100" style="margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:3/4;background:#F1EEE7;">
-            <img src="assets/nail-3.webp" width="470" height="632" alt="ラメとパーツをあしらったピンクベージュのネイル" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 42%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-          </figure>
-        </div>
-      </div>
-
-      <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,3.4vw,64px);margin-top:clamp(28px,3.4vw,52px);">
-        <figure data-reveal="image" data-delay="55" style="flex:0 0 auto;width:clamp(128px,13vw,196px);margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:1/1;background:#F1EEE7;">
-          <img src="assets/jagua-decollete.webp" width="472" height="470" alt="デコルテに描かれた月と星のジャグアタトゥー" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:52% 62%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-        </figure>
-        <div style="flex:1 1 320px;min-width:0;">
-          <p data-reveal="body" style="margin:0 0 clamp(22px,2.6vw,34px);font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.15;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">肌を整えたい日も、身体を変えたいときも、<br />指先や目元を彩りたいときも。<br /><br />BeautySalon nanairoは、<br />エステ、痩身、小顔、フェイシャル、脱毛、バストケア、ネイル、まつ毛、アイブロウ、メンズ美容、ジャグアタトゥーまで、幅広い美容を展開するトータルビューティーサロングループです。<br /><br />そのときの自分に合う美容を、<br />もっと自由に選べる場所へ。</p>
-          <a href="ABOUT.dc.html" data-arrow="" data-reveal="body" data-delay="55" style="display:inline-flex;align-items:center;gap:12px;padding-bottom:10px;border-bottom:1px solid #171512;font-size:clamp(11.5px,0.9vw,13px);letter-spacing:0.08em;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">nanairoについて<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section data-screen-label="03 SERVICES" data-services="" style="padding:clamp(66px,9vw,140px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">

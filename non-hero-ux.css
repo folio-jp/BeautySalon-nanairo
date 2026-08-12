@@ -789,6 +789,7 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
 
 [data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"] {
   min-height: 680px;
+  padding-bottom: 0 !important;
 }
 
 [data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"]::before {
@@ -807,7 +808,7 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   place-items: center;
   width: 100vw;
   min-height: clamp(550px, 39vw, 650px);
-  margin: clamp(62px, 7vw, 108px) calc(50% - 50vw) clamp(70px, 8vw, 120px);
+  margin: clamp(62px, 7vw, 108px) calc(50% - 50vw) 0;
   padding: clamp(54px, 7vw, 104px) var(--ux-gutter);
   overflow: hidden;
   background: #8f7761 url("assets/top-locations-panorama.webp") center center / cover no-repeat;
@@ -1004,7 +1005,6 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   .top-location-feature {
     min-height: 650px;
     margin-top: 54px;
-    margin-bottom: 72px;
     padding: 64px 22px;
     background-position: 69% center;
   }
