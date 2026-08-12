@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet" />
-<link href="non-hero-ux.css?v=20260812-step2" rel="stylesheet" />
+<link href="non-hero-ux.css?v=20260812-top-hierarchy" rel="stylesheet" />
 <link rel="preload" as="image" href="assets/hero-complete-pc.png" media="(min-width:1200px)" />
 <link rel="preload" as="image" href="assets/hero-complete-tablet-1.png" media="(min-width:768px) and (max-width:1199px)" />
 <link rel="preload" as="image" href="assets/hero-complete-mobile-1.png" media="(max-width:767px)" />
@@ -106,7 +106,7 @@
 </style>
 </helmet>
 
-<div style="position:relative;background:#FBFAF6;">
+<div data-page="top" style="position:relative;background:#FBFAF6;">
 
 <section data-screen-label="01 HERO" data-hero="">
   <h1 class="visually-hidden">年齢も環境も制限のない、美しさへ</h1>
@@ -141,7 +141,7 @@
   <div class="hero__header-mask" aria-hidden="true"><span class="hero__header-mask-logo"></span><span class="hero__header-mask-nav"></span></div>
 
   <header class="site-header" data-header="">
-    <a class="site-header__logo" href="TOP.dc.html" aria-label="BeautySalon nanairo トップへ"><img data-logo="" src="assets/logo-circle.webp" width="560" height="560" alt="BeautySalon nanairo 正式ロゴ" /></a>
+    <a class="site-header__logo" href="TOP.dc.html" aria-label="BeautySalon nanairo トップへ"><img data-logo="" src="assets/logo-circle.png" width="1254" height="1254" alt="BeautySalon nanairo 正式ロゴ" /></a>
     <nav class="site-header__nav" aria-label="グローバルナビゲーション">
       <a href="SERVICES.dc.html">SERVICES</a>
       <a href="SALONS.dc.html">SALONS</a>
@@ -174,16 +174,25 @@
   <div class="ux-shell ux-summary">
     <div>
       <p class="ux-kicker">NANAIRO AT A GLANCE</p>
-      <h2 class="ux-title">2つの拠点、5つの美容カテゴリー。</h2>
+      <h2 class="ux-title">nanairoを、ひと目で。</h2>
       <p class="ux-lead">nanairoは、大分市の椎迫・片島に複数の専門サロンを展開するトータルビューティーグループです。施術からでも、通いやすい拠点からでも選べます。</p>
     </div>
-    <div class="ux-quick-grid" aria-label="施術と対応拠点の早見表">
-      <div class="ux-quick-item"><strong>エステティック</strong><span>痩身・小顔・フェイシャル・脱毛・バストケア</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span><span class="ux-tag">片島</span></div></div>
-      <div class="ux-quick-item"><strong>ネイル</strong><span>ワンカラー・マグネット・アート・フット</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span><span class="ux-tag">片島</span></div></div>
-      <div class="ux-quick-item"><strong>まつ毛・アイブロウ</strong><span>まつ毛パーマ・エクステ・眉スタイリング</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span><span class="ux-tag">片島</span></div></div>
-      <div class="ux-quick-item"><strong>メンズ美容</strong><span>男性の肌・身体・身だしなみをトータルケア</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span></div></div>
-      <div class="ux-quick-item"><strong>ジャグアタトゥー</strong><span>約2週間楽しめるオーダーボディアート</span><div class="ux-tag-list"><span class="ux-tag">椎迫</span><span class="ux-tag">片島</span></div></div>
-      <div class="ux-quick-item"><strong>予約までの流れ</strong><span>施術を選ぶ → 店舗を確認 → 空席・クーポンを見る</span><a class="ux-inline-link" href="RESERVE.dc.html">予約先を選ぶ</a></div>
+    <div class="top-glance" aria-label="2拠点と5つの美容カテゴリー">
+      <section class="top-glance__group top-glance__group--locations" aria-labelledby="glance-locations">
+        <div class="top-glance__index"><strong>02</strong><span id="glance-locations">LOCATIONS</span></div>
+        <p class="top-glance__names">椎迫 <i>/</i> 片島</p>
+        <p class="top-glance__note">大分市内の2つの拠点</p>
+      </section>
+      <section class="top-glance__group top-glance__group--categories" aria-labelledby="glance-categories">
+        <div class="top-glance__index"><strong>05</strong><span id="glance-categories">BEAUTY CATEGORIES</span></div>
+        <ul class="top-glance__list">
+          <li>エステティック</li><li>ネイル</li><li>アイ</li><li>メンズ美容</li><li>ジャグアタトゥー</li>
+        </ul>
+      </section>
+      <div class="ux-actions top-glance__actions">
+        <a class="ux-inline-link" href="SERVICES.dc.html">受けたい施術から探す</a>
+        <a class="ux-inline-link" href="SALONS.dc.html">2拠点と専門サロンを比較する</a>
+      </div>
     </div>
   </div>
 </section>
@@ -310,7 +319,7 @@
     <p data-reveal="body" style="margin:0;max-width:360px;font-size:clamp(12px,0.98vw,14px);line-height:2.05;color:#6D6759;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">nanairoの美容サービスは、<br />大分市内の椎迫・片島、2つの拠点で展開しています。</p>
   </div>
 
-  <div data-salon-block="" style="display:flex;flex-wrap:wrap;gap:clamp(26px,3.4vw,64px);padding-bottom:clamp(48px,6vw,104px);">
+  <div class="top-salon-block" data-salon-block="" style="display:flex;flex-wrap:wrap;gap:clamp(26px,3.4vw,64px);padding-bottom:clamp(48px,6vw,104px);">
     <div data-salon-sticky="" style="flex:0 1 260px;min-width:0;">
       <p style="margin:0 0 14px;font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);color:#9C9585;">01</p>
       <p data-reveal="label" style="margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,40px);letter-spacing:0.06em;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">SHIIZAKO</p>
@@ -333,7 +342,7 @@
     </div>
   </div>
 
-  <div data-salon-block="" style="display:flex;flex-wrap:wrap;gap:clamp(26px,3.4vw,64px);border-top:1px solid #E0DBD0;padding-top:clamp(44px,5.4vw,96px);">
+  <div class="top-salon-block" data-salon-block="" style="display:flex;flex-wrap:wrap;gap:clamp(26px,3.4vw,64px);border-top:1px solid #E0DBD0;padding-top:clamp(44px,5.4vw,96px);">
     <div data-salon-sticky="" style="flex:0 1 260px;min-width:0;">
       <p style="margin:0 0 14px;font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);color:#9C9585;">02</p>
       <p data-reveal="label" style="margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:clamp(24px,2.6vw,40px);letter-spacing:0.06em;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">KATASHIMA</p>
@@ -369,7 +378,7 @@
       </h2>
     </div>
     <div data-phil-track="" style="display:flex;flex-direction:column;gap:clamp(20px,3vw,40px);padding:0 clamp(18px,3.2vw,52px);">
-      <article data-phil-card="" style="flex:0 0 auto;border-top:1px solid #171512;padding-top:clamp(20px,2.4vw,32px);">
+      <article class="top-total-beauty" data-phil-card="" style="flex:0 0 auto;border-top:1px solid #171512;padding-top:clamp(20px,2.4vw,32px);">
         <p style="margin:0 0 clamp(18px,2.2vw,30px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);color:#9C9585;">01</p>
         <p style="margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.2vw,34px);letter-spacing:0.03em;">Total Beauty</p>
         <p style="margin:0 0 clamp(16px,2vw,26px);font-size:clamp(11px,0.85vw,12px);letter-spacing:0.16em;color:#8A8376;">TOTAL BEAUTY</p>

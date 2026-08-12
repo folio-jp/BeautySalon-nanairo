@@ -775,3 +775,134 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   .ux-inline-link,
   section[data-screen-label]:not([data-screen-label$="HERO"]) figure img { transition: none !important; }
 }
+
+/* ---------- TOP only: clarity without changing the HERO composition ---------- */
+[data-page="top"] section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"] {
+  color: #49443c !important;
+  font-weight: 400;
+}
+
+[data-page="top"] .ux-lead {
+  color: #49443c;
+  font-weight: 400;
+}
+
+[data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"] {
+  min-height: 680px;
+}
+
+[data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"]::before {
+  display: none;
+}
+
+[data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"] .ux-summary {
+  grid-template-columns: minmax(280px, .78fr) minmax(0, 1.45fr);
+  gap: clamp(54px, 8vw, 128px);
+}
+
+.top-glance {
+  display: grid;
+  grid-template-columns: minmax(190px, .72fr) minmax(300px, 1.28fr);
+  gap: clamp(42px, 6vw, 92px);
+  align-items: start;
+}
+
+.top-glance__group {
+  min-width: 0;
+  border-top: 1px solid rgba(67, 57, 46, .3);
+  padding-top: clamp(18px, 2vw, 28px);
+}
+
+.top-glance__index {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(14px, 2vw, 28px);
+}
+
+.top-glance__index strong {
+  color: #9b7d4b;
+  font: 300 clamp(64px, 7vw, 108px)/.82 var(--ux-roman);
+  letter-spacing: -.035em;
+}
+
+.top-glance__index span {
+  color: #786f63;
+  font: 400 11px/1.45 var(--ux-sans);
+  letter-spacing: .18em;
+}
+
+.top-glance__names {
+  margin: clamp(30px, 3.5vw, 50px) 0 0;
+  color: #1d1a17;
+  font: 400 clamp(25px, 2.4vw, 37px)/1.5 var(--ux-serif);
+  letter-spacing: .035em;
+}
+
+.top-glance__names i { padding: 0 .35em; color: #9b7d4b; font-style: normal; }
+.top-glance__note { margin: 12px 0 0; color: #49443c; font-size: 14px; font-weight: 400; line-height: 1.9; }
+.top-glance__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(24px, 3vw, 48px); margin: clamp(28px, 3vw, 46px) 0 0; padding: 0; list-style: none; }
+.top-glance__list li { padding: 12px 0; border-bottom: 1px solid rgba(67, 57, 46, .18); color: #24201c; font: 400 clamp(15px, 1.15vw, 18px)/1.7 var(--ux-sans); }
+.top-glance__actions { grid-column: 1 / -1; margin-top: clamp(4px, 1vw, 12px); }
+.top-glance__actions .ux-inline-link { min-height: 44px; color: #49443c !important; font-weight: 400; }
+
+[data-page="top"] section[data-screen-label="02 ABOUT nanairo"] [data-reveal="body"],
+[data-page="top"] section[data-screen-label="03 SERVICES"] [data-service-row] > span:nth-child(3) {
+  color: #49443c !important;
+  font-weight: 400;
+}
+
+[data-page="top"] section[data-screen-label="03 SERVICES"] [data-service-row] > span:nth-child(2) > span:last-child {
+  color: #49443c !important;
+  font-size: clamp(13px, 1vw, 15px) !important;
+  font-weight: 400;
+}
+
+[data-page="top"] .top-salon-block [data-salon-sticky] p:last-child { color: #1d1a17; }
+[data-page="top"] .top-salon-block [data-reveal="body"] { margin-bottom: 20px !important; }
+[data-page="top"] .top-salon-block ul { margin-top: 0 !important; }
+[data-page="top"] .top-salon-block li {
+  color: #28241f !important;
+  font-size: clamp(14px, 1.02vw, 16px) !important;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+[data-page="top"] .top-total-beauty > p:nth-child(2) {
+  margin-bottom: 12px !important;
+  color: #1d1a17;
+  font-size: clamp(32px, 3.8vw, 56px) !important;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+[data-page="top"] .top-total-beauty > p:nth-child(3) {
+  margin-bottom: clamp(22px, 2.6vw, 34px) !important;
+  color: #81786c !important;
+  font-size: 10px !important;
+  font-weight: 400;
+  letter-spacing: .2em !important;
+}
+
+[data-page="top"] .top-total-beauty > p:last-child {
+  color: #49443c !important;
+  font-size: clamp(15px, 1.08vw, 17px) !important;
+  font-weight: 400;
+  line-height: 2 !important;
+}
+
+@media (max-width: 980px) {
+  [data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"] .ux-summary { grid-template-columns: 1fr; }
+  .top-glance { grid-template-columns: minmax(180px, .72fr) minmax(300px, 1.28fr); }
+}
+
+@media (max-width: 640px) {
+  [data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"] { min-height: 0; }
+  .top-glance { grid-template-columns: 1fr; gap: 50px; }
+  .top-glance__index strong { font-size: clamp(68px, 23vw, 92px); }
+  .top-glance__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; }
+  .top-glance__list li { font-size: 15px; }
+  .top-glance__actions { grid-column: 1; gap: 12px 24px; }
+  [data-page="top"] section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"],
+  [data-page="top"] .ux-lead { font-size: 15px !important; line-height: 2 !important; }
+  [data-page="top"] section[data-screen-label="03 SERVICES"] [data-service-row] > span:nth-child(2) > span:last-child { font-size: 15px !important; }
+}
