@@ -208,8 +208,8 @@ section[data-screen-label="NANAIRO AT A GLANCE"]::before {
   z-index: -1;
   left: var(--ux-gutter);
   bottom: -0.11em;
-  color: rgba(83, 70, 55, .055);
-  font: 300 clamp(130px, 20vw, 330px)/.8 var(--ux-roman);
+  color: rgba(83, 70, 55, .032);
+  font: 300 clamp(110px, 16vw, 250px)/.8 var(--ux-roman);
   letter-spacing: -.05em;
   white-space: nowrap;
 }
@@ -290,39 +290,53 @@ section[data-screen-label="NANAIRO AT A GLANCE"]::before {
 /* TOP photographic chapters */
 section[data-screen-label="02 ABOUT nanairo"] { background: var(--ux-paper) !important; }
 section[data-screen-label="02 ABOUT nanairo"] > div { width: var(--ux-wide); margin-inline: auto; }
-section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/esthetic-facial.webp"]) { flex-basis: min(54vw, 720px) !important; }
-section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/nail-3.webp"]) { flex-basis: auto !important; width: min(22vw, 320px); transform: translateY(clamp(28px, 6vw, 90px)); }
-section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/jagua-decollete.webp"]) { flex-basis: auto !important; width: clamp(150px, 17vw, 250px) !important; transform: translateX(clamp(0px, 5vw, 72px)); }
+section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/esthetic-facial.webp"]) { flex-basis: min(50vw, 670px) !important; }
+section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/nail-3.webp"]) { flex-basis: auto !important; width: min(18vw, 260px); transform: translateY(clamp(12px, 2.5vw, 36px)); }
+section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/jagua-decollete.webp"]) { flex-basis: auto !important; width: clamp(125px, 13vw, 190px) !important; transform: translateX(clamp(0px, 2vw, 28px)); }
+section[data-screen-label="02 ABOUT nanairo"] [data-reveal="body"] { font-size: clamp(14px, 1.08vw, 17px) !important; }
 
 section[data-screen-label="03 SERVICES"] { background: var(--ux-milk) !important; }
 section[data-screen-label="03 SERVICES"] > div { width: var(--ux-wide); margin-inline: auto; }
 section[data-screen-label="03 SERVICES"] [data-service-list] { border: 0 !important; }
 section[data-screen-label="03 SERVICES"] [data-service-row] {
   position: relative;
-  width: 94%;
+  width: 100%;
   padding: clamp(30px, 3.6vw, 56px) 0 !important;
   border: 0 !important;
 }
-section[data-screen-label="03 SERVICES"] [data-service-row]:nth-child(even) { margin-left: 6%; }
 section[data-screen-label="03 SERVICES"] [data-service-row]::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: min(66%, 740px);
+  width: 100%;
   height: 1px;
   background: var(--ux-line);
   transition: width .55s cubic-bezier(.22, 1, .36, 1), background .35s ease;
 }
 section[data-screen-label="03 SERVICES"] [data-service-row]:hover::after { width: 100%; background: rgba(155, 125, 75, .58); }
-section[data-screen-label="03 SERVICES"] [data-service-en] { font-size: clamp(38px, 6.2vw, 96px) !important; font-weight: 300; }
+section[data-screen-label="03 SERVICES"] [data-service-row] > span:nth-child(2) { display: flex; flex: 0 1 clamp(210px, 24vw, 320px) !important; flex-direction: column-reverse; }
+section[data-screen-label="03 SERVICES"] [data-service-en] { font-size: clamp(23px, 2.6vw, 38px) !important; font-weight: 300; }
+section[data-screen-label="03 SERVICES"] [data-service-en] + span {
+  margin-top: 8px !important;
+  color: var(--ux-ink) !important;
+  font-family: var(--ux-serif);
+  font-size: clamp(17px, 1.5vw, 22px) !important;
+  font-weight: 500;
+  letter-spacing: .035em !important;
+}
+section[data-screen-label="03 SERVICES"] [data-service-row] > span:nth-child(3) {
+  flex-basis: clamp(260px, 30vw, 390px) !important;
+  color: var(--ux-copy) !important;
+  font-size: clamp(12.5px, 1vw, 14.5px) !important;
+}
 section[data-screen-label="03 SERVICES"] > div:has(> figure) {
   display: grid !important;
   grid-template-columns: 1.25fr .72fr .96fr .66fr 1.08fr !important;
   align-items: end;
   gap: clamp(10px, 1.5vw, 24px) !important;
 }
-section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(even) { transform: translateY(clamp(24px, 4vw, 64px)); }
+section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(even) { transform: translateY(clamp(12px, 2vw, 28px)); }
 
 section[data-screen-label="04 SALONS"] { background: var(--ux-paper) !important; }
 section[data-screen-label="04 SALONS"] > div { width: var(--ux-wide); margin-inline: auto; }
@@ -355,8 +369,8 @@ section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-card] {
 section[data-screen-label="SERVICE COMPARISON"] { min-height: 720px; display: grid; align-items: center; }
 .ux-service-grid {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: clamp(32px, 4vw, 62px) clamp(22px, 3vw, 48px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(32px, 4vw, 62px) clamp(18px, 2.2vw, 34px);
   margin-top: clamp(58px, 7vw, 110px);
   background: transparent;
   border: 0 !important;
@@ -364,7 +378,7 @@ section[data-screen-label="SERVICE COMPARISON"] { min-height: 720px; display: gr
 
 .ux-service-card {
   position: relative;
-  grid-column: span 6;
+  grid-column: span 1;
   display: flex;
   min-height: 260px;
   padding: 0 0 32px;
@@ -393,14 +407,13 @@ section[data-screen-label="SERVICE COMPARISON"] { min-height: 720px; display: gr
 .ux-service-card:nth-child(3) { --ux-service-image: url("assets/lash-perm-1.webp"); }
 .ux-service-card:nth-child(4) { --ux-service-image: url("assets/mens-face.webp"); }
 .ux-service-card:nth-child(5) { --ux-service-image: url("assets/jagua-arm.webp"); }
-.ux-service-card:nth-child(even)::before { top: auto; bottom: 30px; border-radius: 43% 57% 53% 47% / 57% 42% 58% 43%; }
 .ux-service-card > * { position: relative; z-index: 1; }
-.ux-service-card:nth-child(n + 3) { grid-column: span 4; min-height: 230px; }
+.ux-service-card:nth-child(n + 3) { grid-column: span 1; min-height: 260px; }
 .ux-service-card:hover { transform: translateY(-8px); border-color: var(--ux-gold); background: transparent !important; }
 .ux-service-card:hover::before { transform: scale(1.035) rotate(.5deg); filter: saturate(.86) contrast(.96) brightness(1.02); }
 .ux-service-card small { color: var(--ux-gold); font: 400 11px/1.4 var(--ux-roman); letter-spacing: .16em; }
-.ux-service-card h3 { width: 64%; margin: auto 0 16px; font: 400 clamp(25px, 3.2vw, 48px)/1.3 var(--ux-serif); }
-.ux-service-card p { max-width: 58%; margin: 0; color: var(--ux-copy); font-size: 13px; line-height: 1.9; }
+.ux-service-card h3 { width: 68%; margin: auto 0 16px; font: 400 clamp(20px, 2.05vw, 31px)/1.35 var(--ux-serif); }
+.ux-service-card p { max-width: 68%; margin: 0; color: var(--ux-copy); font-size: 12.5px; line-height: 1.9; }
 .ux-service-card b { margin-top: 26px; padding: 0; font-size: 11.5px; font-weight: 400; letter-spacing: .06em; }
 
 section[data-screen-label="SERVICE INDEX"] { background: var(--ux-paper) !important; }
@@ -414,9 +427,10 @@ section[data-screen-label="SERVICE INDEX"] [data-acc-item]::after {
   height: 1px;
   background: var(--ux-line);
 }
-section[data-screen-label="SERVICE INDEX"] [data-acc-item]:nth-child(even)::after { margin-left: auto; }
 section[data-screen-label="SERVICE INDEX"] [data-acc-head] { padding: clamp(30px, 4vw, 62px) 0 !important; }
-section[data-screen-label="SERVICE INDEX"] [data-acc-en] { font-size: clamp(34px, 5.4vw, 84px) !important; font-weight: 300; }
+section[data-screen-label="SERVICE INDEX"] [data-acc-en] { order: 3; flex: 0 1 190px !important; font-size: clamp(18px, 2vw, 30px) !important; font-weight: 300; }
+section[data-screen-label="SERVICE INDEX"] [data-acc-en] + span { order: 2; flex: 1 1 240px !important; color: var(--ux-ink) !important; font-family: var(--ux-serif); font-size: clamp(17px, 1.5vw, 23px) !important; font-weight: 500; }
+section[data-screen-label="SERVICE INDEX"] [data-acc-mark] { order: 4; }
 
 /* ---------- Location guides ---------- */
 section[data-screen-label$="QUICK GUIDE"] { min-height: 650px; display: grid; align-items: center; background: var(--ux-soft) !important; }
@@ -473,8 +487,6 @@ section[data-screen-label="MENU"] [data-menu-row]::after {
   background: var(--ux-line);
   transition: width .5s cubic-bezier(.22, 1, .36, 1);
 }
-section[data-screen-label$="MENU"] [data-menu-row]:nth-child(even)::after,
-section[data-screen-label="MENU"] [data-menu-row]:nth-child(even)::after { left: auto; right: 0; }
 section[data-screen-label$="MENU"] [data-menu-row]:hover::after,
 section[data-screen-label="MENU"] [data-menu-row]:hover::after { width: 100%; }
 
@@ -602,9 +614,40 @@ main[data-screen-label="RESERVE NAVIGATOR"] button[data-salon] {
   padding: clamp(26px, 3vw, 44px) 0 !important;
   border-bottom-color: var(--ux-line) !important;
 }
-main[data-screen-label="RESERVE NAVIGATOR"] [data-opt-en] { font-size: clamp(28px, 4vw, 58px) !important; font-weight: 300; }
+main[data-screen-label="RESERVE NAVIGATOR"] button[data-service] > span:first-child {
+  flex-direction: column-reverse;
+  align-items: flex-start !important;
+  gap: 7px !important;
+}
+main[data-screen-label="RESERVE NAVIGATOR"] button[data-service] > span:first-child > span:not([data-opt-en]) {
+  color: var(--ux-ink) !important;
+  font-family: var(--ux-serif);
+  font-size: clamp(19px, 2vw, 28px) !important;
+  font-weight: 500;
+  line-height: 1.4;
+}
+main[data-screen-label="RESERVE NAVIGATOR"] button[data-service] [data-opt-en] {
+  color: var(--ux-muted);
+  font-size: clamp(12px, 1vw, 15px) !important;
+  font-weight: 400;
+  letter-spacing: .13em;
+}
 main[data-screen-label="RESERVE NAVIGATOR"] [data-booking] { border-top: 0 !important; }
 main[data-screen-label="RESERVE NAVIGATOR"] [data-booking] > div { gap: 12px clamp(24px, 3vw, 48px) !important; }
+main[data-screen-label="RESERVE NAVIGATOR"] [data-booking] a {
+  color: var(--ux-copy) !important;
+  border-color: var(--ux-line) !important;
+  background: transparent !important;
+}
+main[data-screen-label="RESERVE NAVIGATOR"] [data-booking] a[href*="beauty.hotpepper.jp"],
+main[data-screen-label="RESERVE NAVIGATOR"] [data-booking^="JAGUA"] a[href*="lin.ee"],
+main[data-screen-label="RESERVE NAVIGATOR"] [data-booking="MENS"] a[href*="instagram.com"] {
+  padding: 15px 21px !important;
+  color: var(--ux-paper) !important;
+  border-color: var(--ux-night) !important;
+  background: var(--ux-night) !important;
+  font-weight: 500;
+}
 
 /* ---------- Footer: final brand image ---------- */
 footer[data-screen-label="FOOTER"] {
@@ -637,9 +680,10 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   section[data-screen-label$="QUICK GUIDE"] .ux-summary { grid-template-columns: 1fr; gap: 58px; }
   .ux-title { max-width: 15em; }
   .ux-quick-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ux-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ux-service-card,
-  .ux-service-card:nth-child(n + 3) { grid-column: span 6; }
-  .ux-service-card:last-child { grid-column: 4 / span 6; }
+  .ux-service-card:nth-child(n + 3) { grid-column: span 1; }
+  .ux-service-card:last-child { grid-column: span 1; }
   .ux-service-card::before { width: 42%; }
   .ux-salon-card { grid-template-columns: 1fr; gap: 44px; }
   .ux-salon-card > .ux-tag-list,
@@ -649,8 +693,7 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   section[data-salon-chapter] [data-salon-sticky] { flex-basis: 100% !important; }
   section[data-screen-label="03 SERVICES"] > div:has(> figure) { grid-template-columns: repeat(5, 1fr) !important; }
   section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-track] { grid-template-columns: 1fr; }
-  section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-card] { width: min(82%, 560px) !important; min-height: 0; }
-  section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-card]:nth-child(even) { margin-left: auto; }
+  section[data-screen-label="05 OUR PHILOSOPHY"] [data-phil-card] { width: 100% !important; min-height: 0; }
 }
 
 /* ---------- Mobile: still editorial, never a repetitive card stack ---------- */
@@ -664,23 +707,22 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   .ux-title { font-size: clamp(31px, 10vw, 44px); line-height: 1.34; }
   .ux-lead { font-size: 14px; line-height: 2; }
   .ux-summary { gap: 52px; }
-  .ux-quick-grid { grid-template-columns: 1fr 1fr; gap: 46px 22px; }
+  .ux-quick-grid { grid-template-columns: 1fr; gap: 38px; }
   .ux-quick-item { padding-top: 36px !important; }
-  .ux-quick-item:nth-child(even) { transform: translateY(24px); }
   .ux-quick-item strong { font-size: 16px; }
   .ux-quick-item > span { font-size: 11.5px; }
-  section[data-screen-label="NANAIRO AT A GLANCE"] { min-height: 940px; }
-  section[data-screen-label="NANAIRO AT A GLANCE"]::before { font-size: 36vw; bottom: -.03em; }
+  section[data-screen-label="NANAIRO AT A GLANCE"] { min-height: 0; }
+  section[data-screen-label="NANAIRO AT A GLANCE"]::before { left: auto; right: -4vw; font-size: 23vw; bottom: .08em; color: rgba(83, 70, 55, .025); }
   section[data-screen-label="01b HERO INTRO"] { min-height: 400px; align-content: space-between; }
   section[data-screen-label="01b HERO INTRO"] > div { width: 100%; gap: 12px 26px !important; }
   section[data-screen-label="01b HERO INTRO"] > div a { flex: 1 1 130px; }
-  section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/esthetic-facial.webp"]) { flex-basis: 80vw !important; margin-right: 12vw !important; }
-  section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/nail-3.webp"]) { width: 58vw; margin-left: auto !important; transform: translateY(22px); }
-  section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/jagua-decollete.webp"]) { width: 38vw !important; transform: translateX(9vw); }
+  section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/esthetic-facial.webp"]) { flex-basis: 100% !important; margin-right: 0 !important; }
+  section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/nail-3.webp"]) { width: min(46vw, 180px); margin-left: 0 !important; transform: translateY(10px); }
+  section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/jagua-decollete.webp"]) { width: min(34vw, 132px) !important; transform: translateX(0); }
   section[data-screen-label="03 SERVICES"] [data-service-row],
   section[data-screen-label="03 SERVICES"] [data-service-row]:nth-child(even) { width: 100%; margin-left: 0; padding: 34px 0 !important; }
-  section[data-screen-label="03 SERVICES"] [data-service-row]::after { width: 72%; }
-  section[data-screen-label="03 SERVICES"] [data-service-en] { font-size: clamp(34px, 12vw, 54px) !important; }
+  section[data-screen-label="03 SERVICES"] [data-service-row]::after { width: 100%; }
+  section[data-screen-label="03 SERVICES"] [data-service-en] { font-size: clamp(24px, 8vw, 34px) !important; }
   section[data-screen-label="03 SERVICES"] > div:has(> figure) {
     grid-template-columns: repeat(6, 1fr) !important;
     gap: 8px !important;
@@ -689,23 +731,21 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   section[data-screen-label="03 SERVICES"] > div:has(> figure) figure { grid-column: span 2; }
   section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(1),
   section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(4) { grid-column: span 3; }
-  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(even) { transform: translateY(28px); }
-  .ux-service-grid { gap: 50px 18px; }
+  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(even) { transform: translateY(10px); }
+  .ux-service-grid { grid-template-columns: 1fr; gap: 46px; }
   .ux-service-card,
   .ux-service-card:nth-child(n + 3),
-  .ux-service-card:last-child { grid-column: span 6; min-height: 230px; }
-  .ux-service-card:nth-child(even) { width: 88%; margin-left: auto; }
+  .ux-service-card:last-child { grid-column: span 1; min-height: 230px; width: 100%; }
   .ux-service-card h3 { font-size: 30px; }
   .ux-service-card::before { width: 43%; height: 58%; opacity: .78; }
   .ux-service-card h3 { width: 58%; }
   .ux-service-card p { max-width: 56%; }
   .ux-location-grid { grid-template-columns: 1fr; gap: 64px; }
-  .ux-location-card:nth-child(even) { width: 88%; margin-left: auto; }
   section[data-screen-label="CONCEPT"] > div { gap: 50px !important; }
   section[data-screen-label="CONCEPT"] figure { flex-basis: 76vw !important; }
   section[data-screen-label="AVAILABLE SALONS"] > div:has(figure) { gap: 54px !important; }
   section[data-screen-label="AVAILABLE SALONS"] figure { width: 82%; min-height: 260px; }
-  section[data-screen-label="AVAILABLE SALONS"] figure:nth-of-type(even) { width: 72%; margin: 48px 0 0 auto !important; }
+  section[data-screen-label="AVAILABLE SALONS"] figure:nth-of-type(even) { width: 76%; margin: 20px 0 0 auto !important; }
   .ux-salon-stack { gap: 110px; }
   .ux-salon-card { gap: 38px; padding-bottom: 0; }
   .ux-salon-card::before { font-size: 34vw; top: -.15em; }
@@ -717,10 +757,12 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   .ux-btn { width: auto; min-height: 0; }
   section[data-screen-label="RESERVATION"],
   section[data-screen-label="06 RESERVATION"] { min-height: 520px; }
+  section[data-screen-label="RESERVATION"] > div { grid-template-columns: 1fr !important; }
   section[data-screen-label="RESERVATION"]::before,
   section[data-screen-label="06 RESERVATION"]::before { font-size: 31vw; bottom: -.05em; }
   main[data-screen-label="RESERVE NAVIGATOR"] { min-height: 820px; }
-  main[data-screen-label="RESERVE NAVIGATOR"] [data-opt-en] { font-size: 30px !important; }
+  main[data-screen-label="RESERVE NAVIGATOR"] button[data-service] > span:first-child > span:not([data-opt-en]) { font-size: 21px !important; }
+  main[data-screen-label="RESERVE NAVIGATOR"] button[data-service] [data-opt-en] { font-size: 11px !important; }
   main[data-screen-label="RESERVE NAVIGATOR"] [data-booking] > div { display: grid !important; justify-items: start; }
   footer[data-screen-label="FOOTER"] { padding-top: 100px !important; }
   footer[data-screen-label="FOOTER"] h2 { font-size: 19vw !important; }
