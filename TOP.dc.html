@@ -61,12 +61,12 @@
   .hero__art--pc { display: block; }
   .hero__header-mask { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
   .hero__header-mask span { position: absolute; display: block; background: #fff; }
-  .hero__header-mask-logo { top: 0; left: 0; width: 12.5%; height: auto; aspect-ratio: 1; border-radius: 50%; }
+  .hero__header-mask span.hero__header-mask-logo { display: none; }
   .hero__header-mask-nav { top: 0; right: 0; width: 40%; height: 8.5%; }
   .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 30; display: flex; align-items: flex-start; justify-content: space-between; gap: clamp(10px,2vw,32px); padding: clamp(20px,2.65vw,26px) clamp(18px,3.55vw,64px) 0 clamp(28px,2.7vw,44px); pointer-events: none; }
   .site-header__logo, .site-header__nav, .site-header__menu { pointer-events: auto; }
   .site-header__logo { display: block; flex: none; }
-  .site-header__logo img { display: block; width: clamp(86px,9.35vw,166px); height: auto; }
+  .site-header__logo img { display: block; visibility: hidden; width: clamp(86px,9.35vw,166px); height: auto; }
   .site-header__nav { display: flex; align-items: center; gap: clamp(16px,3.25vw,58px); font-family: "Cormorant Garamond", serif; font-size: clamp(10px,.98vw,17px); letter-spacing: .14em; font-weight: 400; color: #81796E; }
   .site-header__nav a { padding: 8px 0; color: inherit; }
   .site-header__menu { display: none; border: 0; padding: 0; background: transparent; color: #81796E; cursor: pointer; }
@@ -90,13 +90,11 @@
   @media (min-width: 768px) and (max-width: 1199px) {
     .hero__art--pc { display: none; }
     .hero__art--tablet { display: block; }
-    .hero__header-mask-logo { width: 100%; height: 9%; aspect-ratio: auto; border-radius: 0; }
     .hero__header-mask-nav { display: none; }
   }
   @media (max-width: 767px) {
     .hero__art--pc { display: none; }
     .hero__art--mobile { display: block; }
-    .hero__header-mask-logo { width: 100%; height: 8.5%; aspect-ratio: auto; border-radius: 0; }
     .hero__header-mask-nav { display: none; }
     .site-header { padding: clamp(10px,3.2vw,16px) clamp(14px,4.5vw,20px) 0; }
     .site-header__logo img { width: clamp(72px,20vw,86px); }
