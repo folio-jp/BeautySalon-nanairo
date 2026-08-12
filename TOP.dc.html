@@ -66,15 +66,11 @@
     top: 0;
     left: 0;
     z-index: 1;
-    width: 12.5%;
-    height: auto;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: transparent;
-    -webkit-backdrop-filter: blur(24px) saturate(.25);
-    backdrop-filter: blur(24px) saturate(.25);
-    -webkit-mask-image: radial-gradient(circle, #000 0 60%, rgba(0,0,0,.94) 72%, transparent 98%);
-    mask-image: radial-gradient(circle, #000 0 60%, rgba(0,0,0,.94) 72%, transparent 98%);
+    width: 12%;
+    height: 21.5%;
+    background: rgb(251 251 251);
+    -webkit-mask-image: radial-gradient(circle at 54% 48%, #000 0 53%, rgba(0,0,0,.98) 66%, transparent 100%);
+    mask-image: radial-gradient(circle at 54% 48%, #000 0 53%, rgba(0,0,0,.98) 66%, transparent 100%);
   }
   .hero__header-mask-nav { top: 0; right: 0; width: 40%; height: 8.5%; }
   .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 120; display: flex; align-items: flex-start; justify-content: space-between; gap: clamp(10px,2vw,32px); padding: clamp(20px,2.65vw,26px) clamp(18px,3.55vw,64px) 0 clamp(28px,2.7vw,44px); pointer-events: none; }
@@ -104,13 +100,13 @@
   @media (min-width: 768px) and (max-width: 1199px) {
     .hero__art--pc { display: none; }
     .hero__art--tablet { display: block; }
-    .hero__header-mask span.hero__header-mask-logo { width: 29%; height: 9%; aspect-ratio: auto; border-radius: 0; -webkit-backdrop-filter: blur(20px) saturate(.18); backdrop-filter: blur(20px) saturate(.18); -webkit-mask-image: linear-gradient(90deg,#000 0 76%,transparent 100%); mask-image: linear-gradient(90deg,#000 0 76%,transparent 100%); }
+    .hero__header-mask span.hero__header-mask-logo { width: 28%; height: 9.4%; background: rgb(243 240 237); -webkit-mask-image: radial-gradient(ellipse 78% 78% at 38% 42%,#000 0 58%,rgba(0,0,0,.98) 70%,transparent 100%); mask-image: radial-gradient(ellipse 78% 78% at 38% 42%,#000 0 58%,rgba(0,0,0,.98) 70%,transparent 100%); }
     .hero__header-mask-nav { display: none; }
   }
   @media (max-width: 767px) {
     .hero__art--pc { display: none; }
     .hero__art--mobile { display: block; }
-    .hero__header-mask span.hero__header-mask-logo { width: 43%; height: 8.5%; aspect-ratio: auto; border-radius: 0; -webkit-backdrop-filter: blur(18px) saturate(.15); backdrop-filter: blur(18px) saturate(.15); -webkit-mask-image: linear-gradient(90deg,#000 0 78%,transparent 100%); mask-image: linear-gradient(90deg,#000 0 78%,transparent 100%); }
+    .hero__header-mask span.hero__header-mask-logo { width: 40%; height: 8.6%; background: rgb(245 242 239); -webkit-mask-image: radial-gradient(ellipse 78% 80% at 36% 40%,#000 0 58%,rgba(0,0,0,.98) 70%,transparent 100%); mask-image: radial-gradient(ellipse 78% 80% at 36% 40%,#000 0 58%,rgba(0,0,0,.98) 70%,transparent 100%); }
     .hero__header-mask-nav { display: none; }
     .site-header { padding: clamp(10px,3.2vw,16px) clamp(14px,4.5vw,20px) 0; }
     .site-header__logo img { width: clamp(72px,20vw,86px); }
