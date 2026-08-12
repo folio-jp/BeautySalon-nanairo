@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet" />
-<link href="non-hero-ux.css?v=20260812-top-hierarchy" rel="stylesheet" />
+<link href="non-hero-ux.css?v=20260812-locations" rel="stylesheet" />
 <link rel="preload" as="image" href="assets/hero-complete-pc.png" media="(min-width:1200px)" />
 <link rel="preload" as="image" href="assets/hero-complete-tablet-1.png" media="(min-width:768px) and (max-width:1199px)" />
 <link rel="preload" as="image" href="assets/hero-complete-mobile-1.png" media="(max-width:767px)" />
@@ -194,12 +194,20 @@
       <h2 class="ux-title">nanairoを、ひと目で。</h2>
       <p class="ux-lead">nanairoは、大分市の椎迫・片島に複数の専門サロンを展開するトータルビューティーグループです。施術からでも、通いやすい拠点からでも選べます。</p>
     </div>
-    <div class="top-glance" aria-label="2拠点と5つの美容カテゴリー">
-      <section class="top-glance__group top-glance__group--locations" aria-labelledby="glance-locations">
-        <div class="top-glance__index"><strong>02</strong><span id="glance-locations">LOCATIONS</span></div>
-        <p class="top-glance__names">椎迫 <i>/</i> 片島</p>
-        <p class="top-glance__note">大分市内の2つの拠点</p>
-      </section>
+  </div>
+
+  <div class="top-location-feature" aria-labelledby="top-location-title">
+    <div class="top-location-feature__content">
+      <h3 id="top-location-title" class="top-location-feature__title" data-reveal="location">大分市に2つの拠点を展開</h3>
+      <p class="top-location-feature__copy" data-reveal="location" data-delay="55">椎迫と片島を中心に、<br />トータルビューティーを叶える専門サービスをご用意しています</p>
+      <nav class="top-location-feature__actions" aria-label="店舗エリアを選ぶ" data-reveal="location" data-delay="60">
+        <a href="SALONS.dc.html#shiizako">椎迫</a>
+        <a href="SALONS.dc.html#katashima">片島</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="ux-shell top-glance top-glance--categories-only" aria-label="5つの美容カテゴリー">
       <section class="top-glance__group top-glance__group--categories" aria-labelledby="glance-categories">
         <div class="top-glance__index"><strong>05</strong><span id="glance-categories">BEAUTY CATEGORIES</span></div>
         <ul class="top-glance__list">
@@ -210,7 +218,6 @@
         <a class="ux-inline-link" href="SERVICES.dc.html">受けたい施術から探す</a>
         <a class="ux-inline-link" href="SALONS.dc.html">2拠点と専門サロンを比較する</a>
       </div>
-    </div>
   </div>
 </section>
 

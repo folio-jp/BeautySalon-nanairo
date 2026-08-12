@@ -800,6 +800,97 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   gap: clamp(54px, 8vw, 128px);
 }
 
+/* TOP: dedicated two-location selector */
+.top-location-feature {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  min-height: clamp(550px, 39vw, 650px);
+  margin: clamp(62px, 7vw, 108px) calc(50% - 50vw) clamp(70px, 8vw, 120px);
+  padding: clamp(54px, 7vw, 104px) var(--ux-gutter);
+  overflow: hidden;
+  background: #8f7761 url("assets/top-locations-panorama.webp") center center / cover no-repeat;
+  color: #fff;
+  isolation: isolate;
+}
+
+.top-location-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(38, 25, 15, .35);
+}
+
+.top-location-feature__content {
+  width: min(760px, 100%);
+  text-align: center;
+}
+
+.top-location-feature [data-reveal="location"] {
+  opacity: 0;
+  transform: translateY(9px);
+  transition: opacity .45s ease, transform .45s cubic-bezier(.22, 1, .36, 1);
+}
+
+.top-location-feature__title {
+  margin: 0;
+  color: #fff !important;
+  font: 400 clamp(32px, 3.35vw, 54px)/1.45 var(--ux-serif);
+  letter-spacing: .055em;
+  text-shadow: 0 1px 18px rgba(30, 20, 12, .24);
+}
+
+.top-location-feature__copy {
+  margin: clamp(26px, 2.7vw, 40px) auto 0;
+  color: #fff !important;
+  font: 400 clamp(14px, 1.2vw, 18px)/2 var(--ux-sans) !important;
+  letter-spacing: .045em;
+  text-shadow: 0 1px 12px rgba(30, 20, 12, .3);
+}
+
+.top-location-feature__actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+  margin-top: clamp(40px, 4.6vw, 64px);
+}
+
+.top-location-feature__actions a {
+  display: grid;
+  place-items: center;
+  min-height: 70px;
+  padding: 16px 24px;
+  border: 1px solid rgba(255, 255, 255, .86);
+  color: #fff;
+  font: 400 clamp(15px, 1.2vw, 18px)/1.4 var(--ux-serif);
+  letter-spacing: .1em;
+  transition: color .28s ease, background-color .28s ease, border-color .28s ease;
+}
+
+.top-location-feature__actions a:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.top-glance--categories-only {
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(28px, 3vw, 46px);
+}
+
+.top-glance--categories-only .top-glance__group--categories {
+  width: min(760px, 100%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .top-location-feature__actions a:hover {
+    border-color: #fff;
+    background: #fff;
+    color: #4a3a2d;
+  }
+}
+
 .top-glance {
   display: grid;
   grid-template-columns: minmax(190px, .72fr) minmax(300px, 1.28fr);
@@ -893,6 +984,11 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
 @media (max-width: 980px) {
   [data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"] .ux-summary { grid-template-columns: 1fr; }
   .top-glance { grid-template-columns: minmax(180px, .72fr) minmax(300px, 1.28fr); }
+  .top-glance--categories-only { grid-template-columns: 1fr; }
+  .top-location-feature {
+    min-height: 590px;
+    background-position: 51% center;
+  }
 }
 
 @media (max-width: 640px) {
@@ -905,4 +1001,37 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   [data-page="top"] section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"],
   [data-page="top"] .ux-lead { font-size: 15px !important; line-height: 2 !important; }
   [data-page="top"] section[data-screen-label="03 SERVICES"] [data-service-row] > span:nth-child(2) > span:last-child { font-size: 15px !important; }
+  .top-location-feature {
+    min-height: 650px;
+    margin-top: 54px;
+    margin-bottom: 72px;
+    padding: 64px 22px;
+    background-position: 69% center;
+  }
+  .top-location-feature::before { background: rgba(38, 25, 15, .42); }
+  .top-location-feature__content { width: 100%; }
+  .top-location-feature__title {
+    font-size: clamp(27px, 8.5vw, 36px);
+    line-height: 1.55;
+    letter-spacing: .035em;
+  }
+  .top-location-feature__copy {
+    margin-top: 24px;
+    font-size: 14px !important;
+    line-height: 2 !important;
+    letter-spacing: .02em;
+  }
+  .top-location-feature__actions {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 38px;
+  }
+  .top-location-feature__actions a {
+    min-height: 62px;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .top-location-feature__actions a { transition: none; }
 }
