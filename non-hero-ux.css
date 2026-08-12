@@ -36,6 +36,17 @@ main[data-screen-label="RESERVE NAVIGATOR"] {
   border-top: 0 !important;
 }
 
+[data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"].ux-section.ux-section--tint {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+@media (max-width: 640px) {
+  [data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"].ux-section.ux-section--tint {
+    padding-top: 0 !important;
+  }
+}
+
 .ux-section {
   background: var(--ux-paper) !important;
   color: var(--ux-ink);
@@ -787,8 +798,10 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   font-weight: 400;
 }
 
-[data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"] {
+[data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"],
+[data-page="top"] section[data-screen-label="NANAIRO AT A GLANCE"].ux-section {
   min-height: 680px;
+  padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
 
@@ -808,7 +821,7 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   place-items: center;
   width: 100vw;
   min-height: clamp(550px, 39vw, 650px);
-  margin: clamp(62px, 7vw, 108px) calc(50% - 50vw) 0;
+  margin: 0 calc(50% - 50vw);
   padding: clamp(54px, 7vw, 104px) var(--ux-gutter);
   overflow: hidden;
   background: #8f7761 url("assets/top-locations-panorama.webp") center center / cover no-repeat;
@@ -1004,7 +1017,6 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   [data-page="top"] section[data-screen-label="03 SERVICES"] [data-service-row] > span:nth-child(2) > span:last-child { font-size: 15px !important; }
   .top-location-feature {
     min-height: 650px;
-    margin-top: 54px;
     padding: 64px 22px;
     background-position: 69% center;
   }
