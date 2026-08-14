@@ -306,8 +306,41 @@ section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/nail-3.
 section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/jagua-decollete.webp"]) { flex-basis: auto !important; width: clamp(125px, 13vw, 190px) !important; transform: translateX(clamp(0px, 2vw, 28px)); }
 section[data-screen-label="02 ABOUT nanairo"] [data-reveal="body"] { font-size: clamp(14px, 1.08vw, 17px) !important; }
 
-section[data-screen-label="03 SERVICES"] { background: var(--ux-milk) !important; }
-section[data-screen-label="03 SERVICES"] > div { width: var(--ux-wide); margin-inline: auto; }
+section[data-screen-label="03 SERVICES"] {
+  background: var(--ux-milk) !important;
+  isolation: isolate;
+}
+section[data-screen-label="03 SERVICES"]::before,
+section[data-screen-label="03 SERVICES"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+section[data-screen-label="03 SERVICES"]::before {
+  z-index: 0;
+  background: url("assets/services-woman-pc.webp") 80% center / cover no-repeat;
+  filter: saturate(.78) brightness(1.035);
+  opacity: .9;
+}
+section[data-screen-label="03 SERVICES"]::after {
+  z-index: 1;
+  background: linear-gradient(
+    90deg,
+    rgba(248, 244, 237, 1) 0%,
+    rgba(248, 244, 237, .99) 36%,
+    rgba(248, 244, 237, .96) 51%,
+    rgba(248, 244, 237, .74) 65%,
+    rgba(248, 244, 237, .34) 78%,
+    rgba(248, 244, 237, .05) 100%
+  );
+}
+section[data-screen-label="03 SERVICES"] > div {
+  position: relative;
+  z-index: 2;
+  width: var(--ux-wide);
+  margin-inline: auto;
+}
 section[data-screen-label="03 SERVICES"] [data-service-list] { border: 0 !important; }
 section[data-screen-label="03 SERVICES"] [data-service-row] {
   position: relative;
@@ -348,6 +381,24 @@ section[data-screen-label="03 SERVICES"] > div:has(> figure) {
   gap: clamp(10px, 1.5vw, 24px) !important;
 }
 section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(even) { transform: translateY(clamp(12px, 2vw, 28px)); }
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  section[data-screen-label="03 SERVICES"]::before {
+    background-position: 80% center;
+    filter: saturate(.72) brightness(1.055);
+    opacity: .66;
+  }
+  section[data-screen-label="03 SERVICES"]::after {
+    background: linear-gradient(
+      90deg,
+      rgba(248, 244, 237, 1) 0%,
+      rgba(248, 244, 237, .99) 44%,
+      rgba(248, 244, 237, .94) 62%,
+      rgba(248, 244, 237, .68) 82%,
+      rgba(248, 244, 237, .42) 100%
+    );
+  }
+}
 
 section[data-screen-label="04 SALONS"] { background: var(--ux-paper) !important; }
 section[data-screen-label="04 SALONS"] > div { width: var(--ux-wide); margin-inline: auto; }
@@ -732,6 +783,18 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   section[data-screen-label="02 ABOUT nanairo"] figure:has(img[src="assets/jagua-decollete.webp"]) { width: min(34vw, 132px) !important; transform: translateX(0); }
   section[data-screen-label="03 SERVICES"] [data-service-row],
   section[data-screen-label="03 SERVICES"] [data-service-row]:nth-child(even) { width: 100%; margin-left: 0; padding: 34px 0 !important; }
+  section[data-screen-label="03 SERVICES"]::before {
+    background-image: url("assets/services-woman-mobile.webp");
+    background-position: 73% top;
+    background-size: auto 58%;
+    filter: saturate(.68) brightness(1.06);
+    opacity: .52;
+  }
+  section[data-screen-label="03 SERVICES"]::after {
+    background:
+      linear-gradient(180deg, rgba(248, 244, 237, .08) 0%, rgba(248, 244, 237, .48) 22%, rgba(248, 244, 237, .9) 43%, rgba(248, 244, 237, 1) 61%),
+      linear-gradient(90deg, rgba(248, 244, 237, .99) 0%, rgba(248, 244, 237, .94) 46%, rgba(248, 244, 237, .62) 100%);
+  }
   section[data-screen-label="03 SERVICES"] [data-service-row]::after { width: 100%; }
   section[data-screen-label="03 SERVICES"] [data-service-en] { font-size: clamp(24px, 8vw, 34px) !important; }
   section[data-screen-label="03 SERVICES"] > div:has(> figure) {
