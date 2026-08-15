@@ -25,6 +25,7 @@
   @keyframes nanairoLogoIn { from { opacity: 0; transform: scale(.82); } to { opacity: 1; transform: scale(1); } }
   @media (prefers-reduced-motion: reduce) { [data-logo] { animation: none !important; opacity: 1 !important; transform: none !important; } }
 </style>
+<link href="services-redesign.css?v=20260815-services-final" rel="stylesheet" />
 </helmet>
 
 <div style="position:relative;background:#FBFAF6;">
@@ -40,190 +41,33 @@
     <a href="RESERVE.dc.html" data-nav="RESERVE" style="padding:11px clamp(12px,1.4vw,20px);border:1px solid #CFC8B8;">RESERVE</a>
   </nav>
 </header>
-
-<section data-screen-label="ESTHETIC HERO" style="padding:clamp(118px,12vw,176px) clamp(18px,3.2vw,52px) clamp(46px,6vw,86px);">
-  <nav aria-label="パンくず" style="margin-bottom:clamp(26px,3vw,44px);font-size:11px;letter-spacing:0.14em;color:#9C9585;display:flex;gap:12px;">
-    <a href="SERVICES.dc.html" data-underline="">SERVICES</a><span>/</span><span>ESTHETIC</span>
-  </nav>
-  <h1 style="margin:0 0 clamp(14px,1.8vw,24px);font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(40px,8vw,132px);line-height:0.98;letter-spacing:0.01em;">
-    <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .62s cubic-bezier(.22,1,.36,1);">ESTHETIC</span></span>
-  </h1>
-  <p data-reveal="label" style="margin:0 0 clamp(30px,3.6vw,52px);font-family:'Shippori Mincho',serif;font-size:clamp(15px,1.5vw,24px);letter-spacing:0.1em;color:#4A453D;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">エステティック</p>
-  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(24px,3vw,64px);">
-    <p data-reveal="body" data-delay="55" style="margin:0;max-width:520px;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.1;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">身体、肌、フェイスライン。<br />目的に合わせて選べる、nanairoのエステティック。</p>
-    <p style="margin:0;font-size:11px;letter-spacing:0.16em;color:#9C9585;">01 / 05</p>
-  </div>
+<main class="service-detail detail-esthetic">
+<section class="detail-hero" data-screen-label="ESTHETIC HERO">
+  <div class="detail-hero__copy"><p class="svc-kicker" data-reveal="label">椎迫 / 片島</p><h1 data-reveal="line">ESTHETIC</h1><p class="detail-hero__jp">エステティック</p><p class="svc-copy" data-reveal="body">身体、肌、フェイスライン。<br />目的に合わせて選べる、nanairoのエステティック。</p></div>
+  <figure class="detail-hero__visual"><img src="assets/service-esthetic-20260815.webp" alt="エステティックの施術イメージ" width="1080" height="1456" fetchpriority="high" decoding="async" /></figure>
 </section>
-
-<section class="ux-section ux-section--tint" data-screen-label="ESTHETIC QUICK GUIDE">
-  <div class="ux-shell ux-summary">
-    <div><p class="ux-kicker">このページで分かること</p><h2 class="ux-title">目的別の施術と、2つの対応サロン。</h2><p class="ux-lead">痩身・小顔・フェイシャルを中心に、椎迫と片島で内容の異なる専門サロンから選べます。</p></div>
-    <div class="ux-location-grid">
-      <article class="ux-location-card"><h3>椎迫</h3><p>BeautySalon nanairo 顧問医師認定サロン</p><div class="ux-tag-list"><span class="ux-tag">痩身</span><span class="ux-tag">小顔</span><span class="ux-tag">フェイシャル</span><span class="ux-tag">脱毛</span><span class="ux-tag">バストケア</span></div><div class="ux-actions"><a class="ux-btn ux-btn--primary" href="https://beauty.hotpepper.jp/kr/slnH000546817/coupon/" target="_blank" rel="noopener">空席・クーポンを見る</a><a class="ux-btn" href="SALONS.dc.html#shiizako">店舗情報を見る</a></div></article>
-      <article class="ux-location-card"><h3>片島</h3><p>ダイエット痩身&amp;小顔フェイシャル nanairo 下郡店</p><div class="ux-tag-list"><span class="ux-tag">痩身</span><span class="ux-tag">小顔</span><span class="ux-tag">フェイシャル</span><span class="ux-tag">バストケア</span></div><div class="ux-actions"><a class="ux-btn ux-btn--primary" href="https://beauty.hotpepper.jp/kr/slnH000675927/coupon/" target="_blank" rel="noopener">空席・クーポンを見る</a><a class="ux-btn" href="SALONS.dc.html#katashima">店舗情報を見る</a></div></article>
-    </div>
-  </div>
+<section class="detail-section" data-screen-label="ABOUT SERVICE">
+  <div class="svc-shell detail-about"><div><p class="svc-kicker" data-reveal="label">ABOUT SERVICE</p><h2 class="svc-heading" data-reveal="line">エステティックについて</h2></div><div><p class="svc-copy" data-reveal="body">痩身やボディケアから、小顔・フェイシャル、脱毛、バストケアまで。悩みや目的に寄り添い、今の自分に必要なケアを選べます。</p><ul class="service-tags" aria-label="対応メニュー"><li>痩身</li><li>ボディ</li><li>小顔</li><li>フェイシャル</li><li>脱毛</li><li>バストケア</li></ul></div></div>
 </section>
-
-<section data-screen-label="CONCEPT" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
-  <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,80px);">
-    <div data-sticky-photo="" style="flex:1 1 380px;min-width:0;">
-      <figure data-reveal="image" style="margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:4/5;background:#F1EEE7;">
-        <img src="assets/esthetic-facial.webp" width="768" height="558" alt="フェイシャル施術中の肌に密着したジェルパック" style="width:100%;height:100%;object-fit:cover;object-position:56% 48%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-      </figure>
-    </div>
-    <div style="flex:1 1 380px;min-width:0;padding-top:clamp(0px,2vw,40px);">
-      <p data-reveal="label" style="margin:0 0 clamp(20px,2.4vw,34px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">CONCEPT</p>
-      <h2 style="margin:0 0 clamp(24px,3vw,44px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(22px,2.7vw,40px);line-height:1.46;">
-        <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">一人ひとりに合わせた、</span></span>
-        <span style="display:block;overflow:hidden;"><span data-reveal="line" data-delay="75" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">美容の選択を。</span></span>
-      </h2>
-      <p data-reveal="body" style="margin:0;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.15;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">痩身・ボディ、小顔・フェイシャル、脱毛、バストケアまで。<br />目的や悩みに合わせた幅広い美容メニューをご用意しています。</p>
-    </div>
-  </div>
+<section class="detail-section detail-section--tint" data-screen-label="AVAILABLE SALONS">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">AVAILABLE SALONS</p><h2 class="svc-heading" data-reveal="line">対応店舗</h2><div class="available-grid"><article class="available-card" data-reveal="card"><p class="svc-kicker">椎迫</p><h3><a href="SALONS.dc.html#shiihasama">BeautySalon nanairo 顧問医師認定サロン</a></h3><p>痩身 / ボディ / 小顔 / フェイシャル / 脱毛 / バストケア</p><a class="svc-text-link" href="#menu-price">メニューを見る <span aria-hidden="true">↓</span></a></article>
+<article class="available-card" data-reveal="card"><p class="svc-kicker">片島</p><h3><a href="SALONS.dc.html#katashima">ダイエット痩身&小顔フェイシャル nanairo</a></h3><p>痩身 / 脂肪冷却 / 小顔 / フェイシャル / 艶肌WAX / バストケア</p><a class="svc-text-link" href="#menu-price">メニューを見る <span aria-hidden="true">↓</span></a></article></div></div>
 </section>
-
-<section data-screen-label="MENU" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;background:#F7F5EF;">
-  <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">MENU</p>
-  <h2 style="margin:0 0 clamp(34px,4.4vw,68px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(24px,3vw,44px);line-height:1.34;">
-    <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">施術メニュー</span></span>
-  </h2>
-
-  <div style="display:flex;flex-wrap:wrap;gap:clamp(26px,3.6vw,72px);">
-    <div data-menu-visual-wrap="" style="flex:0 1 380px;min-width:0;">
-      <div data-menu-visual="" style="position:relative;overflow:hidden;aspect-ratio:3/4;background:#EDE9E1;">
-        <div data-menu-layer="a" style="position:absolute;inset:0;clip-path:inset(0 0 0 0);">
-          <img src="assets/esthetic-machine.webp" width="742" height="550" alt="腹部に装着された脂肪冷却系の施術機器" style="width:100%;height:100%;object-fit:cover;object-position:52% 50%;" />
-        </div>
-        <div data-menu-layer="b" style="position:absolute;inset:0;clip-path:inset(100% 0 0 0);transition:clip-path .58s cubic-bezier(.22,1,.36,1);">
-          <img src="assets/esthetic-facial.webp" width="768" height="558" alt="" style="width:100%;height:100%;object-fit:cover;object-position:56% 48%;" />
-        </div>
-      </div>
-      <p data-menu-caption="" style="margin:12px 0 0;font-size:11px;letter-spacing:0.04em;color:#9C9585;line-height:1.8;">痩身・ボディ｜施術機器</p>
-    </div>
-
-    <div style="flex:1 1 360px;min-width:0;border-top:1px solid #171512;">
-      <div data-menu-row="" data-img="assets/esthetic-machine.webp" data-alt="腹部に装着された脂肪冷却系の施術機器" data-caption="痩身・ボディ｜施術機器" style="border-bottom:1px solid #DED8CD;">
-        <button data-menu-head="" type="button" aria-expanded="false" style="width:100%;display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(18px,2.2vw,30px) 0;background:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;">
-          <span style="flex:0 0 auto;width:clamp(28px,2.4vw,42px);font-family:'Cormorant Garamond',serif;font-size:clamp(11px,0.88vw,13px);color:#9C9585;">01</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(17px,1.9vw,29px);letter-spacing:0.05em;line-height:1.3;">痩身・ボディ</span>
-            <span style="display:block;margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);letter-spacing:0.2em;color:#9C9585;">BODY</span>
-          </span>
-          <span data-menu-mark="" style="flex:0 0 auto;font-family:'Cormorant Garamond',serif;font-size:clamp(14px,1.2vw,18px);color:#8A8376;transition:transform .5s cubic-bezier(.22,.61,.36,1);">＋</span>
-        </button>
-        <div data-menu-panel="" style="overflow:hidden;height:0;transition:height .6s cubic-bezier(.22,.61,.36,1);">
-          <div style="padding:0 0 clamp(22px,2.6vw,34px);display:flex;flex-wrap:wrap;gap:clamp(14px,2vw,26px);">
-            <figure style="flex:1 1 220px;margin:0;overflow:hidden;background:#EDE9E1;">
-              <img src="assets/esthetic-body-ba-back.webp" width="794" height="568" alt="痩身施術の背面ビフォーアフターの提供写真" loading="lazy" style="width:100%;height:auto;display:block;" />
-              <figcaption style="margin-top:8px;font-size:10.5px;color:#9C9585;line-height:1.7;">提供写真（施術例）</figcaption>
-            </figure>
-            <figure style="flex:1 1 220px;margin:0;overflow:hidden;background:#EDE9E1;">
-              <img src="assets/esthetic-body-ba-side.webp" width="788" height="696" alt="痩身施術の横向きビフォーアフターの提供写真" loading="lazy" style="width:100%;height:auto;display:block;" />
-              <figcaption style="margin-top:8px;font-size:10.5px;color:#9C9585;line-height:1.7;">提供写真（施術例）</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div data-menu-row="" data-img="assets/esthetic-facial.webp" data-alt="フェイシャル施術中の肌に密着したジェルパック" data-caption="小顔・フェイシャル｜施術風景" style="border-bottom:1px solid #DED8CD;">
-        <button data-menu-head="" type="button" aria-expanded="false" style="width:100%;display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(18px,2.2vw,30px) 0;background:none;border:0;cursor:pointer;text-align:left;font:inherit;color:inherit;">
-          <span style="flex:0 0 auto;width:clamp(28px,2.4vw,42px);font-family:'Cormorant Garamond',serif;font-size:clamp(11px,0.88vw,13px);color:#9C9585;">02</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(17px,1.9vw,29px);letter-spacing:0.05em;line-height:1.3;">小顔・フェイシャル</span>
-            <span style="display:block;margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);letter-spacing:0.2em;color:#9C9585;">FACE</span>
-          </span>
-          <span data-menu-mark="" style="flex:0 0 auto;font-family:'Cormorant Garamond',serif;font-size:clamp(14px,1.2vw,18px);color:#8A8376;transition:transform .5s cubic-bezier(.22,.61,.36,1);">＋</span>
-        </button>
-        <div data-menu-panel="" style="overflow:hidden;height:0;transition:height .6s cubic-bezier(.22,.61,.36,1);">
-          <div style="padding:0 0 clamp(22px,2.6vw,34px);">
-            <figure style="margin:0;max-width:340px;overflow:hidden;background:#EDE9E1;">
-              <img src="assets/esthetic-facial.webp" width="768" height="558" alt="フェイシャル施術中の肌に密着したジェルパック" loading="lazy" style="width:100%;height:auto;display:block;" />
-              <figcaption style="margin-top:8px;font-size:10.5px;color:#9C9585;line-height:1.7;">提供写真（施術風景）</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-
-      <div data-menu-row="" data-img="" data-caption="脱毛" style="border-bottom:1px solid #DED8CD;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(18px,2.2vw,30px) 0;">
-          <span style="flex:0 0 auto;width:clamp(28px,2.4vw,42px);font-family:'Cormorant Garamond',serif;font-size:clamp(11px,0.88vw,13px);color:#9C9585;">03</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(17px,1.9vw,29px);letter-spacing:0.05em;line-height:1.3;">脱毛</span>
-            <span style="display:block;margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);letter-spacing:0.2em;color:#9C9585;">REMOVAL</span>
-          </span>
-        </div>
-      </div>
-
-      <div data-menu-row="" data-img="" data-caption="バストケア" style="border-bottom:1px solid #DED8CD;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(18px,2.2vw,30px) 0;">
-          <span style="flex:0 0 auto;width:clamp(28px,2.4vw,42px);font-family:'Cormorant Garamond',serif;font-size:clamp(11px,0.88vw,13px);color:#9C9585;">04</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(17px,1.9vw,29px);letter-spacing:0.05em;line-height:1.3;">バストケア</span>
-            <span style="display:block;margin-top:8px;font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);letter-spacing:0.2em;color:#9C9585;">BUST CARE</span>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="detail-section" id="menu-price" data-screen-label="MENU & PRICE">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">MENU &amp; PRICE</p><h2 class="svc-heading" data-reveal="line">メニュー・料金</h2><div class="price-grid"><section class="price-block"><header><div><p class="svc-kicker">椎迫</p><h3>BeautySalon nanairo 顧問医師認定サロン</h3></div></header><div class="price-list"><div class="price-row"><span>最新オーダーメイド痩身施術</span><strong>¥9,900</strong></div><div class="price-row"><span>脂肪冷却4cap＆好きな施術 90分</span><strong>¥9,900</strong></div><div class="price-row"><span>マイクロリフト 頬＋顎下</span><strong>¥11,000</strong></div><div class="price-row"><span>ララピール×MPC高濃度ヒト幹細胞導入</span><strong>¥13,000</strong></div><div class="price-row"><span>艶肌WAX</span><strong>¥8,800</strong></div><div class="price-row"><span>ノンメス豊胸／脂肪増加剤導入</span><strong>¥9,900</strong></div></div></section>
+<section class="price-block"><header><div><p class="svc-kicker">片島</p><h3>ダイエット痩身&小顔フェイシャル nanairo</h3></div></header><div class="price-list"><div class="price-row"><span>キャビゼロ＋脂肪冷却2Cup＋セルライトケア（新規）</span><strong>¥8,800</strong></div><div class="price-row"><span>キャビゼロ＋脂肪冷却2Cup＋セルライトケア（再来）</span><strong>¥9,900</strong></div><div class="price-row"><span>バスト系施術</span><strong>¥9,900</strong></div><div class="price-row"><span>REDSHOT 小顔系</span><strong>¥8,800</strong></div></div></section></div><p class="price-note">※掲載料金は既存情報に基づきます。最新の料金・メニュー・提供条件は各予約ページでご確認ください。</p></div>
 </section>
-
-<section data-screen-label="AVAILABLE SALONS" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
-  <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">AVAILABLE SALONS</p>
-  <h2 style="margin:0 0 clamp(30px,3.8vw,58px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(22px,2.8vw,40px);line-height:1.36;">
-    <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">この施術を受けられる店舗</span></span>
-  </h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,2.4vw,36px);">
-    <a href="SALONS.dc.html#shiizako" data-card="" style="display:block;border-top:1px solid #171512;padding-top:clamp(18px,2.2vw,28px);">
-      <figure data-reveal="image" style="margin:0 0 clamp(18px,2.2vw,26px);overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:16/10;background:#F1EEE7;">
-        <img data-card-img="" src="assets/salon-room.webp" width="784" height="560" alt="間接照明の施術ルーム｜nanairoのサロンイメージ" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 58%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-      </figure>
-      <p style="margin:0 0 8px;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.4vw,22px);letter-spacing:0.08em;">SHIIZAKO</p>
-      <p data-card-title="" style="margin:0 0 12px;font-family:'Shippori Mincho',serif;font-size:clamp(14px,1.2vw,18px);letter-spacing:0.06em;transition:transform .5s cubic-bezier(.22,.61,.36,1);">椎迫</p>
-      <p style="margin:0 0 14px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;">BeautySalon nanairo 顧問医師認定サロン</p>
-      <p style="margin:0 0 10px;font-size:11px;color:#9C9585;line-height:1.8;">※写真はnanairoブランドのサロンイメージです。</p>
-      <span data-arrow="" style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(10.5px,0.85vw,12px);letter-spacing:0.14em;color:#8A8376;">VIEW SALON<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
-    </a>
-    <a href="SALONS.dc.html#katashima" data-card="" style="display:block;border-top:1px solid #171512;padding-top:clamp(18px,2.2vw,28px);">
-      <figure data-reveal="image" data-delay="55" style="margin:0 0 clamp(18px,2.2vw,26px);overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:16/10;background:#F1EEE7;">
-        <img data-card-img="" src="assets/salon-lounge.webp" width="786" height="566" alt="ショーケースとソファのある待合スペース｜nanairoのサロンイメージ" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:44% 52%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-      </figure>
-      <p style="margin:0 0 8px;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.4vw,22px);letter-spacing:0.08em;">KATASHIMA</p>
-      <p data-card-title="" style="margin:0 0 12px;font-family:'Shippori Mincho',serif;font-size:clamp(14px,1.2vw,18px);letter-spacing:0.06em;transition:transform .5s cubic-bezier(.22,.61,.36,1);">片島</p>
-      <p style="margin:0 0 14px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;">ダイエット痩身&amp;小顔フェイシャル nanairo 下郡店</p>
-      <p style="margin:0 0 10px;font-size:11px;color:#9C9585;line-height:1.8;">※写真はnanairoブランドのサロンイメージです。</p>
-      <span data-arrow="" style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(10.5px,0.85vw,12px);letter-spacing:0.14em;color:#8A8376;">VIEW SALON<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
-    </a>
-  </div>
+<section class="detail-section detail-section--tint" data-screen-label="RESERVATION">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">RESERVATION</p><h2 class="svc-heading" data-reveal="line">ご予約</h2><div class="reservation-grid"><a class="reservation-card" href="https://beauty.hotpepper.jp/kr/slnH000546817/coupon/" target="_blank" rel="noopener noreferrer"><span>椎迫</span><strong>HOT PEPPER BEAUTY</strong><small>予約ページへ <span aria-hidden="true">↗</span></small></a>
+<a class="reservation-card" href="https://beauty.hotpepper.jp/kr/slnH000675927/coupon/" target="_blank" rel="noopener noreferrer"><span>片島</span><strong>HOT PEPPER BEAUTY</strong><small>予約ページへ <span aria-hidden="true">↗</span></small></a></div></div>
 </section>
-
-<section data-screen-label="RESERVATION" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;background:#F7F5EF;">
-  <h2 style="margin:0 0 clamp(28px,3.4vw,48px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(26px,3.4vw,50px);line-height:1.3;">
-    <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">ご予約</span></span>
-  </h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,2.4vw,34px);max-width:900px;">
-    <div style="border-top:1px solid #171512;padding-top:clamp(16px,2vw,24px);">
-      <p style="margin:0 0 6px;font-family:'Cormorant Garamond',serif;font-size:clamp(13px,1.1vw,16px);letter-spacing:0.08em;">SHIIZAKO 椎迫</p>
-      <p style="margin:0 0 16px;font-size:11.5px;color:#6D6759;line-height:1.9;">BeautySalon nanairo 顧問医師認定サロン</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;">
-        <a href="https://beauty.hotpepper.jp/kr/slnH000546817/" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">HOT PEPPER</a>
-        <a href="https://www.instagram.com/smile_nanairo" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">INSTAGRAM</a>
-        <a href="https://lin.ee/6MWwoSh" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">LINE</a>
-        <a href="tel:09024507716" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">090-2450-7716</a>
-      </div>
-    </div>
-    <div style="border-top:1px solid #171512;padding-top:clamp(16px,2vw,24px);">
-      <p style="margin:0 0 6px;font-family:'Cormorant Garamond',serif;font-size:clamp(13px,1.1vw,16px);letter-spacing:0.08em;">KATASHIMA 片島</p>
-      <p style="margin:0 0 16px;font-size:11.5px;color:#6D6759;line-height:1.9;">ダイエット痩身&amp;小顔フェイシャル nanairo 下郡店</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;">
-        <a href="https://beauty.hotpepper.jp/kr/slnH000675927/" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">HOT PEPPER</a>
-        <a href="tel:09024507716" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">090-2450-7716</a>
-      </div>
-    </div>
-  </div>
-  <p style="margin:clamp(24px,3vw,40px) 0 0;font-size:11px;color:#9C9585;line-height:1.9;">※料金・営業時間・定休日等は変動する情報のため、ご予約前に各予約ページの最新情報をご確認ください。</p>
+<section class="detail-section" data-screen-label="OTHER SERVICES">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">OTHER SERVICES</p><h2 class="svc-heading" data-reveal="line">ほかの施術を見る</h2><nav class="other-services" aria-label="ほかのサービス"><a class="other-service-link" href="NAIL.dc.html"><span>ネイル</span><strong>NAIL</strong><span aria-hidden="true">↗</span></a>
+<a class="other-service-link" href="EYE.dc.html"><span>アイ</span><strong>EYE</strong><span aria-hidden="true">↗</span></a>
+<a class="other-service-link" href="MENS-BEAUTY.dc.html"><span>メンズ美容</span><strong>MEN’S BEAUTY</strong><span aria-hidden="true">↗</span></a>
+<a class="other-service-link" href="JAGUA-TATTOO.dc.html"><span>ジャグアタトゥー</span><strong>JAGUA TATTOO</strong><span aria-hidden="true">↗</span></a></nav></div>
 </section>
-
+</main>
 <footer data-screen-label="FOOTER" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px) clamp(28px,3vw,44px);border-top:1px solid #E6E2D9;">
   <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(28px,4vw,64px);">
     <div>

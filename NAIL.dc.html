@@ -25,6 +25,7 @@
   @keyframes nanairoLogoIn { from { opacity: 0; transform: scale(.82); } to { opacity: 1; transform: scale(1); } }
   @media (prefers-reduced-motion: reduce) { [data-logo] { animation: none !important; opacity: 1 !important; transform: none !important; } }
 </style>
+<link href="services-redesign.css?v=20260815-services-final" rel="stylesheet" />
 </helmet>
 
 <div style="position:relative;background:#FBFAF6;">
@@ -40,197 +41,33 @@
     <a href="RESERVE.dc.html" data-nav="RESERVE" style="padding:11px clamp(12px,1.4vw,20px);border:1px solid #CFC8B8;">RESERVE</a>
   </nav>
 </header>
-
-<section data-screen-label="NAIL HERO" style="padding:clamp(118px,12vw,176px) clamp(18px,3.2vw,52px) clamp(46px,6vw,86px);">
-  <nav aria-label="パンくず" style="margin-bottom:clamp(26px,3vw,44px);font-size:11px;letter-spacing:0.14em;color:#9C9585;display:flex;gap:12px;">
-    <a href="SERVICES.dc.html" data-underline="">SERVICES</a><span>/</span><span>NAIL</span>
-  </nav>
-  <h1 style="margin:0 0 clamp(14px,1.8vw,24px);font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(36px,7.2vw,118px);line-height:0.98;letter-spacing:0.01em;">
-    <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .62s cubic-bezier(.22,1,.36,1);">NAIL</span></span>
-  </h1>
-  <p data-reveal="label" style="margin:0 0 clamp(30px,3.6vw,52px);font-family:'Shippori Mincho',serif;font-size:clamp(15px,1.5vw,24px);letter-spacing:0.1em;color:#4A453D;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">ネイル</p>
-  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(24px,3vw,64px);">
-    <p data-reveal="body" data-delay="55" style="margin:0;max-width:520px;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.1;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">シンプルからトレンドまで。<br />毎日の気分を、指先から。</p>
-    <p style="margin:0;font-size:11px;letter-spacing:0.16em;color:#9C9585;">02 / 05</p>
-  </div>
+<main class="service-detail detail-nail">
+<section class="detail-hero" data-screen-label="NAIL HERO">
+  <div class="detail-hero__copy"><p class="svc-kicker" data-reveal="label">椎迫 / 片島</p><h1 data-reveal="line">NAIL</h1><p class="detail-hero__jp">ネイル</p><p class="svc-copy" data-reveal="body">シンプルからトレンドまで。<br />毎日の気分を、指先から。</p></div>
+  <figure class="detail-hero__visual"><img src="assets/service-nail-20260815.webp" alt="ネイルの施術イメージ" width="474" height="634" fetchpriority="high" decoding="async" /></figure>
 </section>
-
-<section class="ux-section ux-section--tint" data-screen-label="NAIL QUICK GUIDE">
-  <div class="ux-shell ux-summary">
-    <div><p class="ux-kicker">このページで分かること</p><h2 class="ux-title">ネイルメニューと、2つの対応サロン。</h2><p class="ux-lead">椎迫のNAIL&amp;EYE nanairo、片島のnanairo＋ nail &amp; eyelashで受けられます。</p></div>
-    <div class="ux-location-grid">
-      <article class="ux-location-card"><h3>椎迫</h3><p>NAIL&amp;EYE nanairo</p><div class="ux-tag-list"><span class="ux-tag">ワンカラー</span><span class="ux-tag">マグネット</span><span class="ux-tag">アート</span><span class="ux-tag">フット</span></div><div class="ux-actions"><a class="ux-btn ux-btn--primary" href="https://beauty.hotpepper.jp/kr/slnH000675923/coupon/" target="_blank" rel="noopener">メニュー・料金を見る</a><a class="ux-btn" href="SALONS.dc.html#shiizako">店舗情報を見る</a></div></article>
-      <article class="ux-location-card"><h3>片島</h3><p>nanairo＋ nail &amp; eyelash</p><div class="ux-tag-list"><span class="ux-tag">ワンカラー</span><span class="ux-tag">フルオーダー</span><span class="ux-tag">アート</span></div><div class="ux-actions"><a class="ux-btn ux-btn--primary" href="https://beauty.hotpepper.jp/kr/slnH000717412/coupon/" target="_blank" rel="noopener">メニュー・料金を見る</a><a class="ux-btn" href="SALONS.dc.html#katashima">店舗情報を見る</a></div></article>
-    </div>
-  </div>
+<section class="detail-section" data-screen-label="ABOUT SERVICE">
+  <div class="svc-shell detail-about"><div><p class="svc-kicker" data-reveal="label">ABOUT SERVICE</p><h2 class="svc-heading" data-reveal="line">ネイルについて</h2></div><div><p class="svc-copy" data-reveal="body">ワンカラーやラメグラデーションから、マグネット、フット、フルオーダーまで。日常になじむ指先も、特別な日のデザインもご相談ください。</p><ul class="service-tags" aria-label="対応メニュー"><li>ワンカラー</li><li>ラメグラ</li><li>マグネット</li><li>フラッシュ</li><li>フット</li><li>アート</li></ul></div></div>
 </section>
-
-<section data-screen-label="CONCEPT" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
-  <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,80px);">
-    <div style="flex:1 1 360px;min-width:0;order:2;">
-      <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">CONCEPT</p>
-      <h2 style="margin:0 0 clamp(24px,3vw,44px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(22px,2.7vw,40px);line-height:1.46;"><span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">自分らしさを、指先に。</span></span></h2>
-      <p data-reveal="body" style="margin:0;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.15;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">ワンカラー、マグネット、フレンチ、アート、フット、長さ出しまで。<br />スタイルや好みに合わせてネイルをお選びいただけます。</p>
-    </div>
-    <div data-sticky-photo="" style="flex:0 1 300px;min-width:0;order:3;">
-      <figure data-reveal="image" data-delay="55" style="margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:3/4;background:#F1EEE7;">
-        <img src="assets/nail-1.webp" width="476" height="638" alt="ヌーディカラーに仕上げたネイルとポリッシュボトル" style="width:100%;height:100%;object-fit:cover;object-position:50% 44%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-      </figure>
-    </div>
-  </div>
+<section class="detail-section detail-section--tint" data-screen-label="AVAILABLE SALONS">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">AVAILABLE SALONS</p><h2 class="svc-heading" data-reveal="line">対応店舗</h2><div class="available-grid"><article class="available-card" data-reveal="card"><p class="svc-kicker">椎迫</p><h3><a href="SALONS.dc.html#shiihasama">NAIL&EYE nanairo</a></h3><p>ハンド / フット / トレンドデザイン</p><a class="svc-text-link" href="#menu-price">メニューを見る <span aria-hidden="true">↓</span></a></article>
+<article class="available-card" data-reveal="card"><p class="svc-kicker">片島</p><h3><a href="SALONS.dc.html#katashima">nanairo＋ nail & eyelash</a></h3><p>ハンド / フット / アート / フルオーダー</p><a class="svc-text-link" href="#menu-price">メニューを見る <span aria-hidden="true">↓</span></a></article></div></div>
 </section>
-
-<section data-screen-label="NAIL MENU" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;background:#F7F5EF;">
-  <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">NAIL MENU</p>
-  <h2 style="margin:0 0 clamp(34px,4.4vw,68px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(24px,3vw,44px);line-height:1.34;"><span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">ネイルメニュー</span></span></h2>
-  <div style="display:flex;flex-wrap:wrap-reverse;gap:clamp(26px,3.6vw,72px);">
-    <div style="flex:1 1 340px;min-width:0;border-top:1px solid #171512;">
-      <div data-menu-row="" data-img="nail-1.webp" data-alt="ヌーディベージュのワンカラーネイル" data-caption="ワンカラー｜ベーシックデザイン" style="border-bottom:1px solid #DED8CD;cursor:pointer;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">01</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">ワンカラー</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">ONE COLOR</span>
-          </span>
-        </div>
-      </div>
-      <div data-menu-row="" data-img="nail-3.webp" data-alt="ラメを重ねたピンクベージュのネイル" data-caption="ラメグラデーション｜デザイン例" style="border-bottom:1px solid #DED8CD;cursor:pointer;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">02</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">ラメグラデーション</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">GLITTER GRADATION</span>
-          </span>
-        </div>
-      </div>
-      <div data-menu-row="" data-img="nail-2.webp" data-alt="偏光パールがきらめくミルキーホワイトのネイル" data-caption="マグネット｜デザイン例" style="border-bottom:1px solid #DED8CD;cursor:pointer;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">03</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">マグネット</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">MAGNET</span>
-          </span>
-        </div>
-      </div>
-      <div data-menu-row="" data-img="nail-2.webp" data-alt="オーロラのように光を反射するネイル" data-caption="フラッシュ｜デザイン例" style="border-bottom:1px solid #DED8CD;cursor:pointer;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">04</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">フラッシュ</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">FLASH</span>
-          </span>
-        </div>
-      </div>
-      <div data-menu-row="" data-img="nail-1.webp" data-alt="ミルキーカラーで仕上げた指先" data-caption="フレンチ｜ベーシックデザイン" style="border-bottom:1px solid #DED8CD;cursor:pointer;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">05</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">フレンチ</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">FRENCH</span>
-          </span>
-        </div>
-      </div>
-      <div data-menu-row="" data-img="nail-3.webp" data-alt="フラワーパーツとゴールドラインのネイルアート" data-caption="アート｜デザイン例" style="border-bottom:1px solid #DED8CD;cursor:pointer;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">06</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">アート</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">ART</span>
-          </span>
-        </div>
-      </div>
-      <div data-menu-row="" data-img="nail-3.webp" data-alt="ストーンとパーツをあしらったネイル" data-caption="パーツ｜デザイン例" style="border-bottom:1px solid #DED8CD;cursor:pointer;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">07</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">パーツ</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">PARTS</span>
-          </span>
-        </div>
-      </div>
-      <div data-menu-row="" data-img="" data-alt="" data-caption="フット" style="border-bottom:1px solid #DED8CD;cursor:default;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">08</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">フット</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">FOOT</span>
-          </span>
-        </div>
-      </div>
-      <div data-menu-row="" data-img="" data-alt="" data-caption="長さ出し" style="border-bottom:1px solid #DED8CD;cursor:default;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">09</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">長さ出し</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">EXTENSION</span>
-          </span>
-        </div>
-      </div>
-      <div data-menu-row="" data-img="" data-alt="" data-caption="オフ" style="border-bottom:1px solid #DED8CD;cursor:default;">
-        <div style="display:flex;align-items:baseline;gap:clamp(14px,2vw,32px);padding:clamp(15px,1.8vw,24px) 0;">
-          <span style="flex:0 0 auto;width:clamp(26px,2.2vw,38px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.85vw,12.5px);color:#9C9585;">10</span>
-          <span style="flex:1 1 auto;min-width:0;">
-            <span style="display:block;font-family:'Shippori Mincho',serif;font-size:clamp(16px,1.7vw,26px);letter-spacing:0.05em;line-height:1.32;">オフ</span>
-            <span style="display:block;margin-top:7px;font-family:'Cormorant Garamond',serif;font-size:clamp(10px,0.8vw,12px);letter-spacing:0.2em;color:#9C9585;">OFF</span>
-          </span>
-        </div>
-      </div>
-      <p style="margin:12px 0 0;font-size:11px;color:#766F63;line-height:1.9;">デザイン写真とあわせて、対応メニューをご覧いただけます。</p>
-    </div>
-    <div data-menu-visual-wrap="" style="flex:0 1 340px;min-width:0;">
-      <div data-menu-visual="" style="position:relative;overflow:hidden;aspect-ratio:4/5;background:#EDE9E1;">
-        <div data-menu-layer="a" style="position:absolute;inset:0;clip-path:inset(0 0 0 0);">
-          <img src="assets/nail-2.webp" width="462" height="624" alt="オーロラのようにきらめくミルキーホワイトのネイル" style="width:100%;height:100%;object-fit:cover;object-position:50% 44%;" />
-        </div>
-        <div data-menu-layer="b" style="position:absolute;inset:0;clip-path:inset(100% 0 0 0);transition:clip-path .58s cubic-bezier(.22,1,.36,1);">
-          <img src="assets/nail-1.webp" width="476" height="638" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 44%;" />
-        </div>
-      </div>
-      <p data-menu-caption="" style="margin:12px 0 0;font-size:11px;letter-spacing:0.04em;color:#9C9585;line-height:1.8;">マグネット｜デザイン例</p>
-    </div>
-  </div>
+<section class="detail-section" id="menu-price" data-screen-label="MENU & PRICE">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">MENU &amp; PRICE</p><h2 class="svc-heading" data-reveal="line">メニュー・料金</h2><div class="price-grid"><section class="price-block"><header><div><p class="svc-kicker">椎迫</p><h3>NAIL&EYE nanairo</h3></div></header><div class="price-list"><div class="price-row"><span>新規 ワンカラー / ラメグラ</span><strong>¥4,800</strong></div><div class="price-row"><span>再来 ワンカラー / ラメグラ</span><strong>¥4,600</strong></div><div class="price-row"><span>平日マグネット</span><strong>¥5,000</strong></div><div class="price-row"><span>平日フラッシュ</span><strong>¥5,000</strong></div><div class="price-row"><span>マグネット</span><strong>¥5,800</strong></div><div class="price-row"><span>Jr.ワンカラー / ラメグラ</span><strong>¥2,500</strong></div></div></section>
+<section class="price-block"><header><div><p class="svc-kicker">片島</p><h3>nanairo＋ nail & eyelash</h3></div></header><div class="price-list"><div class="price-row"><span>新規 ワンカラー / ラメグラ</span><strong>¥5,000</strong></div><div class="price-row"><span>平日マグネット</span><strong>¥5,500</strong></div><div class="price-row"><span>平日フットワンカラー</span><strong>¥5,500</strong></div><div class="price-row"><span>新規 パーツ＆アートやり放題120分</span><strong>¥9,500</strong></div><div class="price-row"><span>新規 フルオーダー</span><strong>¥8,500</strong></div></div></section></div><p class="price-note">※掲載料金は既存情報に基づきます。最新の料金・メニュー・提供条件は各予約ページでご確認ください。</p></div>
 </section>
-
-<section data-screen-label="AVAILABLE SALONS" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
-  <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">AVAILABLE SALONS</p>
-  <h2 style="margin:0 0 clamp(30px,3.8vw,58px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(22px,2.8vw,40px);line-height:1.36;"><span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">この施術を受けられる店舗</span></span></h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,2.4vw,36px);"><a href="SALONS.dc.html#shiizako" data-card="" style="display:block;border-top:1px solid #171512;padding-top:clamp(18px,2.2vw,28px);">
-      <figure data-reveal="image" style="margin:0 0 clamp(18px,2.2vw,26px);overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:4/3;background:#F1EEE7;">
-        <img data-card-img="" src="assets/nail-3.webp" width="470" height="632" alt="フラワーパーツとゴールドラインのネイルアート" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 42%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-      </figure>
-      <p style="margin:0 0 8px;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.4vw,22px);letter-spacing:0.08em;">SHIIZAKO</p>
-      <p data-card-title="" style="margin:0 0 12px;font-family:'Shippori Mincho',serif;font-size:clamp(14px,1.2vw,18px);letter-spacing:0.06em;transition:transform .5s cubic-bezier(.22,.61,.36,1);">椎迫</p>
-      <p style="margin:0 0 14px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;">NAIL&amp;EYE nanairo</p>
-      <p style="margin:0 0 10px;font-size:11px;color:#9C9585;line-height:1.8;">※写真は施術デザインのイメージです。</p>
-      <span data-arrow="" style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(10.5px,0.85vw,12px);letter-spacing:0.14em;color:#8A8376;">VIEW SALON<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
-    </a>
-    <a href="SALONS.dc.html#katashima" data-card="" style="display:block;border-top:1px solid #171512;padding-top:clamp(18px,2.2vw,28px);">
-      <figure data-reveal="image" data-delay="55" style="margin:0 0 clamp(18px,2.2vw,26px);overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:4/3;background:#F1EEE7;">
-        <img data-card-img="" src="assets/nail-1.webp" width="476" height="638" alt="ヌーディカラーのネイルとポリッシュボトル" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 46%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-      </figure>
-      <p style="margin:0 0 8px;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.4vw,22px);letter-spacing:0.08em;">KATASHIMA</p>
-      <p data-card-title="" style="margin:0 0 12px;font-family:'Shippori Mincho',serif;font-size:clamp(14px,1.2vw,18px);letter-spacing:0.06em;transition:transform .5s cubic-bezier(.22,.61,.36,1);">片島</p>
-      <p style="margin:0 0 14px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;">nanairo＋ nail &amp; eyelash</p>
-      <p style="margin:0 0 10px;font-size:11px;color:#9C9585;line-height:1.8;">※写真は施術デザインのイメージです。</p>
-      <span data-arrow="" style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(10.5px,0.85vw,12px);letter-spacing:0.14em;color:#8A8376;">VIEW SALON<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
-    </a></div>
+<section class="detail-section detail-section--tint" data-screen-label="RESERVATION">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">RESERVATION</p><h2 class="svc-heading" data-reveal="line">ご予約</h2><div class="reservation-grid"><a class="reservation-card" href="https://beauty.hotpepper.jp/kr/slnH000675923/coupon/" target="_blank" rel="noopener noreferrer"><span>椎迫</span><strong>HOT PEPPER BEAUTY</strong><small>予約ページへ <span aria-hidden="true">↗</span></small></a>
+<a class="reservation-card" href="https://beauty.hotpepper.jp/kr/slnH000717412/coupon/" target="_blank" rel="noopener noreferrer"><span>片島</span><strong>HOT PEPPER BEAUTY</strong><small>予約ページへ <span aria-hidden="true">↗</span></small></a></div></div>
 </section>
-
-<section data-screen-label="RESERVATION" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;background:#F7F5EF;">
-  <h2 style="margin:0 0 clamp(28px,3.4vw,48px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(26px,3.4vw,50px);line-height:1.3;"><span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">ご予約</span></span></h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(16px,2.4vw,34px);max-width:900px;"><div style="border-top:1px solid #171512;padding-top:clamp(16px,2vw,24px);">
-      <p style="margin:0 0 6px;font-family:'Cormorant Garamond',serif;font-size:clamp(13px,1.1vw,16px);letter-spacing:0.08em;">SHIIZAKO 椎迫</p>
-      <p style="margin:0 0 16px;font-size:11.5px;color:#6D6759;line-height:1.9;">NAIL&amp;EYE nanairo 椎迫店</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;"><a href="https://beauty.hotpepper.jp/kr/slnH000675923/" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">HOT PEPPER</a><a href="https://www.instagram.com/nanairo__nail.eye" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">INSTAGRAM</a><a href="https://lin.ee/OEAdZAL" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">LINE</a><a href="tel:09024507716" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">090-2450-7716</a></div>
-    </div>
-    <div style="border-top:1px solid #171512;padding-top:clamp(16px,2vw,24px);">
-      <p style="margin:0 0 6px;font-family:'Cormorant Garamond',serif;font-size:clamp(13px,1.1vw,16px);letter-spacing:0.08em;">KATASHIMA 片島</p>
-      <p style="margin:0 0 16px;font-size:11.5px;color:#6D6759;line-height:1.9;">nanairo＋ nail &amp; eyelash 片島店</p>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;"><a href="https://beauty.hotpepper.jp/kr/slnH000717412/" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">HOT PEPPER</a><a href="https://www.instagram.com/beautysalon_nanairo_" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">INSTAGRAM</a><a href="https://lin.ee/ZAmiLjC" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">LINE</a><a href="tel:0975600936" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">097-560-0936</a></div>
-    </div></div>
-  <p style="margin:clamp(24px,3vw,40px) 0 0;font-size:11px;color:#9C9585;line-height:1.9;">※料金・営業時間・定休日等は変動する情報のため、ご予約前に各予約ページの最新情報をご確認ください。</p>
+<section class="detail-section" data-screen-label="OTHER SERVICES">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">OTHER SERVICES</p><h2 class="svc-heading" data-reveal="line">ほかの施術を見る</h2><nav class="other-services" aria-label="ほかのサービス"><a class="other-service-link" href="ESTHETIC.dc.html"><span>エステティック</span><strong>ESTHETIC</strong><span aria-hidden="true">↗</span></a>
+<a class="other-service-link" href="EYE.dc.html"><span>アイ</span><strong>EYE</strong><span aria-hidden="true">↗</span></a>
+<a class="other-service-link" href="MENS-BEAUTY.dc.html"><span>メンズ美容</span><strong>MEN’S BEAUTY</strong><span aria-hidden="true">↗</span></a>
+<a class="other-service-link" href="JAGUA-TATTOO.dc.html"><span>ジャグアタトゥー</span><strong>JAGUA TATTOO</strong><span aria-hidden="true">↗</span></a></nav></div>
 </section>
-
+</main>
 <footer data-screen-label="FOOTER" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px) clamp(28px,3vw,44px);border-top:1px solid #E6E2D9;">
   <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(28px,4vw,64px);">
     <div>

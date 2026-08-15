@@ -1,0 +1,177 @@
+.services-page,
+.service-detail {
+  --svc-ink: #171512;
+  --svc-muted: #70695d;
+  --svc-line: #ded8cc;
+  --svc-paper: #fbfaf6;
+  --svc-tint: #f4f0e8;
+  --svc-greige: #aaa49a;
+  color: var(--svc-ink);
+}
+
+.services-page *,
+.service-detail * { box-sizing: border-box; }
+
+.svc-shell { width: min(calc(100% - 36px), 1440px); margin-inline: auto; }
+.svc-section { padding-block: clamp(78px, 9vw, 148px); }
+.svc-kicker { margin: 0 0 20px; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .24em; color: #8a8376; }
+.svc-heading { margin: 0; font-family: "Shippori Mincho", serif; font-size: clamp(30px, 4vw, 62px); font-weight: 400; line-height: 1.48; letter-spacing: .04em; }
+.svc-copy { margin: 0; font-size: clamp(13px, 1.05vw, 15px); line-height: 2.15; color: var(--svc-muted); }
+
+.services-hero {
+  position: relative;
+  min-height: clamp(580px, 68vh, 760px);
+  display: flex;
+  align-items: center;
+  background: url("assets/services-hero-20260815.webp") 66% center / cover no-repeat;
+  isolation: isolate;
+}
+.services-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(251,250,246,.95) 0%, rgba(251,250,246,.76) 33%, rgba(251,250,246,.14) 58%, transparent 74%); }
+.services-hero__content { width: min(calc(100% - 36px), 1440px); margin-inline: auto; padding-top: clamp(112px, 10vw, 150px); }
+.services-hero h1 { max-width: 690px; }
+.services-hero .svc-copy { max-width: 590px; margin-top: 30px; color: #514b42; }
+
+.total-beauty { background: var(--svc-paper); }
+.total-beauty__intro { display: grid; grid-template-columns: minmax(0, .95fr) minmax(360px, .72fr); justify-content: space-between; gap: clamp(50px, 8vw, 140px); align-items: end; }
+.total-beauty__intro .svc-copy { padding-bottom: 8px; }
+.category-nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(18px, 2.8vw, 46px); margin-top: clamp(70px, 8vw, 120px); }
+.category-nav__item { min-width: 0; text-align: center; }
+.category-nav__circle { width: min(100%, 205px); aspect-ratio: 1; margin-inline: auto; display: grid; place-items: center; border-radius: 50%; background: var(--svc-greige); color: #fff; transition: background .35s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+.category-nav__circle svg { width: 57%; height: 57%; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s cubic-bezier(.22,1,.36,1); }
+.category-nav__item:hover { color: var(--svc-ink); }
+.category-nav__item:hover .category-nav__circle { background: #969087; transform: scale(1.02); }
+.category-nav__item:hover svg { transform: translateY(-2px); }
+.category-nav__item strong { display: block; margin: 20px 0 7px; font-family: "Cormorant Garamond", serif; font-size: clamp(17px, 1.5vw, 24px); font-weight: 400; letter-spacing: .04em; }
+.category-nav__item > span:last-child { display: block; margin: 0; font-size: 12px; letter-spacing: .08em; }
+
+.service-visuals { padding-bottom: clamp(90px, 11vw, 170px); }
+.service-visuals__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 2.7vw, 44px); }
+.service-visual-card { position: relative; min-height: clamp(440px, 47vw, 680px); overflow: hidden; background: #e9e4da; color: #fff; }
+.service-visual-card:last-child { grid-column: 1 / -1; width: calc(50% - clamp(10px, 1.35vw, 22px)); justify-self: center; }
+.service-visual-card img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .75s cubic-bezier(.22,1,.36,1); }
+.service-visual-card::after { content: ""; position: absolute; inset: 44% 0 0; background: linear-gradient(transparent, rgba(20,16,12,.58)); pointer-events: none; }
+.service-visual-card__body { position: absolute; left: clamp(22px, 3vw, 48px); right: 22px; bottom: clamp(24px, 3vw, 46px); z-index: 1; }
+.service-visual-card__body > span { display: block; margin: 0 0 9px; font-size: 12px; letter-spacing: .16em; }
+.service-visual-card h3 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(30px, 4vw, 62px); font-weight: 400; line-height: 1; letter-spacing: .04em; }
+.service-visual-card small { display: inline-block; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 10px; letter-spacing: .14em; }
+.service-visual-card:hover { color: #fff; }
+.service-visual-card:hover img { transform: scale(1.025); }
+.service-visual-card--nail img { object-position: center 42%; }
+.service-visual-card--eye img { object-position: center; }
+.service-visual-card--mens img { object-position: center 46%; }
+.service-visual-card--jagua img { object-position: center; }
+
+.detail-hero { min-height: clamp(620px, 72vh, 820px); display: grid; grid-template-columns: minmax(330px, .82fr) minmax(0, 1.18fr); background: var(--svc-tint); padding-top: clamp(104px, 9vw, 138px); }
+.detail-hero__copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(48px, 6vw, 100px); }
+.detail-hero__area { margin: 0 0 20px; font-size: 12px; letter-spacing: .18em; color: var(--svc-muted); }
+.detail-hero h1 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(44px, 6vw, 94px); font-weight: 300; line-height: .98; letter-spacing: .03em; }
+.detail-hero__jp { margin: 22px 0 0; font-family: "Shippori Mincho", serif; font-size: clamp(18px, 1.6vw, 25px); letter-spacing: .08em; }
+.detail-hero .svc-copy { margin-top: clamp(34px, 4vw, 58px); max-width: 520px; }
+.detail-hero__visual { min-width: 0; min-height: 540px; overflow: hidden; }
+.detail-hero__visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.detail-esthetic .detail-hero__visual img { object-position: center 52%; }
+.detail-nail .detail-hero__visual img { object-position: center 44%; }
+.detail-eye .detail-hero__visual img { object-position: center; }
+.detail-mens .detail-hero__visual img { object-position: center 46%; }
+.detail-jagua .detail-hero__visual img { object-position: center; }
+
+.detail-section { padding-block: clamp(76px, 9vw, 140px); border-top: 1px solid var(--svc-line); }
+.detail-section--tint { background: var(--svc-tint); }
+.detail-about { display: grid; grid-template-columns: minmax(240px, .55fr) minmax(0, 1fr); gap: clamp(38px, 7vw, 120px); align-items: start; }
+.detail-section__head { display: grid; grid-template-columns: minmax(240px, .55fr) minmax(0, 1fr); gap: clamp(38px, 7vw, 120px); align-items: start; }
+.detail-section__title { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(31px, 3.6vw, 56px); font-weight: 400; line-height: 1.1; letter-spacing: .03em; }
+.service-tags { display: flex; flex-wrap: wrap; gap: 0; margin: 35px 0 0; padding: 0; border-top: 1px solid var(--svc-line); list-style: none; }
+.service-tags li { padding: 14px 22px 14px 0; margin-right: 22px; border-bottom: 1px solid var(--svc-line); font-size: 13px; color: var(--svc-muted); }
+
+.available-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin-top: 48px; border-top: 1px solid var(--svc-line); border-left: 1px solid var(--svc-line); }
+.available-grid--single { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
+.available-card { display: flex; flex-direction: column; min-height: 310px; padding: clamp(28px, 3.5vw, 52px); border-right: 1px solid var(--svc-line); border-bottom: 1px solid var(--svc-line); }
+.available-card__area { margin: 0 0 18px; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .18em; color: #8a8376; }
+.available-card h3 { margin: 0 0 20px; font-family: "Shippori Mincho", serif; font-size: clamp(18px, 1.55vw, 24px); font-weight: 400; line-height: 1.65; }
+.available-card p { margin: 0; font-size: 13px; line-height: 1.95; color: var(--svc-muted); }
+.svc-text-link { margin-top: auto; padding-top: 28px; align-self: flex-start; border-bottom: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; }
+
+.price-grid { display: grid; gap: clamp(54px, 7vw, 94px); margin-top: 52px; }
+.price-block { display: grid; grid-template-columns: minmax(230px, .42fr) minmax(0, 1fr); gap: clamp(38px, 6vw, 100px); align-items: start; }
+.price-block__meta { position: sticky; top: 130px; }
+.price-block__area { margin: 0 0 12px; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .18em; color: #8a8376; }
+.price-block h3 { margin: 0; font-family: "Shippori Mincho", serif; font-size: clamp(18px, 1.6vw, 25px); font-weight: 400; line-height: 1.65; }
+.price-list { border-top: 1px solid var(--svc-ink); }
+.price-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 25px; padding: 17px 0; border-bottom: 1px solid var(--svc-line); font-size: 13px; line-height: 1.7; }
+.price-row strong { font-weight: 400; white-space: nowrap; }
+.price-note { margin: 18px 0 0; font-size: 11px; line-height: 1.9; color: #8a8376; }
+.price-link, .reserve-link { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 58px; margin-top: 25px; padding: 15px 18px; border: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; transition: background .3s ease, color .3s ease; }
+.price-link:hover, .reserve-link:hover { color: #fff; background: var(--svc-ink); }
+
+.reservation-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid var(--svc-line); border-left: 1px solid var(--svc-line); margin-top: 46px; }
+.reservation-grid--single { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
+.reservation-card { padding: clamp(28px, 3.5vw, 48px); border-right: 1px solid var(--svc-line); border-bottom: 1px solid var(--svc-line); }
+.reservation-card > span { display: block; margin: 0 0 10px; font-size: 12px; letter-spacing: .16em; color: #8a8376; }
+.reservation-card > strong { display: block; font-family: "Cormorant Garamond", serif; font-size: clamp(24px, 2.4vw, 38px); font-weight: 400; letter-spacing: .04em; }
+.reservation-card > small { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 58px; margin-top: 25px; padding: 15px 18px; border: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; transition: background .3s ease, color .3s ease; }
+.reservation-card:hover > small { color: #fff; background: var(--svc-ink); }
+.reservation-card__area { margin: 0 0 10px; font-size: 12px; letter-spacing: .16em; color: #8a8376; }
+.reservation-card h3 { margin: 0; font-family: "Shippori Mincho", serif; font-size: clamp(17px, 1.4vw, 22px); font-weight: 400; line-height: 1.6; }
+.reservation-card .reserve-link { margin-top: 24px; }
+.reservation-card__sub { display: inline-block; margin-top: 15px; padding-bottom: 5px; border-bottom: 1px solid var(--svc-ink); font-size: 12px; }
+
+.other-services { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 46px; border-top: 1px solid var(--svc-line); }
+.other-service-link { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1fr) auto; align-items: center; gap: 18px; padding: 22px 0; border-bottom: 1px solid var(--svc-line); }
+.other-service-link:nth-child(odd) { padding-right: 28px; }
+.other-service-link:nth-child(even) { padding-left: 28px; }
+.other-service-link > span:first-child { font-size: 12px; color: var(--svc-muted); }
+.other-service-link strong { font-family: "Cormorant Garamond", serif; font-size: clamp(19px, 2vw, 30px); font-weight: 400; }
+.other-services__links { border-top: 1px solid var(--svc-line); }
+.other-services__links a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--svc-line); font-family: "Cormorant Garamond", serif; font-size: clamp(19px, 2vw, 30px); }
+.other-services__links a span { transition: transform .3s ease; }
+.other-services__links a:hover span { transform: translateX(5px); }
+
+@media (max-width: 1100px) {
+  .category-nav { grid-template-columns: repeat(3, minmax(0, 1fr)); justify-content: center; }
+  .category-nav__item:nth-child(4) { grid-column: 1 / 2; transform: translateX(50%); }
+  .category-nav__item:nth-child(5) { grid-column: 2 / 3; transform: translateX(50%); }
+  .category-nav__item:hover:nth-child(n+4) { color: var(--svc-ink); }
+  .service-visual-card { min-height: 520px; }
+  .detail-hero { grid-template-columns: minmax(300px, .92fr) minmax(0, 1.08fr); }
+  .detail-hero__copy { padding: 46px; }
+}
+
+@media (max-width: 767px) {
+  .svc-shell { width: min(calc(100% - 36px), 1440px); }
+  .svc-section { padding-block: 76px; }
+  .services-hero { min-height: 620px; background-position: 68% center; align-items: flex-end; }
+  .services-hero::after { background: linear-gradient(90deg, rgba(251,250,246,.93) 0%, rgba(251,250,246,.72) 46%, rgba(251,250,246,.08) 78%); }
+  .services-hero__content { padding: 145px 0 64px; }
+  .services-hero h1 { max-width: 270px; font-size: 36px; }
+  .services-hero .svc-copy { max-width: 255px; font-size: 12.5px; line-height: 2; }
+  .total-beauty__intro { grid-template-columns: 1fr; gap: 30px; }
+  .category-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 18px; margin-top: 56px; }
+  .category-nav__item:nth-child(4) { grid-column: auto; transform: none; }
+  .category-nav__item:nth-child(5) { grid-column: 1 / -1; width: calc(50% - 9px); justify-self: center; transform: none; }
+  .category-nav__circle { width: min(100%, 150px); }
+  .category-nav__item strong { margin-top: 14px; font-size: 18px; }
+  .service-visuals__grid { grid-template-columns: 1fr; }
+  .service-visual-card, .service-visual-card:last-child { grid-column: auto; width: 100%; min-height: 500px; }
+  .service-visual-card h3 { font-size: 38px; }
+  .detail-hero { min-height: 0; display: flex; flex-direction: column-reverse; padding-top: 94px; }
+  .detail-hero__copy { padding: 44px 18px 58px; }
+  .detail-hero__visual { min-height: 0; height: 58vh; max-height: 580px; }
+  .detail-hero h1 { font-size: clamp(48px, 15vw, 66px); }
+  .detail-section { padding-block: 76px; }
+  .detail-section__head, .detail-about { grid-template-columns: 1fr; gap: 28px; }
+  .available-grid, .available-grid--single { grid-template-columns: 1fr; }
+  .available-card { min-height: 280px; }
+  .price-grid { gap: 70px; }
+  .price-block { grid-template-columns: 1fr; gap: 26px; }
+  .price-block__meta { position: static; }
+  .price-row { grid-template-columns: 1fr; gap: 4px; padding: 15px 0; }
+  .price-row strong { color: var(--svc-muted); }
+  .price-link, .reserve-link { width: 100%; min-height: 60px; }
+  .reservation-grid, .reservation-grid--single { grid-template-columns: 1fr; }
+  .other-services { grid-template-columns: 1fr; }
+  .other-service-link:nth-child(n) { padding-inline: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .category-nav__circle, .category-nav__circle svg, .service-visual-card img, .price-link, .reserve-link { transition: none !important; }
+}

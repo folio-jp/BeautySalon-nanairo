@@ -25,6 +25,7 @@
   @keyframes nanairoLogoIn { from { opacity: 0; transform: scale(.82); } to { opacity: 1; transform: scale(1); } }
   @media (prefers-reduced-motion: reduce) { [data-logo] { animation: none !important; opacity: 1 !important; transform: none !important; } }
 </style>
+<link href="services-redesign.css?v=20260815-services-final" rel="stylesheet" />
 </helmet>
 
 <div style="position:relative;background:#FBFAF6;">
@@ -40,94 +41,32 @@
     <a href="RESERVE.dc.html" data-nav="RESERVE" style="padding:11px clamp(12px,1.4vw,20px);border:1px solid #CFC8B8;">RESERVE</a>
   </nav>
 </header>
-
-<section data-screen-label="JAGUA TATTOO HERO" style="padding:clamp(118px,12vw,176px) clamp(18px,3.2vw,52px) clamp(46px,6vw,86px);">
-  <nav aria-label="パンくず" style="margin-bottom:clamp(26px,3vw,44px);font-size:11px;letter-spacing:0.14em;color:#9C9585;display:flex;gap:12px;">
-    <a href="SERVICES.dc.html" data-underline="">SERVICES</a><span>/</span><span>JAGUA TATTOO</span>
-  </nav>
-  <h1 style="margin:0 0 clamp(14px,1.8vw,24px);font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(36px,7.2vw,118px);line-height:0.98;letter-spacing:0.01em;">
-    <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .62s cubic-bezier(.22,1,.36,1);">JAGUA TATTOO</span></span>
-  </h1>
-  <p data-reveal="label" style="margin:0 0 clamp(30px,3.6vw,52px);font-family:'Shippori Mincho',serif;font-size:clamp(15px,1.5vw,24px);letter-spacing:0.1em;color:#4A453D;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">ジャグアタトゥー</p>
-  <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(24px,3vw,64px);">
-    <p data-reveal="body" data-delay="55" style="margin:0;max-width:520px;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.1;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">約2週間楽しめる、<br />彫らないボディアート。</p>
-    <p style="margin:0;font-size:11px;letter-spacing:0.16em;color:#9C9585;">05 / 05</p>
-  </div>
+<main class="service-detail detail-jagua">
+<section class="detail-hero" data-screen-label="JAGUA TATTOO HERO">
+  <div class="detail-hero__copy"><p class="svc-kicker" data-reveal="label">椎迫 / 片島</p><h1 data-reveal="line">JAGUA TATTOO</h1><p class="detail-hero__jp">ジャグアタトゥー</p><p class="svc-copy" data-reveal="body">約2週間楽しめる、<br />彫らないボディアート。</p></div>
+  <figure class="detail-hero__visual"><img src="assets/service-jagua-20260815.webp" alt="ジャグアタトゥーの施術イメージ" width="478" height="472" fetchpriority="high" decoding="async" /></figure>
 </section>
-
-<section class="ux-section ux-section--tint" data-screen-label="JAGUA QUICK GUIDE">
-  <div class="ux-shell ux-summary">
-    <div><p class="ux-kicker">このページで分かること</p><h2 class="ux-title">約2週間楽しむ、予約制のボディアート。</h2><p class="ux-lead">オーダーデザインのジャグアタトゥーを椎迫・片島の2拠点で受けられます。予約相談は専用LINEから。</p></div>
-    <article class="ux-location-card"><h3>椎迫・片島</h3><p>ジャグアタトゥー nanairo</p><div class="ux-tag-list"><span class="ux-tag">オーダーデザイン</span><span class="ux-tag">約2週間</span><span class="ux-tag">完全予約制</span></div><div class="ux-actions"><a class="ux-btn ux-btn--primary" href="https://lin.ee/tGjqGer" target="_blank" rel="noopener">LINEで予約相談する</a><a class="ux-btn" href="SALONS.dc.html">2拠点の場所を見る</a></div></article>
-  </div>
+<section class="detail-section" data-screen-label="ABOUT SERVICE">
+  <div class="svc-shell detail-about"><div><p class="svc-kicker" data-reveal="label">ABOUT SERVICE</p><h2 class="svc-heading" data-reveal="line">ジャグアタトゥーについて</h2></div><div><p class="svc-copy" data-reveal="body">植物由来のインクで肌の角質層を染める、約2週間のボディアート。日常のアクセントや、特別な日のデザインを完全予約制で承ります。</p><ul class="service-tags" aria-label="対応メニュー"><li>オーダーデザイン</li><li>約2週間</li><li>植物由来インク</li><li>完全予約制</li></ul></div></div>
 </section>
-
-<section data-screen-label="CONCEPT" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
-  <div style="display:flex;flex-wrap:wrap;gap:clamp(28px,4vw,80px);">
-    <div data-sticky-photo="" style="flex:1 1 420px;min-width:0;">
-      <figure data-reveal="image" style="margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:1/1;background:#F1EEE7;">
-        <img src="assets/jagua-decollete.webp" width="472" height="470" alt="デコルテに描かれた月と星のジャグアタトゥー" style="width:100%;height:100%;object-fit:cover;object-position:50% 58%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-      </figure>
-    </div>
-    <div style="flex:1 1 340px;min-width:0;padding-top:clamp(0px,2vw,40px);">
-      <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">CONCEPT</p>
-      <h2 style="margin:0 0 clamp(24px,3vw,44px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(22px,2.7vw,40px);line-height:1.46;"><span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">そのときだけのデザインを、</span></span><span style="display:block;overflow:hidden;"><span data-reveal="line" data-delay="75" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">肌に。</span></span></h2>
-      <p data-reveal="body" style="margin:0;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.15;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">オーダーデザインで楽しむジャグアタトゥー。<br />椎迫・片島の2拠点で展開しています。</p>
-    </div>
-  </div>
+<section class="detail-section detail-section--tint" data-screen-label="AVAILABLE SALONS">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">AVAILABLE SALONS</p><h2 class="svc-heading" data-reveal="line">対応店舗</h2><div class="available-grid"><article class="available-card" data-reveal="card"><p class="svc-kicker">椎迫</p><h3><a href="SALONS.dc.html#shiihasama">ジャグアタトゥー</a></h3><p>オーダーデザイン / 完全予約制</p><a class="svc-text-link" href="#menu-price">メニューを見る <span aria-hidden="true">↓</span></a></article>
+<article class="available-card" data-reveal="card"><p class="svc-kicker">片島</p><h3><a href="SALONS.dc.html#katashima">ジャグアタトゥー</a></h3><p>オーダーデザイン / 完全予約制</p><a class="svc-text-link" href="#menu-price">メニューを見る <span aria-hidden="true">↓</span></a></article></div></div>
 </section>
-
-<section data-screen-label="DESIGN" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;background:#F7F5EF;">
-  <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">DESIGN</p>
-  <h2 style="margin:0 0 clamp(20px,2.4vw,32px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(24px,3vw,44px);line-height:1.34;"><span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">オーダーデザイン</span></span></h2>
-  <p data-reveal="body" style="margin:0;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.15;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">希望するイメージに合わせてデザイン。</p>
-  <div style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(18px,2.6vw,44px);margin-top:clamp(30px,3.8vw,56px);">
-    <figure data-card="" style="flex:1 1 340px;margin:0;overflow:hidden;">
-      <div data-reveal="image" style="overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:1/1;background:#EDE9E1;">
-        <img data-card-img="" src="assets/jagua-arm.webp" width="476" height="470" alt="二の腕に描かれた月と星のジャグアタトゥー" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:38% 45%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-      </div>
-      <figcaption style="margin-top:10px;font-size:11px;color:#9C9585;line-height:1.8;">二の腕｜月と星のデザイン</figcaption>
-    </figure>
-    <figure data-card="" style="flex:0 1 230px;margin:clamp(24px,4vw,80px) 0 0;overflow:hidden;">
-      <div data-reveal="image" data-delay="90" style="overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:4/5;background:#EDE9E1;">
-        <img data-card-img="" src="assets/jagua-decollete.webp" width="472" height="470" alt="デコルテに描かれた星と月の小さなジャグアタトゥー" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:52% 62%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
-      </div>
-      <figcaption style="margin-top:10px;font-size:11px;color:#9C9585;line-height:1.8;">デコルテ｜繊細な小さめデザイン</figcaption>
-    </figure>
-    <div style="flex:0 1 200px;padding-top:clamp(10px,3vw,60px);">
-      <p style="margin:12px 0 0;font-size:11px;color:#9C9585;line-height:1.9;">※掲載写真は過去のデザイン例です。デザイン・部位・仕上がりはご相談のうえ決定します。</p>
-    </div>
-  </div>
+<section class="detail-section" id="menu-price" data-screen-label="MENU & PRICE">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">MENU &amp; PRICE</p><h2 class="svc-heading" data-reveal="line">メニュー・料金</h2><div class="price-grid"><section class="price-block"><header><div><p class="svc-kicker">椎迫 / 片島</p><h3>ジャグアタトゥー</h3></div></header><div class="price-list"><div class="price-row"><span>オーダーデザイン</span><strong>デザイン・部位・料金はご相談のうえ決定</strong></div><div class="price-row"><span>約2週間楽しめるボディアート</span><strong>ご相談ください</strong></div><div class="price-row"><span>完全予約制</span><strong>LINEからご予約ください</strong></div></div></section></div><p class="price-note">※掲載料金は既存情報に基づきます。最新の料金・メニュー・提供条件は各予約ページでご確認ください。</p></div>
 </section>
-
-<section data-screen-label="AVAILABLE SALONS" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
-  <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">AVAILABLE SALONS</p>
-  <h2 style="margin:0 0 clamp(30px,3.8vw,58px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(22px,2.8vw,40px);line-height:1.36;"><span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">この施術を受けられる店舗</span></span></h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(18px,2.4vw,36px);">
-    <a href="SALONS.dc.html#shiizako" data-card="" style="display:block;border-top:1px solid #171512;padding-top:clamp(18px,2.2vw,28px);">
-      <p style="margin:0 0 8px;font-family:'Cormorant Garamond',serif;font-size:clamp(18px,1.8vw,28px);letter-spacing:0.08em;">SHIIZAKO</p>
-      <p data-card-title="" style="margin:0 0 12px;font-family:'Shippori Mincho',serif;font-size:clamp(14px,1.2vw,18px);letter-spacing:0.06em;transition:transform .5s cubic-bezier(.22,.61,.36,1);">椎迫</p>
-      <p style="margin:0 0 16px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;">ジャグアタトゥー 椎迫店</p>
-      <span data-arrow="" style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(10.5px,0.85vw,12px);letter-spacing:0.14em;color:#8A8376;">VIEW SALON<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
-    </a>
-    <a href="SALONS.dc.html#katashima" data-card="" style="display:block;border-top:1px solid #171512;padding-top:clamp(18px,2.2vw,28px);">
-      <p style="margin:0 0 8px;font-family:'Cormorant Garamond',serif;font-size:clamp(18px,1.8vw,28px);letter-spacing:0.08em;">KATASHIMA</p>
-      <p data-card-title="" style="margin:0 0 12px;font-family:'Shippori Mincho',serif;font-size:clamp(14px,1.2vw,18px);letter-spacing:0.06em;transition:transform .5s cubic-bezier(.22,.61,.36,1);">片島</p>
-      <p style="margin:0 0 16px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;">ジャグアタトゥー 下郡店<br /><span style="color:#9C9585;font-size:11px;">※「下郡店」という名称ですが、所在地は大分市片島59-1です。</span></p>
-      <span data-arrow="" style="display:inline-flex;align-items:center;gap:10px;font-size:clamp(10.5px,0.85vw,12px);letter-spacing:0.14em;color:#8A8376;">VIEW SALON<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
-    </a>
-  </div>
+<section class="detail-section detail-section--tint" data-screen-label="RESERVATION">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">RESERVATION</p><h2 class="svc-heading" data-reveal="line">ご予約</h2><div class="reservation-grid"><a class="reservation-card" href="https://lin.ee/tGjqGer" target="_blank" rel="noopener noreferrer"><span>椎迫 / 片島</span><strong>LINE</strong><small>予約ページへ <span aria-hidden="true">↗</span></small></a>
+<a class="reservation-card" href="https://www.instagram.com/nanairo_jagua.tattoo" target="_blank" rel="noopener noreferrer"><span>作品・最新情報</span><strong>INSTAGRAM</strong><small>予約ページへ <span aria-hidden="true">↗</span></small></a></div></div>
 </section>
-
-<section data-screen-label="RESERVATION" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;background:#F7F5EF;">
-  <h2 style="margin:0 0 clamp(28px,3.4vw,48px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(26px,3.4vw,50px);line-height:1.3;"><span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">ご予約</span></span></h2>
-  <div style="max-width:620px;border-top:1px solid #171512;padding-top:clamp(16px,2vw,24px);">
-    <p style="margin:0 0 16px;font-size:11.5px;color:#6D6759;line-height:1.9;">ジャグアタトゥー｜椎迫店・下郡店 共通の予約導線</p>
-    <div style="display:flex;flex-wrap:wrap;gap:10px;"><a href="https://www.instagram.com/nanairo_jagua.tattoo" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">INSTAGRAM</a><a href="https://lin.ee/tGjqGer" target="_blank" rel="noopener" style="padding:12px 16px;border:1px solid #CFC8B8;font-size:11px;letter-spacing:0.1em;">LINE</a></div>
-    <p style="margin:12px 0 0;font-size:11px;color:#9C9585;line-height:1.9;">※デザイン・部位・料金はご相談のうえ決定します。最新情報は各予約導線をご確認ください。</p>
-  </div>
+<section class="detail-section" data-screen-label="OTHER SERVICES">
+  <div class="svc-shell"><p class="svc-kicker" data-reveal="label">OTHER SERVICES</p><h2 class="svc-heading" data-reveal="line">ほかの施術を見る</h2><nav class="other-services" aria-label="ほかのサービス"><a class="other-service-link" href="ESTHETIC.dc.html"><span>エステティック</span><strong>ESTHETIC</strong><span aria-hidden="true">↗</span></a>
+<a class="other-service-link" href="NAIL.dc.html"><span>ネイル</span><strong>NAIL</strong><span aria-hidden="true">↗</span></a>
+<a class="other-service-link" href="EYE.dc.html"><span>アイ</span><strong>EYE</strong><span aria-hidden="true">↗</span></a>
+<a class="other-service-link" href="MENS-BEAUTY.dc.html"><span>メンズ美容</span><strong>MEN’S BEAUTY</strong><span aria-hidden="true">↗</span></a></nav></div>
 </section>
-
+</main>
 <footer data-screen-label="FOOTER" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px) clamp(28px,3vw,44px);border-top:1px solid #E6E2D9;">
   <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(28px,4vw,64px);">
     <div>
