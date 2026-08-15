@@ -14,6 +14,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet" />
 <link href="non-hero-ux.css?v=20260812-step2" rel="stylesheet" />
+<link href="about-redesign.css?v=20260815-about-final" rel="stylesheet" />
+<link rel="preload" as="image" href="assets/about-hero-curtain-20260815.webp" fetchpriority="high" />
 <style>
   html { -webkit-text-size-adjust: 100%; }
   body { margin: 0; background: #FBFAF6; color: #171512; font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
@@ -41,138 +43,28 @@
   </nav>
 </header>
 
-<section data-screen-label="ABOUT HERO" style="padding:clamp(130px,15vw,230px) clamp(18px,3.2vw,52px) clamp(70px,9vw,140px);">
-  <p data-reveal="label" style="margin:0 0 clamp(26px,3.2vw,48px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">ABOUT</p>
-  <h1 style="margin:0 0 clamp(28px,3.4vw,52px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(26px,4.2vw,66px);line-height:1.3;max-width:20em;">
-    <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .62s cubic-bezier(.22,1,.36,1);">BeautySalon nanairoについて</span></span>
-  </h1>
-  <p data-reveal="body" data-delay="85" style="margin:0;font-family:'Shippori Mincho',serif;font-size:clamp(14px,1.4vw,22px);letter-spacing:0.06em;line-height:2;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">年齢も環境も制限のない、美しさへ</p>
-</section>
+<main class="about-page">
+<section class="about-hero" data-screen-label="ABOUT HERO"><div class="about-hero__inner"><p class="about-label" data-reveal="label">ABOUT</p><h1 class="about-heading" data-reveal="line">BeautySalon nanairo</h1><p class="about-hero__tagline" data-reveal="body">年齢も環境も制限のない、美しさへ</p></div></section>
 
-<section class="ux-section ux-section--tint" data-screen-label="BRAND STRUCTURE">
-  <div class="ux-shell">
-    <p class="ux-kicker">NANAIRO GROUP</p>
-    <h2 class="ux-title">ひとつのブランドに、複数の専門サロン。</h2>
-    <p class="ux-lead">BeautySalon nanairoは、エステ・ネイル・目元・メンズ美容・ジャグアタトゥーを、大分市内の2拠点で展開しています。</p>
-    <div class="ux-location-grid">
-      <article class="ux-location-card"><h3>椎迫</h3><ul><li>BeautySalon nanairo 顧問医師認定サロン</li><li>NAIL&amp;EYE nanairo</li><li>MEN'S美容サロン nanairo</li><li>ジャグアタトゥー</li></ul><a class="ux-inline-link" href="SALONS.dc.html#shiizako">椎迫の店舗情報を見る</a></article>
-      <article class="ux-location-card"><h3>片島</h3><ul><li>nanairo＋ nail &amp; eyelash</li><li>ダイエット痩身&amp;小顔フェイシャル nanairo 下郡店</li><li>ジャグアタトゥー</li></ul><a class="ux-inline-link" href="SALONS.dc.html#katashima">片島の店舗情報を見る</a></article>
-    </div>
-  </div>
-</section>
+<section class="about-concept" data-screen-label="CONCEPT"><div class="about-shell about-concept__grid">
+  <figure class="about-concept__media"><img src="assets/about-editorial-woman-20260815.webp" width="1448" height="1086" alt="自然な表情で美しさに向き合う女性のイメージ" fetchpriority="high" decoding="async" /></figure>
+  <div class="about-concept__content"><p class="about-label" data-reveal="label">CONCEPT</p><h2 class="about-heading" data-reveal="line">年齢も環境も制限のない、美しさへ</h2><div class="about-copy" data-reveal="body"><p>BeautySalon nanairoは、大分市の椎迫・片島という2つの拠点を中心に、エステ、痩身、小顔、フェイシャル、脱毛、バストケア、ネイル、まつ毛、アイブロウ、メンズ美容、ジャグアタトゥーまで展開するトータルビューティーサロングループです。</p><p>「年齢も環境も制限のない、美しさへ」という想いのもと、美容を通して一人ひとりの「なりたい」を叶えることを大切にしています。</p></div></div>
+</div></section>
 
-<section data-screen-label="OUR PHILOSOPHY" style="padding:clamp(60px,8vw,120px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
-  <div style="display:flex;flex-wrap:wrap;gap:clamp(30px,4vw,90px);">
-    <div style="flex:0 0 auto;width:clamp(140px,14vw,220px);">
-      <p data-reveal="label" style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">OUR PHILOSOPHY</p>
-    </div>
-    <div style="flex:1 1 400px;min-width:0;max-width:640px;">
-      <h2 style="margin:0 0 clamp(30px,3.6vw,56px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(24px,3.2vw,48px);line-height:1.44;">
-        <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">美しさの選択肢を、</span></span>
-        <span style="display:block;overflow:hidden;"><span data-reveal="line" data-delay="75" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">もっと自由に。</span></span>
-      </h2>
-      <p data-reveal="body" style="margin:0;max-width:34em;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.2;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">美容は、一つの答えだけではありません。<br />肌、身体、指先、目元。<br />年齢や環境、その日の気持ちによって、求める美しさも変わっていく。<br /><br />BeautySalon nanairoは、<br />一人ひとりの「なりたい」に合わせて美容を選べる場所を目指しています。</p>
-    </div>
-    <figure data-parallax="" data-reveal="image" data-delay="75" style="flex:0 1 220px;margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .72s cubic-bezier(.22,1,.36,1);aspect-ratio:2/3;background:#F1EEE7;">
-      <img src="assets/esthetic-facial.webp" width="768" height="558" alt="フェイシャル施術中の肌に密着したジェルパック" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:56% 46%;transform:scale(1.06);transition:transform .9s cubic-bezier(.22,1,.36,1);" />
-    </figure>
-  </div>
-</section>
+<section class="about-approach" data-screen-label="OUR APPROACH"><div class="about-shell about-approach__grid">
+  <div><p class="about-label" data-reveal="label">OUR APPROACH</p><p class="about-approach__word" aria-hidden="true"><span>OUR</span><span>APPROACH</span></p></div>
+  <div class="about-approach__content"><h2 class="about-heading" data-reveal="line">ひとつのnanairoとして、専門性を分ける</h2><div class="about-copy" data-reveal="body"><p>nanairoは、一つの店舗ですべてのメニューを提供する構造ではありません。</p><p>椎迫・片島という2つの拠点の中に、エステ、ネイル・Eye、メンズ美容、ジャグアタトゥーなど、専門性の異なる複数のブランド・予約窓口があります。</p><p>各店舗を独立させすぎるのではなく、「nanairoという1つのトータルビューティーブランド」として統合しながら、それぞれの専門ブランドの役割を明確に分けています。</p><p>受けたい施術から、該当するサービス、対応ブランド、対応店舗、メニュー、予約へとつながることで、複数の専門美容サービスを一つのnanairoブランドとして理解・比較・予約できる形を目指しています。</p></div></div>
+</div></section>
 
-<section data-screen-label="TOTAL BEAUTY" data-stack-outer="" style="padding:clamp(60px,8vw,120px) clamp(18px,3.2vw,52px) clamp(40px,5vw,80px);border-top:1px solid #E6E2D9;background:#F7F5EF;">
-  <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">TOTAL BEAUTY</p>
-  <h2 style="margin:0 0 clamp(24px,3vw,44px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(24px,3.2vw,46px);line-height:1.36;">
-    <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">ひとつのnanairoから、広がる美容。</span></span>
-  </h2>
-  <p data-reveal="body" style="margin:0 0 clamp(38px,4.6vw,74px);max-width:38em;font-size:clamp(12.5px,1.02vw,14.5px);line-height:2.2;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">エステ、痩身、小顔、フェイシャル、脱毛、バストケア。<br />ネイル、まつ毛、アイブロウ。<br />メンズ美容、ジャグアタトゥー。<br /><br />異なる専門領域を一つのnanairoブランドとして展開し、<br />受けたい美容から、自分に合うサービスと店舗を選べる環境をつくっています。</p>
+<section class="about-strengths" data-screen-label="OUR STRENGTHS"><div class="about-shell">
+  <header class="about-strengths__intro"><p class="about-label" data-reveal="label">OUR STRENGTHS</p><h2 class="about-heading" data-reveal="line">nanairoが大切にしている、<br />3つの強み。</h2></header>
+  <article class="strength-block strength-block--total"><figure class="strength-block__media"><img src="assets/services-hero-20260815.webp" width="1672" height="941" alt="BeautySalon nanairoのトータルビューティーイメージ" loading="lazy" decoding="async" /></figure><div class="strength-block__content"><p class="strength-block__number" data-reveal="label">01</p><p class="strength-block__en">TOTAL BEAUTY</p><h3 class="about-heading" data-reveal="line">幅広い美容を、ひとつのnanairoで。</h3><div class="about-copy" data-reveal="body"><p>nanairoは、単一の美容カテゴリーに特化したサロンではありません。</p><p>痩身・ボディ・フェイシャル・小顔・バスト・脱毛・ネイル・まつ毛・アイブロウ・メンズ美容・ジャグアタトゥーまで、幅広い美容サービスを展開しています。</p></div></div></article>
+  <article class="strength-block strength-block--reverse strength-block--specialists"><div class="strength-block__content"><p class="strength-block__number" data-reveal="label">02</p><p class="strength-block__en">SPECIALISTS</p><h3 class="about-heading" data-reveal="line">専門性の異なる、複数の美容ブランド。</h3><div class="about-copy" data-reveal="body"><p>椎迫・片島の2拠点には、それぞれ専門性の異なるブランド・サービスがあります。</p><p>各専門ブランドの役割を明確に分けながら、一つのnanairoブランドとして展開しています。</p></div></div><div class="strength-specialists" aria-label="ネイルとジャグアタトゥーの施術風景"><figure><img src="assets/about-nail-process-20260815.webp" width="1086" height="1448" alt="ネイル施術中の専門スタッフの手元" loading="lazy" decoding="async" /></figure><figure><img src="assets/about-jagua-process-20260815.webp" width="1086" height="1448" alt="ジャグアタトゥーの施術風景" loading="lazy" decoding="async" /></figure></div></article>
+  <article class="strength-block strength-block--for-you"><figure class="strength-block__media"><img src="assets/about-counseling-20260815.webp" width="1447" height="1087" alt="スタッフがお客様へカウンセリングを行う様子" loading="lazy" decoding="async" /></figure><div class="strength-block__content"><p class="strength-block__number" data-reveal="label">03</p><p class="strength-block__en">FOR YOU</p><h3 class="about-heading" data-reveal="line">受けたい美容から、自分に合う選択へ。</h3><div class="about-copy" data-reveal="body"><p>受けたい施術から、該当するサービス、対応ブランド、対応店舗、メニュー、予約へ。</p><p>複数の専門美容サービスを一つのnanairoブランドとして理解・比較し、自分に合うサービスと店舗を選べる環境をつくっています。</p></div></div></article>
+</div></section>
 
-  <div data-stack-track="" style="display:flex;flex-direction:column;gap:clamp(16px,2.2vw,28px);">
-    <a href="ESTHETIC.dc.html" data-stack-card="" style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2.4vw,40px);padding:clamp(20px,2.4vw,34px);background:#FBFAF6;border:1px solid #E6E2D9;">
-      <span style="flex:0 0 auto;width:clamp(28px,2.4vw,44px);font-family:'Cormorant Garamond',serif;font-size:clamp(11px,0.9vw,13px);color:#9C9585;">01</span>
-      <span style="flex:1 1 200px;min-width:0;">
-        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(21px,2.2vw,34px);line-height:1.14;">ESTHETIC</span>
-        <span style="display:block;margin-top:8px;font-size:clamp(11.5px,0.92vw,13px);color:#6D6759;letter-spacing:0.06em;">エステティック</span>
-      </span>
-      <span style="flex:1 1 200px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;">痩身・ボディ、小顔・フェイシャル、脱毛、バストケア。</span>
-      <span data-card="" style="flex:0 0 auto;display:block;width:clamp(84px,8vw,124px);aspect-ratio:1/1;overflow:hidden;background:#EDE9E1;">
-        <img data-card-img="" src="assets/esthetic-machine.webp" width="742" height="550" alt="痩身施術で使用される機器" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:52% 52%;transition:transform .58s cubic-bezier(.22,1,.36,1);" />
-      </span>
-    </a>
-    <a href="NAIL.dc.html" data-stack-card="" style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2.4vw,40px);padding:clamp(20px,2.4vw,34px);background:#FBFAF6;border:1px solid #E6E2D9;">
-      <span style="flex:0 0 auto;width:clamp(28px,2.4vw,44px);font-family:'Cormorant Garamond',serif;font-size:clamp(11px,0.9vw,13px);color:#9C9585;">02</span>
-      <span style="flex:1 1 200px;min-width:0;">
-        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(21px,2.2vw,34px);line-height:1.14;">NAIL</span>
-        <span style="display:block;margin-top:8px;font-size:clamp(11.5px,0.92vw,13px);color:#6D6759;letter-spacing:0.06em;">ネイル</span>
-      </span>
-      <span style="flex:1 1 200px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;">ワンカラーからトレンドデザイン、フット、長さ出しまで。</span>
-      <span data-card="" style="flex:0 0 auto;display:block;width:clamp(84px,8vw,124px);aspect-ratio:1/1;overflow:hidden;background:#EDE9E1;">
-        <img data-card-img="" src="assets/nail-2.webp" width="462" height="624" alt="オーロラのようにきらめくミルキーホワイトのネイル" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 44%;transition:transform .58s cubic-bezier(.22,1,.36,1);" />
-      </span>
-    </a>
-    <a href="EYE.dc.html" data-stack-card="" style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2.4vw,40px);padding:clamp(20px,2.4vw,34px);background:#FBFAF6;border:1px solid #E6E2D9;">
-      <span style="flex:0 0 auto;width:clamp(28px,2.4vw,44px);font-family:'Cormorant Garamond',serif;font-size:clamp(11px,0.9vw,13px);color:#9C9585;">03</span>
-      <span style="flex:1 1 200px;min-width:0;">
-        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(21px,2.2vw,34px);line-height:1.14;">EYE</span>
-        <span style="display:block;margin-top:8px;font-size:clamp(11.5px,0.92vw,13px);color:#6D6759;letter-spacing:0.06em;">まつ毛・アイブロウ</span>
-      </span>
-      <span style="flex:1 1 200px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;">まつ毛パーマ、まつ毛エクステ、アイブロウ。</span>
-      <span data-card="" style="flex:0 0 auto;display:block;width:clamp(84px,8vw,124px);aspect-ratio:1/1;overflow:hidden;background:#EDE9E1;">
-        <img data-card-img="" src="assets/lash-perm-2.webp" width="428" height="324" alt="まつ毛パーマで立ち上がった目元" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;transition:transform .58s cubic-bezier(.22,1,.36,1);" />
-      </span>
-    </a>
-    <a href="MENS-BEAUTY.dc.html" data-stack-card="" style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2.4vw,40px);padding:clamp(20px,2.4vw,34px);background:#FBFAF6;border:1px solid #E6E2D9;">
-      <span style="flex:0 0 auto;width:clamp(28px,2.4vw,44px);font-family:'Cormorant Garamond',serif;font-size:clamp(11px,0.9vw,13px);color:#9C9585;">04</span>
-      <span style="flex:1 1 200px;min-width:0;">
-        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(21px,2.2vw,34px);line-height:1.14;">MEN'S BEAUTY</span>
-        <span style="display:block;margin-top:8px;font-size:clamp(11.5px,0.92vw,13px);color:#6D6759;letter-spacing:0.06em;">メンズ美容</span>
-      </span>
-      <span style="flex:1 1 200px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;">フェイシャル、肌質ケア、痩身、脱毛、爪ケア、眉毛スタイリング。</span>
-      <span data-card="" style="flex:0 0 auto;display:block;width:clamp(84px,8vw,124px);aspect-ratio:1/1;overflow:hidden;background:#EDE9E1;">
-        <img data-card-img="" src="assets/mens-face.webp" width="480" height="398" alt="メンズフェイシャル前後のフェイスラインと肌の変化" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 42%;transition:transform .58s cubic-bezier(.22,1,.36,1);" />
-      </span>
-    </a>
-    <a href="JAGUA-TATTOO.dc.html" data-stack-card="" style="display:flex;flex-wrap:wrap;align-items:center;gap:clamp(16px,2.4vw,40px);padding:clamp(20px,2.4vw,34px);background:#FBFAF6;border:1px solid #E6E2D9;">
-      <span style="flex:0 0 auto;width:clamp(28px,2.4vw,44px);font-family:'Cormorant Garamond',serif;font-size:clamp(11px,0.9vw,13px);color:#9C9585;">05</span>
-      <span style="flex:1 1 200px;min-width:0;">
-        <span style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(21px,2.2vw,34px);line-height:1.14;">JAGUA TATTOO</span>
-        <span style="display:block;margin-top:8px;font-size:clamp(11.5px,0.92vw,13px);color:#6D6759;letter-spacing:0.06em;">ジャグアタトゥー</span>
-      </span>
-      <span style="flex:1 1 200px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;">約2週間楽しめる、オーダーデザインのボディアート。</span>
-      <span data-card="" style="flex:0 0 auto;display:block;width:clamp(84px,8vw,124px);aspect-ratio:1/1;overflow:hidden;background:#EDE9E1;">
-        <img data-card-img="" src="assets/jagua-decollete.webp" width="472" height="470" alt="デコルテに描かれた月と星のジャグアタトゥー" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:50% 58%;transition:transform .58s cubic-bezier(.22,1,.36,1);" />
-      </span>
-    </a>
-  </div>
-</section>
-
-<section data-screen-label="COMPANY" style="padding:clamp(60px,8vw,120px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
-  <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">COMPANY</p>
-  <h2 style="margin:0 0 clamp(34px,4.2vw,64px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(24px,3.2vw,46px);line-height:1.36;">
-    <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">運営会社</span></span>
-  </h2>
-  <dl style="margin:0;max-width:860px;">
-    <div data-row="" style="display:flex;flex-wrap:wrap;gap:8px clamp(20px,4vw,80px);padding:clamp(16px,2vw,24px) 0;position:relative;">
-      <span data-rule="" style="position:absolute;left:0;right:0;top:0;height:1px;background:#DED8CD;transform:scaleX(0);transform-origin:left;transition:transform .56s cubic-bezier(.22,1,.36,1);"></span>
-      <dt style="flex:0 0 auto;width:clamp(140px,15vw,220px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.88vw,12.5px);letter-spacing:0.2em;color:#8A8376;">COMPANY NAME</dt>
-      <dd data-cell="" style="flex:1 1 200px;margin:0;font-size:clamp(12.5px,1.02vw,14.5px);color:#2A2723;opacity:0;transform:translateY(6px);transition:opacity .48s ease,transform .48s cubic-bezier(.22,1,.36,1);">株式会社nanairo</dd>
-    </div>
-    <div data-row="" style="display:flex;flex-wrap:wrap;gap:8px clamp(20px,4vw,80px);padding:clamp(16px,2vw,24px) 0;position:relative;">
-      <span data-rule="" style="position:absolute;left:0;right:0;top:0;height:1px;background:#DED8CD;transform:scaleX(0);transform-origin:left;transition:transform .56s cubic-bezier(.22,1,.36,1);"></span>
-      <dt style="flex:0 0 auto;width:clamp(140px,15vw,220px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.88vw,12.5px);letter-spacing:0.2em;color:#8A8376;">ESTABLISHED</dt>
-      <dd data-cell="" style="flex:1 1 200px;margin:0;font-size:clamp(12.5px,1.02vw,14.5px);color:#2A2723;opacity:0;transform:translateY(6px);transition:opacity .48s ease,transform .48s cubic-bezier(.22,1,.36,1);">2024年7月16日</dd>
-    </div>
-    <div data-row="" style="display:flex;flex-wrap:wrap;gap:8px clamp(20px,4vw,80px);padding:clamp(16px,2vw,24px) 0;position:relative;">
-      <span data-rule="" style="position:absolute;left:0;right:0;top:0;height:1px;background:#DED8CD;transform:scaleX(0);transform-origin:left;transition:transform .56s cubic-bezier(.22,1,.36,1);"></span>
-      <dt style="flex:0 0 auto;width:clamp(140px,15vw,220px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.88vw,12.5px);letter-spacing:0.2em;color:#8A8376;">LOCATION</dt>
-      <dd data-cell="" style="flex:1 1 200px;margin:0;font-size:clamp(12.5px,1.02vw,14.5px);color:#2A2723;opacity:0;transform:translateY(6px);transition:opacity .48s ease,transform .48s cubic-bezier(.22,1,.36,1);">大分県大分市三芳</dd>
-    </div>
-    <div data-row="" style="display:flex;flex-wrap:wrap;gap:8px clamp(20px,4vw,80px);padding:clamp(16px,2vw,24px) 0;position:relative;border-bottom:1px solid #DED8CD;">
-      <span data-rule="" style="position:absolute;left:0;right:0;top:0;height:1px;background:#DED8CD;transform:scaleX(0);transform-origin:left;transition:transform .56s cubic-bezier(.22,1,.36,1);"></span>
-      <dt style="flex:0 0 auto;width:clamp(140px,15vw,220px);font-family:'Cormorant Garamond',serif;font-size:clamp(10.5px,0.88vw,12.5px);letter-spacing:0.2em;color:#8A8376;">BUSINESS THEME</dt>
-      <dd data-cell="" style="flex:1 1 200px;margin:0;font-size:clamp(12.5px,1.02vw,14.5px);color:#2A2723;opacity:0;transform:translateY(6px);transition:opacity .48s ease,transform .48s cubic-bezier(.22,1,.36,1);">Beauty × Health × Life</dd>
-    </div>
-  </dl>
-</section>
+<section class="about-next" data-screen-label="NEXT"><div class="about-shell"><p class="about-label" data-reveal="label">NEXT</p><nav class="about-next__links" aria-label="ABOUTの次に見るページ"><a class="about-next__link" href="SERVICES.dc.html"><span><strong>SERVICES</strong>施術から探す</span><span class="about-next__arrow" aria-hidden="true">→</span></a><a class="about-next__link" href="SALONS.dc.html"><span><strong>SALONS</strong>椎迫・片島の拠点を見る</span><span class="about-next__arrow" aria-hidden="true">→</span></a></nav></div></section>
+</main>
 
 <footer data-screen-label="FOOTER" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px) clamp(28px,3vw,44px);background:#F7F5EF;border-top:1px solid #E6E2D9;">
   <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(28px,4vw,64px);">
