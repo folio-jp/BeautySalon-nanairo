@@ -60,18 +60,18 @@
 .strength-block__en { margin: 0 0 44px; padding-bottom: 18px; border-bottom: 1px solid var(--about-line); font-family:var(--font-main); font-size: 14px; letter-spacing: .24em; color: #7d766c; }
 .strength-block__content .about-heading { font-size: clamp(29px, 3.3vw, 50px); }
 .strength-block__content .about-copy { margin-top: clamp(34px, 4vw, 60px); }
-.strength-specialists { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 30px); aspect-ratio: 1116 / 702; }
-.strength-specialists figure { min-width: 0; height: 100%; margin: 0; overflow: hidden; background: #eee9e0; }
+.strength-specialists { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 2vw, 30px); min-height: clamp(560px, 57vw, 850px); }
+.strength-specialists figure { margin: 0; overflow: hidden; }
+.strength-specialists figure:first-child { align-self: start; height: 82%; }
+.strength-specialists figure:last-child { align-self: end; height: 82%; }
 .strength-specialists img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .strength-specialists figure:first-child img { object-position: center 48%; }
 .strength-specialists figure:last-child img { object-position: center; }
-.strength-for-you-media { position: relative; min-height: clamp(540px, 55vw, 820px); }
-.strength-for-you-media figure { margin: 0; overflow: hidden; background: #eee9e0; }
-.strength-for-you-media figure:first-child { position: absolute; inset: 0 20% 20% 0; }
-.strength-for-you-media figure:last-child { position: absolute; right: 0; bottom: 0; width: 54%; height: 58%; border: clamp(8px, 1vw, 14px) solid var(--about-bg); }
+.strength-for-you-media { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(14px, 2vw, 30px); aspect-ratio: 1116 / 702; }
+.strength-for-you-media figure { min-width: 0; height: 100%; margin: 0; overflow: hidden; background: #eee9e0; }
 .strength-for-you-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.strength-for-you-media figure:first-child img { object-position: 67% center; }
-.strength-for-you-media figure:last-child img { object-position: 36% center; }
+.strength-for-you-media figure:first-child img { object-position: center; }
+.strength-for-you-media figure:last-child img { object-position: center; }
 
 .about-next { padding-block: clamp(105px, 13vw, 200px); }
 .about-next__links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: clamp(54px, 7vw, 100px); border-top: 1px solid var(--about-line); }
@@ -96,7 +96,8 @@
   .about-approach__word span { display: inline; }
   .about-approach__word span + span::before { content: " "; }
   .strength-block { gap: 58px; }
-  .strength-block__media, .strength-specialists, .strength-for-you-media { grid-row: 1; min-height: 0; aspect-ratio: 4 / 3; }
+  .strength-block__media, .strength-specialists { grid-row: 1; min-height: 0; aspect-ratio: 4 / 3; }
+  .strength-for-you-media { grid-row: 1; min-height: 0; aspect-ratio: 1116 / 702; }
   .strength-block__content { grid-row: 2; max-width: 680px; }
 }
 
@@ -119,10 +120,9 @@
   .strength-block__media { aspect-ratio: 4 / 5; }
   .strength-block--total .strength-block__media img { object-position: 62% center; }
   .strength-block--for-you .strength-block__media { aspect-ratio: 4 / 3; }
-  .strength-for-you-media { aspect-ratio: 4 / 5; }
-  .strength-for-you-media figure:first-child { inset: 0 13% 24% 0; }
-  .strength-for-you-media figure:last-child { width: 62%; height: 54%; border-width: 8px; }
-  .strength-specialists { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; aspect-ratio: 1116 / 702; }
+  .strength-for-you-media { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; aspect-ratio: 1116 / 702; }
+  .strength-specialists { grid-template-columns: 1fr 1fr; gap: 10px; aspect-ratio: 1 / 1.18; }
+  .strength-specialists figure:first-child, .strength-specialists figure:last-child { height: 88%; }
   .about-next { padding-block: 100px; }
   .about-next__links { grid-template-columns: 1fr; }
   .about-next__link { min-height: 160px; padding-inline: 0 !important; }
