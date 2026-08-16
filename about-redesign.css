@@ -86,6 +86,8 @@
 
 @media (min-width: 901px) {
   .pc-only-break { display: initial; }
+  .about-strengths__intro .about-heading { max-width: none; white-space: nowrap; }
+  .about-strengths__intro .pc-only-break { display: none; }
 }
 
 @media (max-width: 1100px) {
