@@ -9,6 +9,8 @@
   color: var(--svc-ink);
 }
 
+html:has(.service-detail) { scroll-behavior: smooth; }
+
 .services-page *,
 .service-detail * { box-sizing: border-box; }
 
@@ -81,6 +83,16 @@
 .detail-mens .detail-hero__visual img { object-position: center 46%; }
 .detail-jagua .detail-hero__visual img { object-position: center; }
 
+.detail-directory { padding-block: clamp(72px, 8vw, 118px); text-align: center; background: var(--svc-paper); }
+.detail-directory .svc-kicker { margin-bottom: 18px; }
+.detail-directory__title { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(40px, 5vw, 76px); font-weight: 300; line-height: 1; letter-spacing: .07em; }
+.detail-directory__nav { display: grid; grid-template-columns: repeat(2, minmax(0, 220px)); justify-content: center; gap: 16px; margin-top: clamp(38px, 5vw, 64px); }
+.detail-directory__nav a { display: grid; place-items: center; min-height: 62px; border: 1px solid var(--svc-ink); font-family: "Cormorant Garamond", serif; font-size: 16px; letter-spacing: .17em; transition: background .3s ease, color .3s ease; }
+.detail-directory__nav a:hover,
+.detail-directory__nav a:focus-visible { color: #fff; background: var(--svc-ink); }
+.service-detail #salon,
+.service-detail #menu { scroll-margin-top: 120px; }
+
 .detail-section { padding-block: clamp(76px, 9vw, 140px); border-top: 1px solid var(--svc-line); }
 .detail-section--tint { background: var(--svc-tint); }
 .detail-about { display: grid; grid-template-columns: minmax(240px, .55fr) minmax(0, 1fr); gap: clamp(38px, 7vw, 120px); align-items: start; }
@@ -95,7 +107,8 @@
 .available-card__area { margin: 0 0 18px; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .18em; color: #8a8376; }
 .available-card h3 { margin: 0 0 20px; font-family: "Shippori Mincho", serif; font-size: clamp(18px, 1.55vw, 24px); font-weight: 400; line-height: 1.65; }
 .available-card p { margin: 0; font-size: 13px; line-height: 1.95; color: var(--svc-muted); }
-.svc-text-link { margin-top: auto; padding-top: 28px; align-self: flex-start; border-bottom: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; }
+.available-card__actions { display: flex; flex-wrap: wrap; gap: 18px 28px; margin-top: auto; padding-top: 28px; }
+.svc-text-link { align-self: flex-start; padding-bottom: 5px; border-bottom: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; }
 
 .price-grid { display: grid; gap: clamp(54px, 7vw, 94px); margin-top: 52px; }
 .price-block { display: grid; grid-template-columns: minmax(230px, .42fr) minmax(0, 1fr); gap: clamp(38px, 6vw, 100px); align-items: start; }
@@ -106,6 +119,8 @@
 .price-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 25px; padding: 17px 0; border-bottom: 1px solid var(--svc-line); font-size: 13px; line-height: 1.7; }
 .price-row strong { font-weight: 400; white-space: nowrap; }
 .price-note { margin: 18px 0 0; font-size: 11px; line-height: 1.9; color: #8a8376; }
+.price-block__actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 22px; }
+.price-block__actions .price-link { flex: 1 1 230px; margin-top: 0; }
 .price-link, .reserve-link { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 58px; margin-top: 25px; padding: 15px 18px; border: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; transition: background .3s ease, color .3s ease; }
 .price-link:hover, .reserve-link:hover { color: #fff; background: var(--svc-ink); }
 
@@ -165,6 +180,10 @@
   .detail-hero__copy { padding: 44px 18px 58px; }
   .detail-hero__visual { min-height: 0; height: 58vh; max-height: 580px; }
   .detail-hero h1 { font-size: clamp(48px, 15vw, 66px); }
+  .detail-directory { padding-block: 64px; }
+  .detail-directory__nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 36px; }
+  .detail-directory__nav a { min-height: 56px; font-size: 14px; }
+  .service-detail #salon, .service-detail #menu { scroll-margin-top: 96px; }
   .detail-section { padding-block: 76px; }
   .detail-section__head, .detail-about { grid-template-columns: 1fr; gap: 28px; }
   .available-grid, .available-grid--single { grid-template-columns: 1fr; }
@@ -181,5 +200,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .category-nav__circle, .category-nav__circle img, .service-visual-card img, .price-link, .reserve-link { transition: none !important; }
+  html:has(.service-detail) { scroll-behavior: auto; }
+  .category-nav__circle, .category-nav__circle img, .service-visual-card img, .detail-directory__nav a, .price-link, .reserve-link { transition: none !important; }
 }
