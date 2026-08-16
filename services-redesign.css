@@ -36,11 +36,16 @@
 .total-beauty__intro .svc-copy { padding-bottom: 8px; }
 .category-nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: clamp(18px, 2.8vw, 46px); margin-top: clamp(70px, 8vw, 120px); }
 .category-nav__item { min-width: 0; text-align: center; }
-.category-nav__circle { width: min(100%, 205px); aspect-ratio: 1; margin-inline: auto; display: grid; place-items: center; border-radius: 50%; background: var(--svc-greige); color: #fff; transition: background .35s ease, transform .35s cubic-bezier(.22,1,.36,1); }
-.category-nav__circle svg { width: 57%; height: 57%; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; transition: transform .35s cubic-bezier(.22,1,.36,1); }
+.category-nav__circle { width: min(100%, 205px); aspect-ratio: 1; margin-inline: auto; display: grid; place-items: center; overflow: hidden; border-radius: 50%; background: transparent; color: #fff; transition: background .35s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+.category-nav__circle img { display: block; width: var(--category-logo-size, 122%); max-width: none; height: var(--category-logo-size, 122%); flex: none; object-fit: contain; border-radius: 50%; transition: transform .35s cubic-bezier(.22,1,.36,1); }
+.category-nav__item:nth-child(1) { --category-logo-size: 116%; }
+.category-nav__item:nth-child(2) { --category-logo-size: 124%; }
+.category-nav__item:nth-child(3) { --category-logo-size: 122%; }
+.category-nav__item:nth-child(4) { --category-logo-size: 109%; }
+.category-nav__item:nth-child(5) { --category-logo-size: 126%; }
 .category-nav__item:hover { color: var(--svc-ink); }
 .category-nav__item:hover .category-nav__circle { background: #969087; transform: scale(1.02); }
-.category-nav__item:hover svg { transform: translateY(-2px); }
+.category-nav__item:hover .category-nav__circle img { transform: translateY(-2px); }
 .category-nav__item strong { display: block; margin: 20px 0 7px; font-family: "Cormorant Garamond", serif; font-size: clamp(17px, 1.5vw, 24px); font-weight: 400; letter-spacing: .04em; }
 .category-nav__item > span:last-child { display: block; margin: 0; font-size: 12px; letter-spacing: .08em; }
 
@@ -173,5 +178,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .category-nav__circle, .category-nav__circle svg, .service-visual-card img, .price-link, .reserve-link { transition: none !important; }
+  .category-nav__circle, .category-nav__circle img, .service-visual-card img, .price-link, .reserve-link { transition: none !important; }
 }
