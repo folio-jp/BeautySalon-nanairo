@@ -146,7 +146,7 @@
 .detail-eye .price-block:nth-child(1) { --price-card-image: url("assets/lash-perm-1.webp"); background-position: 50% 50%; }
 .detail-eye .price-block:nth-child(2) { --price-card-image: url("assets/lash-extension.webp"); background-position: 50% 50%; }
 .detail-mens .price-block:nth-child(1) { --price-card-image: url("assets/mens-menu-machine-20260816.png"); background-position: 50% 50%; }
-.detail-jagua .price-block:nth-child(1) { --price-card-image: url("assets/jagua-decollete.webp"); background-position: 50% 44%; }
+.detail-jagua .price-block:nth-child(1) { --price-card-image: url("assets/jagua-menu-finger-20260816.png"); background-position: 50% 50%; }
 .price-block__meta { position: sticky; top: 130px; }
 .price-block__area { margin: 0 0 12px; font-family:var(--font-main); font-size: 13px; letter-spacing: .18em; color: #8a8376; }
 .price-block h3 { margin: 0; font-family:var(--font-main); font-size: clamp(18px, 1.6vw, 25px); font-weight: 400; line-height: 1.65; }
