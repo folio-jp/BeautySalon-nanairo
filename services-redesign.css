@@ -9,8 +9,6 @@
   color: var(--svc-ink);
 }
 
-html:has(.service-detail) { scroll-behavior: smooth; }
-
 .services-page *,
 .service-detail * { box-sizing: border-box; }
 
@@ -87,11 +85,28 @@ html:has(.service-detail) { scroll-behavior: smooth; }
 .detail-directory .svc-kicker { margin-bottom: 18px; }
 .detail-directory__title { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(40px, 5vw, 76px); font-weight: 300; line-height: 1; letter-spacing: .07em; }
 .detail-directory__nav { display: grid; grid-template-columns: repeat(2, minmax(0, 220px)); justify-content: center; gap: 16px; margin-top: clamp(38px, 5vw, 64px); }
-.detail-directory__nav a { display: grid; place-items: center; min-height: 62px; border: 1px solid var(--svc-ink); font-family: "Cormorant Garamond", serif; font-size: 16px; letter-spacing: .17em; transition: background .3s ease, color .3s ease; }
-.detail-directory__nav a:hover,
-.detail-directory__nav a:focus-visible { color: #fff; background: var(--svc-ink); }
-.service-detail #salon,
-.service-detail #menu { scroll-margin-top: 120px; }
+.detail-directory__nav button { display: grid; place-items: center; min-height: 62px; padding: 0 18px; border: 1px solid var(--svc-ink); border-radius: 0; color: var(--svc-ink); background: transparent; font: inherit; font-family: "Cormorant Garamond", serif; font-size: 16px; letter-spacing: .17em; cursor: pointer; }
+.detail-directory__nav button[aria-selected="true"],
+.detail-directory__nav button:hover,
+.detail-directory__nav button:focus-visible { color: #fff; background: var(--svc-ink); }
+
+.service-view[hidden] { display: none !important; }
+.service-salon-details { display: grid; gap: clamp(28px, 4vw, 52px); margin-top: 48px; }
+.service-salon-detail { display: grid; grid-template-columns: minmax(210px, .42fr) minmax(0, 1fr); gap: clamp(34px, 6vw, 96px); padding: clamp(30px, 4vw, 58px); border: 1px solid var(--svc-line); background: rgba(255,255,255,.35); }
+.service-salon-detail__number { margin: 0 0 14px; font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: .18em; color: #8a8376; }
+.service-salon-detail h3 { margin: 0; font-family: "Shippori Mincho", serif; font-size: clamp(25px, 2.8vw, 42px); font-weight: 400; line-height: 1.35; letter-spacing: .04em; }
+.service-salon-detail__brand { margin: 15px 0 0; font-size: 13px; line-height: 1.85; color: var(--svc-muted); }
+.service-salon-detail__social { display: inline-block; margin-top: 24px; padding-bottom: 6px; border-bottom: 1px solid var(--svc-ink); font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: .14em; }
+.service-salon-facts { margin: 0; border-top: 1px solid var(--svc-line); }
+.service-salon-facts__row { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--svc-line); }
+.service-salon-facts dt { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: .14em; color: #8a8376; }
+.service-salon-facts dd { margin: 0; font-size: 13px; line-height: 1.85; }
+.service-salon-access { margin-top: 30px; }
+.service-salon-access__address { margin: 0 0 15px; font-family: "Shippori Mincho", serif; font-size: clamp(15px, 1.3vw, 19px); line-height: 1.85; }
+.service-salon-access ul { margin: 0; padding: 0; list-style: none; color: var(--svc-muted); }
+.service-salon-access li { position: relative; padding: 5px 0 5px 18px; font-size: 13px; line-height: 1.75; }
+.service-salon-access li::before { content: "—"; position: absolute; left: 0; }
+.service-salon-access__map { display: inline-block; margin-top: 20px; padding-bottom: 6px; border-bottom: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; }
 
 .detail-section { padding-block: clamp(76px, 9vw, 140px); border-top: 1px solid var(--svc-line); }
 .detail-section--tint { background: var(--svc-tint); }
@@ -182,12 +197,13 @@ html:has(.service-detail) { scroll-behavior: smooth; }
   .detail-hero h1 { font-size: clamp(48px, 15vw, 66px); }
   .detail-directory { padding-block: 64px; }
   .detail-directory__nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 36px; }
-  .detail-directory__nav a { min-height: 56px; font-size: 14px; }
-  .service-detail #salon, .service-detail #menu { scroll-margin-top: 96px; }
+  .detail-directory__nav button { min-height: 56px; font-size: 14px; }
   .detail-section { padding-block: 76px; }
   .detail-section__head, .detail-about { grid-template-columns: 1fr; gap: 28px; }
   .available-grid, .available-grid--single { grid-template-columns: 1fr; }
   .available-card { min-height: 280px; }
+  .service-salon-detail { grid-template-columns: 1fr; gap: 30px; padding: 28px 20px; }
+  .service-salon-facts__row { grid-template-columns: 82px minmax(0, 1fr); gap: 14px; }
   .price-grid { gap: 70px; }
   .price-block { grid-template-columns: 1fr; gap: 26px; }
   .price-block__meta { position: static; }
@@ -200,6 +216,5 @@ html:has(.service-detail) { scroll-behavior: smooth; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html:has(.service-detail) { scroll-behavior: auto; }
-  .category-nav__circle, .category-nav__circle img, .service-visual-card img, .detail-directory__nav a, .price-link, .reserve-link { transition: none !important; }
+  .category-nav__circle, .category-nav__circle img, .service-visual-card img, .price-link, .reserve-link { transition: none !important; }
 }
