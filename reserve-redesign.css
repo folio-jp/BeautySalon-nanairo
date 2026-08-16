@@ -47,7 +47,7 @@
 
 .reserve-kicker {
   margin: 0 0 20px;
-  font-family: "Cormorant Garamond", serif;
+  font-family:var(--font-main);
   font-size: clamp(12px, .86vw, 15px);
   letter-spacing: .26em;
   color: #70685f;
@@ -55,7 +55,7 @@
 
 .reserve-hero h1 {
   margin: 0;
-  font-family: "Shippori Mincho", serif;
+  font-family:var(--font-main);
   font-size: clamp(42px, 5.4vw, 84px);
   font-weight: 400;
   line-height: 1.18;
@@ -88,7 +88,7 @@
 .reserve-section__head h2,
 .reserve-location__title h2 {
   margin: 0;
-  font-family: "Shippori Mincho", serif;
+  font-family:var(--font-main);
   font-size: clamp(30px, 3.5vw, 54px);
   font-weight: 400;
   line-height: 1.35;
@@ -144,7 +144,7 @@
 .reserve-location__en {
   display: block;
   margin-bottom: 12px;
-  font-family: "Cormorant Garamond", serif;
+  font-family:var(--font-main);
   font-size: clamp(13px, 1vw, 16px);
   letter-spacing: .24em;
   color: var(--reserve-muted);
@@ -219,7 +219,7 @@
 
 .reserve-service__category {
   margin: 0;
-  font-family: "Cormorant Garamond", serif;
+  font-family:var(--font-main);
   font-size: clamp(28px, 2.8vw, 46px);
   font-weight: 400;
   line-height: 1.1;
@@ -229,7 +229,7 @@
 
 .reserve-service__jp {
   margin: 8px 0 0;
-  font-family: "Shippori Mincho", serif;
+  font-family:var(--font-main);
   font-size: clamp(12px, .98vw, 15px);
   letter-spacing: .08em;
   color: rgba(255,255,255,.9);
@@ -262,7 +262,7 @@
 
 .reserve-service__brand {
   margin: 0;
-  font-family: "Shippori Mincho", serif;
+  font-family:var(--font-main);
   font-size: clamp(14px, 1.12vw, 17px);
   line-height: 1.75;
 }

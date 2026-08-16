@@ -10,15 +10,13 @@
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>RESERVE ご予約｜BeautySalon nanairo</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="typography.css?v=20260816" rel="stylesheet" />
 <link rel="preload" href="assets/reserve-hero-20260815.webp" as="image" />
 <link href="non-hero-ux.css?v=20260812-step2" rel="stylesheet" />
 <link href="reserve-redesign.css?v=20260815" rel="stylesheet" />
 <style>
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-  body { margin: 0; background: #FBFAF6; color: #171512; font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body { margin: 0; background: #FBFAF6; color: #171512; font-family:var(--font-main); font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   * { box-sizing: border-box; }
   img { max-width: 100%; }
   a { color: #171512; text-decoration: none; }
@@ -131,7 +129,7 @@
 
 <footer data-screen-label="FOOTER" style="padding:clamp(40px,5vw,80px) clamp(18px,3.2vw,52px) clamp(28px,3vw,44px);background:#F7F5EF;border-top:1px solid #E6E2D9;">
   <div style="display:flex;flex-wrap:wrap;gap:clamp(24px,4vw,80px);align-items:flex-end;justify-content:space-between;">
-    <p style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24px,3.4vw,52px);line-height:1.05;">BeautySalon<br />nanairo</p>
+    <p style="margin:0;font-family:var(--font-main);font-weight:300;font-size:clamp(24px,3.4vw,52px);line-height:1.05;">BeautySalon<br />nanairo</p>
     <nav aria-label="フッターナビゲーション" style="display:flex;flex-wrap:wrap;gap:14px 32px;font-size:clamp(10.5px,0.85vw,12px);letter-spacing:0.16em;">
       <a href="SERVICES.dc.html" data-underline="" style="padding:6px 0;">SERVICES</a>
       <a href="SALONS.dc.html" data-underline="" style="padding:6px 0;">SALONS</a>
@@ -147,7 +145,7 @@
 </footer>
 
 <div data-mask="" aria-hidden="true" style="position:fixed;inset:0;z-index:120;background:#F3EFE6;clip-path:inset(0 0 100% 0);transition:clip-path .28s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:center;pointer-events:none;">
-  <span data-mask-label="" style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,44px);letter-spacing:0.22em;color:#2A2723;opacity:0;transition:opacity .16s ease;"></span>
+  <span data-mask-label="" style="font-family:var(--font-main);font-size:clamp(24px,3vw,44px);letter-spacing:0.22em;color:#2A2723;opacity:0;transition:opacity .16s ease;"></span>
 </div>
 
 </div>

@@ -14,9 +14,9 @@
   --ux-gold: #9b7d4b;
   --ux-gutter: clamp(20px, 4.4vw, 72px);
   --ux-wide: min(1320px, calc(100vw - (var(--ux-gutter) * 2)));
-  --ux-serif: "Shippori Mincho", serif;
-  --ux-roman: "Cormorant Garamond", serif;
-  --ux-sans: "Zen Kaku Gothic New", sans-serif;
+  --ux-serif: var(--font-main);
+  --ux-roman: var(--font-main);
+  --ux-sans: var(--font-main);
 }
 
 /* ---------- Shared editorial field ---------- */

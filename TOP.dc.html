@@ -10,16 +10,14 @@
 <helmet>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>BeautySalon nanairo｜年齢も環境も制限のない、美しさへ</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Shippori+Mincho:wght@400;500&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet" />
+<link href="typography.css?v=20260816" rel="stylesheet" />
 <link href="non-hero-ux.css?v=20260814-services-background-4" rel="stylesheet" />
 <link rel="preload" as="image" href="assets/hero-complete-pc.png" media="(min-width:1200px)" />
 <link rel="preload" as="image" href="assets/hero-complete-tablet-1.png" media="(min-width:768px) and (max-width:1199px)" />
 <link rel="preload" as="image" href="assets/hero-complete-mobile-1.png" media="(max-width:767px)" />
 <style>
   html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: #FBFAF6; color: #171512; font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  body { margin: 0; background: #FBFAF6; color: #171512; font-family:var(--font-main); font-weight: 300; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
   * { box-sizing: border-box; }
   img { max-width: 100%; }
   a { color: #171512; text-decoration: none; }
@@ -84,23 +82,23 @@
   .site-header__logo, .site-header__nav, .site-header__menu { pointer-events: auto; }
   .site-header__logo { display: block; flex: none; }
   .site-header__logo img { display: block; visibility: visible; width: clamp(86px,9.35vw,166px); height: auto; }
-  .site-header__nav { display: flex; align-items: center; gap: clamp(16px,3.25vw,58px); font-family: "Cormorant Garamond", serif; font-size: clamp(10px,.98vw,17px); letter-spacing: .14em; font-weight: 400; color: #81796E; }
+  .site-header__nav { display: flex; align-items: center; gap: clamp(16px,3.25vw,58px); font-family:var(--font-main); font-size: clamp(10px,.98vw,17px); letter-spacing: .14em; font-weight: 400; color: #81796E; }
   .site-header__nav a { padding: 8px 0; color: inherit; }
   .site-header__menu { display: none; border: 0; padding: 0; background: transparent; color: #81796E; cursor: pointer; }
   .site-header__menu-lines { display: flex; width: 42px; flex-direction: column; gap: 8px; }
   .site-header__menu-lines i { display: block; height: 1px; background: currentColor; }
-  .site-header__menu-label { display: block; margin-top: 9px; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .16em; }
+  .site-header__menu-label { display: block; margin-top: 9px; font-family:var(--font-main); font-size: 13px; letter-spacing: .16em; }
   .site-header a:focus-visible, .site-header button:focus-visible { outline: 2px solid #81796E; outline-offset: 4px; }
   [data-hero-menu-panel][aria-hidden="true"] { display: none; }
   [data-hero-menu-panel] { position: fixed; inset: 0; z-index: 110; display: flex; flex-direction: column; justify-content: center; padding: 24px clamp(28px,9vw,54px); background: rgba(255,255,255,.98); }
-  [data-hero-menu-panel] nav { display: flex; flex-direction: column; gap: 22px; font-family: "Cormorant Garamond", serif; font-size: 28px; letter-spacing: .14em; }
-  [data-hero-menu-close] { position: absolute; top: 24px; right: 24px; border: 0; padding: 10px; background: transparent; font-family: "Cormorant Garamond", serif; font-size: 16px; letter-spacing: .12em; color: #81796E; cursor: pointer; }
+  [data-hero-menu-panel] nav { display: flex; flex-direction: column; gap: 22px; font-family:var(--font-main); font-size: 28px; letter-spacing: .14em; }
+  [data-hero-menu-close] { position: absolute; top: 24px; right: 24px; border: 0; padding: 10px; background: transparent; font-family:var(--font-main); font-size: 16px; letter-spacing: .12em; color: #81796E; cursor: pointer; }
   @media (prefers-reduced-motion: reduce) { .hero__slider, .hero__slide, .hero__slide .hero__image { transition: none !important; animation: none !important; -webkit-mask-image: none !important; mask-image: none !important; } }
   @media (min-width: 768px) {
     .site-header { position: fixed; align-items: center; gap: clamp(12px,2vw,32px); padding: clamp(12px,1.5vw,22px) clamp(16px,3.2vw,52px); background: rgba(255,255,255,.94); transition: transform .64s cubic-bezier(.22,.61,.36,1),background .5s ease,padding .5s cubic-bezier(.22,.61,.36,1); }
     .site-header__logo { margin-left: clamp(4px,2.4vw,44px); }
     .site-header__logo img { width: clamp(78px,6.6vw,108px); }
-    .site-header__nav { gap: clamp(10px,1.8vw,34px); font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif; font-size: clamp(9.5px,.78vw,11.5px); letter-spacing: .18em; }
+    .site-header__nav { gap: clamp(10px,1.8vw,34px); font-family:var(--font-main); font-size: clamp(9.5px,.78vw,11.5px); letter-spacing: .18em; }
     .site-header__nav a { padding: 12px 2px; }
     .site-header__nav a:last-child { padding: 11px clamp(12px,1.4vw,20px); border: 1px solid #CFC8B8; }
   }
@@ -117,7 +115,7 @@
     .hero__header-mask span.hero__header-mask-nav { display: block; top: 0; left: 0; right: auto; z-index: 0; width: 100%; height: 8.6%; background: rgb(245 242 239); }
     .site-header { align-items: center; gap: 8px; min-height: 96px; padding: 8px 8px 8px 10px; background: #fff; border-bottom: 1px solid #EEECE7; box-sizing: border-box; }
     .site-header__logo img { width: clamp(72px,20vw,86px); }
-    .site-header__nav { display: flex; flex: 1 1 auto; justify-content: flex-end; gap: clamp(7px,2.5vw,14px); font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif; font-size: clamp(7px,2.15vw,9px); letter-spacing: .1em; white-space: nowrap; }
+    .site-header__nav { display: flex; flex: 1 1 auto; justify-content: flex-end; gap: clamp(7px,2.5vw,14px); font-family:var(--font-main); font-size: clamp(7px,2.15vw,9px); letter-spacing: .1em; white-space: nowrap; }
     .site-header__nav a { padding: 8px 0; }
     .site-header__nav a:last-child { padding: 8px clamp(6px,2vw,10px); border: 1px solid #CFC8B8; }
     .site-header__menu { display: none; }
@@ -208,8 +206,8 @@
 <section data-screen-label="03 SERVICES" data-services="" style="padding:clamp(66px,9vw,140px) clamp(18px,3.2vw,52px);border-top:1px solid #E6E2D9;">
   <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(22px,3vw,56px);margin-bottom:clamp(38px,5vw,80px);">
     <div>
-      <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">SERVICES</p>
-      <h2 style="margin:0;font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(26px,3.4vw,52px);line-height:1.34;">
+      <p data-reveal="label" style="margin:0 0 clamp(16px,2vw,26px);font-family:var(--font-main);font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">SERVICES</p>
+      <h2 style="margin:0;font-family:var(--font-main);font-weight:400;font-size:clamp(26px,3.4vw,52px);line-height:1.34;">
         <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">施術から探す</span></span>
       </h2>
     </div>
@@ -218,57 +216,57 @@
 
   <div data-service-list="" style="border-top:1px solid #E6E2D9;">
     <a href="ESTHETIC.dc.html" data-service-row="" data-img="assets/esthetic-machine.webp" data-alt="腹部に装着された脂肪冷却系の施術機器" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
-      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">01</span>
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:var(--font-main);font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">01</span>
       <span style="flex:1 1 240px;min-width:0;">
-        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;letter-spacing:0.01em;transition:transform .6s cubic-bezier(.22,.61,.36,1);">ESTHETIC</span>
+        <span data-service-en="" style="display:block;font-family:var(--font-main);font-size:clamp(27px,3.6vw,58px);line-height:1.1;letter-spacing:0.01em;transition:transform .6s cubic-bezier(.22,.61,.36,1);">ESTHETIC</span>
         <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">エステティック</span>
       </span>
       <span style="flex:0 1 300px;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;padding-top:8px;">
         <span>痩身・ボディ</span><span>小顔・フェイシャル</span><span>脱毛</span><span>バストケア</span>
       </span>
-      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW ESTHETIC<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW ESTHETIC<span data-arrow-mark="" style="display:inline-block;font-family:var(--font-main);font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
     </a>
 
     <a href="NAIL.dc.html" data-service-row="" data-img="assets/nail-2.webp" data-alt="オーロラのようにきらめくミルキーホワイトのネイル" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
-      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">02</span>
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:var(--font-main);font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">02</span>
       <span style="flex:1 1 240px;min-width:0;">
-        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">NAIL</span>
+        <span data-service-en="" style="display:block;font-family:var(--font-main);font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">NAIL</span>
         <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">ネイル</span>
       </span>
       <span style="flex:0 1 300px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;padding-top:8px;">ワンカラーからトレンドデザイン、<br />フット、長さ出しまで。</span>
-      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW NAIL<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW NAIL<span data-arrow-mark="" style="display:inline-block;font-family:var(--font-main);font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
     </a>
 
     <a href="EYE.dc.html" data-service-row="" data-img="assets/lash-perm-1.webp" data-alt="まつ毛パーマで自然に立ち上がった目元" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
-      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">03</span>
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:var(--font-main);font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">03</span>
       <span style="flex:1 1 240px;min-width:0;">
-        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">EYE</span>
+        <span data-service-en="" style="display:block;font-family:var(--font-main);font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">EYE</span>
         <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">アイ</span>
       </span>
       <span style="flex:0 1 300px;display:flex;flex-wrap:wrap;gap:6px 22px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.9;color:#57524A;padding-top:8px;">
         <span>まつ毛パーマ</span><span>まつ毛エクステ</span><span>アイブロウ</span>
       </span>
-      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW EYE<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW EYE<span data-arrow-mark="" style="display:inline-block;font-family:var(--font-main);font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
     </a>
 
     <a href="MENS-BEAUTY.dc.html" data-service-row="" data-img="assets/mens-face.webp" data-alt="メンズフェイシャル前後のフェイスラインの変化" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
-      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">04</span>
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:var(--font-main);font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">04</span>
       <span style="flex:1 1 240px;min-width:0;">
-        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">MEN'S BEAUTY</span>
+        <span data-service-en="" style="display:block;font-family:var(--font-main);font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">MEN'S BEAUTY</span>
         <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">メンズ美容</span>
       </span>
       <span style="flex:0 1 300px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;padding-top:8px;">フェイシャル、肌質ケア、痩身、脱毛、<br />爪ケア、眉毛スタイリングまで。</span>
-      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW MEN'S BEAUTY<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW MEN'S BEAUTY<span data-arrow-mark="" style="display:inline-block;font-family:var(--font-main);font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
     </a>
 
     <a href="JAGUA-TATTOO.dc.html" data-service-row="" data-img="assets/jagua-arm.webp" data-alt="二の腕に描かれた月と星のジャグアタトゥー" style="display:flex;flex-wrap:wrap;align-items:flex-start;gap:clamp(14px,2.4vw,48px);padding:clamp(24px,2.9vw,44px) 0;border-bottom:1px solid #E6E2D9;transition:opacity .5s ease;">
-      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">05</span>
+      <span style="flex:0 0 auto;width:clamp(34px,3vw,54px);font-family:var(--font-main);font-size:clamp(12px,0.95vw,14px);color:#9C9585;padding-top:6px;">05</span>
       <span style="flex:1 1 240px;min-width:0;">
-        <span data-service-en="" style="display:block;font-family:'Cormorant Garamond',serif;font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">JAGUA TATTOO</span>
+        <span data-service-en="" style="display:block;font-family:var(--font-main);font-size:clamp(27px,3.6vw,58px);line-height:1.1;transition:transform .6s cubic-bezier(.22,.61,.36,1);">JAGUA TATTOO</span>
         <span style="display:block;margin-top:10px;font-size:clamp(12px,0.95vw,13.5px);color:#6D6759;letter-spacing:0.06em;">ジャグアタトゥー</span>
       </span>
       <span style="flex:0 1 300px;font-size:clamp(11.5px,0.92vw,13px);line-height:1.95;color:#57524A;padding-top:8px;">約2週間楽しめる、<br />オーダーデザインのボディアート。</span>
-      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW JAGUA TATTOO<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
+      <span style="flex:0 0 auto;display:flex;align-items:center;gap:12px;padding-top:10px;font-size:clamp(9.5px,0.78vw,11px);letter-spacing:0.16em;color:#8A8376;">VIEW JAGUA TATTOO<span data-arrow-mark="" style="display:inline-block;font-family:var(--font-main);font-size:14px;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></span>
     </a>
   </div>
 
@@ -287,15 +285,15 @@
     <img data-res-img="" src="assets/lash-perm-2.webp" width="428" height="324" alt="" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;transform:scale(1.04);transition:transform .58s cubic-bezier(.22,1,.36,1);" />
   </div>
   <div style="position:relative;z-index:2;">
-    <p data-reveal="label" style="margin:0 0 clamp(20px,2.4vw,32px);font-family:'Cormorant Garamond',serif;font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">RESERVATION</p>
-    <h2 style="margin:0 0 clamp(24px,3vw,44px);font-family:'Shippori Mincho',serif;font-weight:400;font-size:clamp(30px,4.4vw,70px);line-height:1.24;">
+    <p data-reveal="label" style="margin:0 0 clamp(20px,2.4vw,32px);font-family:var(--font-main);font-size:clamp(12px,1vw,14px);letter-spacing:0.24em;color:#8A8376;clip-path:inset(0 100% 0 0);transition:clip-path .62s cubic-bezier(.22,1,.36,1);">RESERVATION</p>
+    <h2 style="margin:0 0 clamp(24px,3vw,44px);font-family:var(--font-main);font-weight:400;font-size:clamp(30px,4.4vw,70px);line-height:1.24;">
       <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">ご予約</span></span>
     </h2>
     <p data-reveal="body" style="margin:0 0 clamp(34px,4vw,60px);max-width:420px;font-size:clamp(12px,0.98vw,14px);line-height:2.05;color:#6D6759;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">受けたい施術と店舗を選んで、<br />それぞれの予約ページへお進みください。</p>
     <div style="display:flex;flex-direction:column;gap:0;border-top:1px solid #E0DBD0;max-width:720px;">
-      <a href="SERVICES.dc.html" data-res-row="" data-img="assets/lash-perm-2.webp" data-alt="まつ毛パーマで立ち上がった目元" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(20px,2.4vw,32px) 0;border-bottom:1px solid #E0DBD0;font-family:'Shippori Mincho',serif;font-size:clamp(19px,2.1vw,32px);letter-spacing:0.03em;">施術から探す<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.4vw,22px);transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
-      <a href="SALONS.dc.html" data-res-row="" data-img="assets/salon-lounge.webp" data-alt="ショーケースとソファのある待合スペース" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(20px,2.4vw,32px) 0;border-bottom:1px solid #E0DBD0;font-family:'Shippori Mincho',serif;font-size:clamp(19px,2.1vw,32px);letter-spacing:0.03em;">店舗から探す<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.4vw,22px);transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
-      <a href="RESERVE.dc.html" data-arrow="" style="display:inline-flex;align-items:center;gap:14px;margin-top:clamp(28px,3.4vw,48px);padding:16px clamp(22px,2.2vw,34px);border:1px solid #171512;align-self:flex-start;font-size:clamp(11.5px,0.9vw,13px);letter-spacing:0.1em;">予約する<span data-arrow-mark="" style="display:inline-block;font-family:'Cormorant Garamond',serif;transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+      <a href="SERVICES.dc.html" data-res-row="" data-img="assets/lash-perm-2.webp" data-alt="まつ毛パーマで立ち上がった目元" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(20px,2.4vw,32px) 0;border-bottom:1px solid #E0DBD0;font-family:var(--font-main);font-size:clamp(19px,2.1vw,32px);letter-spacing:0.03em;">施術から探す<span data-arrow-mark="" style="display:inline-block;font-family:var(--font-main);font-size:clamp(16px,1.4vw,22px);transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+      <a href="SALONS.dc.html" data-res-row="" data-img="assets/salon-lounge.webp" data-alt="ショーケースとソファのある待合スペース" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:clamp(20px,2.4vw,32px) 0;border-bottom:1px solid #E0DBD0;font-family:var(--font-main);font-size:clamp(19px,2.1vw,32px);letter-spacing:0.03em;">店舗から探す<span data-arrow-mark="" style="display:inline-block;font-family:var(--font-main);font-size:clamp(16px,1.4vw,22px);transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
+      <a href="RESERVE.dc.html" data-arrow="" style="display:inline-flex;align-items:center;gap:14px;margin-top:clamp(28px,3.4vw,48px);padding:16px clamp(22px,2.2vw,34px);border:1px solid #171512;align-self:flex-start;font-size:clamp(11.5px,0.9vw,13px);letter-spacing:0.1em;">予約する<span data-arrow-mark="" style="display:inline-block;font-family:var(--font-main);transition:transform .5s cubic-bezier(.22,.61,.36,1);">↗</span></a>
     </div>
   </div>
 </section>
@@ -303,11 +301,11 @@
 <footer data-screen-label="FOOTER" style="padding:clamp(56px,7vw,110px) clamp(18px,3.2vw,52px) clamp(28px,3vw,44px);background:#F7F5EF;border-top:1px solid #E6E2D9;">
   <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:clamp(28px,4vw,64px);">
     <div>
-      <h2 style="margin:0 0 clamp(16px,2vw,26px);font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(38px,6.4vw,110px);line-height:0.98;letter-spacing:0.01em;">
+      <h2 style="margin:0 0 clamp(16px,2vw,26px);font-family:var(--font-main);font-weight:300;font-size:clamp(38px,6.4vw,110px);line-height:0.98;letter-spacing:0.01em;">
         <span style="display:block;overflow:hidden;"><span data-reveal="line" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">BeautySalon</span></span>
         <span style="display:block;overflow:hidden;"><span data-reveal="line" data-delay="85" style="display:block;transform:translateY(112%);transition:transform .6s cubic-bezier(.22,1,.36,1);">nanairo</span></span>
       </h2>
-      <p data-reveal="body" style="margin:0;font-family:'Shippori Mincho',serif;font-size:clamp(13px,1.1vw,16px);letter-spacing:0.04em;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">年齢も環境も制限のない、美しさへ。</p>
+      <p data-reveal="body" style="margin:0;font-family:var(--font-main);font-size:clamp(13px,1.1vw,16px);letter-spacing:0.04em;color:#57524A;opacity:0;transform:translateY(9px);transition:opacity .55s ease,transform .55s cubic-bezier(.22,1,.36,1);">年齢も環境も制限のない、美しさへ。</p>
     </div>
     <figure data-reveal="image" data-delay="55" style="flex:0 1 260px;margin:0;overflow:hidden;clip-path:inset(0 0 100% 0);transition:clip-path .7s cubic-bezier(.22,1,.36,1);aspect-ratio:1/1;background:#EDE9E1;">
       <img src="assets/jagua-decollete.webp" width="472" height="470" alt="デコルテに描かれた星と月のジャグアタトゥー" loading="lazy" style="width:100%;height:100%;object-fit:cover;object-position:48% 55%;transform:scale(1.06);transition:transform .85s cubic-bezier(.22,1,.36,1);" />
@@ -333,7 +331,7 @@
 </footer>
 
 <div data-mask="" aria-hidden="true" style="position:fixed;inset:0;z-index:120;background:#F3EFE6;clip-path:inset(0 0 100% 0);transition:clip-path .28s cubic-bezier(.22,1,.36,1);display:flex;align-items:center;justify-content:center;pointer-events:none;">
-  <span data-mask-label="" style="font-family:'Cormorant Garamond',serif;font-size:clamp(24px,3vw,44px);letter-spacing:0.22em;color:#2A2723;opacity:0;transition:opacity .16s ease;"></span>
+  <span data-mask-label="" style="font-family:var(--font-main);font-size:clamp(24px,3vw,44px);letter-spacing:0.22em;color:#2A2723;opacity:0;transition:opacity .16s ease;"></span>
 </div>
 
 <div data-float="" aria-hidden="true" style="position:fixed;top:0;left:0;z-index:70;width:clamp(180px,17vw,260px);aspect-ratio:3/4;overflow:hidden;pointer-events:none;opacity:0;transform:translate3d(-50%,-50%,0) scale(.85);transition:opacity .5s ease,transform .55s cubic-bezier(.22,.61,.36,1);background:#F1EEE7;">

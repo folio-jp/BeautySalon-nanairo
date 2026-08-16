@@ -1,0 +1,20 @@
+:root {
+  --font-main:
+    "Helvetica Neue",
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    Helvetica,
+    "Yu Gothic",
+    "YuGothic",
+    Arial,
+    sans-serif;
+}
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-main);
+}

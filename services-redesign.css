@@ -14,8 +14,8 @@
 
 .svc-shell { width: min(calc(100% - 36px), 1440px); margin-inline: auto; }
 .svc-section { padding-block: clamp(78px, 9vw, 148px); }
-.svc-kicker { margin: 0 0 20px; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .24em; color: #8a8376; }
-.svc-heading { margin: 0; font-family: "Shippori Mincho", serif; font-size: clamp(30px, 4vw, 62px); font-weight: 400; line-height: 1.48; letter-spacing: .04em; }
+.svc-kicker { margin: 0 0 20px; font-family:var(--font-main); font-size: 13px; letter-spacing: .24em; color: #8a8376; }
+.svc-heading { margin: 0; font-family:var(--font-main); font-size: clamp(30px, 4vw, 62px); font-weight: 400; line-height: 1.48; letter-spacing: .04em; }
 .svc-copy { margin: 0; font-size: clamp(13px, 1.05vw, 15px); line-height: 2.15; color: var(--svc-muted); }
 
 .services-hero {
@@ -46,7 +46,7 @@
 .category-nav__item:hover { color: var(--svc-ink); }
 .category-nav__item:hover .category-nav__circle { transform: scale(1.02); }
 .category-nav__item:hover .category-nav__circle img { transform: translateY(-2px); }
-.category-nav__item strong { display: block; margin: 20px 0 7px; font-family: "Cormorant Garamond", serif; font-size: clamp(17px, 1.5vw, 24px); font-weight: 400; letter-spacing: .04em; }
+.category-nav__item strong { display: block; margin: 20px 0 7px; font-family:var(--font-main); font-size: clamp(17px, 1.5vw, 24px); font-weight: 400; letter-spacing: .04em; }
 .category-nav__item > span:last-child { display: block; margin: 0; font-size: 12px; letter-spacing: .08em; }
 
 .service-visuals { padding-bottom: clamp(90px, 11vw, 170px); }
@@ -58,7 +58,7 @@
 .service-visual-card::after { content: ""; position: absolute; inset: 44% 0 0; background: linear-gradient(transparent, rgba(20,16,12,.58)); pointer-events: none; }
 .service-visual-card__body { position: absolute; left: clamp(22px, 3vw, 48px); right: 22px; bottom: clamp(24px, 3vw, 46px); z-index: 1; }
 .service-visual-card__body > span { display: block; margin: 0 0 9px; font-size: 12px; letter-spacing: .16em; }
-.service-visual-card h3 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(30px, 4vw, 62px); font-weight: 400; line-height: 1; letter-spacing: .04em; }
+.service-visual-card h3 { margin: 0; font-family:var(--font-main); font-size: clamp(30px, 4vw, 62px); font-weight: 400; line-height: 1; letter-spacing: .04em; }
 .service-visual-card small { display: inline-block; margin-top: 24px; padding-bottom: 5px; border-bottom: 1px solid currentColor; font-size: 10px; letter-spacing: .14em; }
 .service-visual-card:hover { color: #fff; }
 .service-visual-card:hover img { transform: scale(1.025); }
@@ -70,8 +70,8 @@
 .detail-hero { min-height: clamp(620px, 72vh, 820px); display: grid; grid-template-columns: minmax(330px, .82fr) minmax(0, 1.18fr); background: var(--svc-tint); padding-top: clamp(104px, 9vw, 138px); }
 .detail-hero__copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(48px, 6vw, 100px); }
 .detail-hero__area { margin: 0 0 20px; font-size: 12px; letter-spacing: .18em; color: var(--svc-muted); }
-.detail-hero h1 { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(44px, 6vw, 94px); font-weight: 300; line-height: .98; letter-spacing: .03em; }
-.detail-hero__jp { margin: 22px 0 0; font-family: "Shippori Mincho", serif; font-size: clamp(18px, 1.6vw, 25px); letter-spacing: .08em; }
+.detail-hero h1 { margin: 0; font-family:var(--font-main); font-size: clamp(44px, 6vw, 94px); font-weight: 300; line-height: .98; letter-spacing: .03em; }
+.detail-hero__jp { margin: 22px 0 0; font-family:var(--font-main); font-size: clamp(18px, 1.6vw, 25px); letter-spacing: .08em; }
 .detail-hero .svc-copy { margin-top: clamp(34px, 4vw, 58px); max-width: 520px; }
 .detail-hero__visual { min-width: 0; min-height: 540px; overflow: hidden; }
 .detail-hero__visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -83,46 +83,56 @@
 
 .detail-directory { padding-block: clamp(72px, 8vw, 118px); text-align: center; background: var(--svc-paper); }
 .detail-directory .svc-kicker { margin-bottom: 18px; }
-.detail-directory__title { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(40px, 5vw, 76px); font-weight: 300; line-height: 1; letter-spacing: .07em; }
+.detail-directory__title { margin: 0; font-family:var(--font-main); font-size: clamp(40px, 5vw, 76px); font-weight: 300; line-height: 1; letter-spacing: .07em; }
 .detail-directory__nav { display: grid; grid-template-columns: repeat(2, minmax(0, 220px)); justify-content: center; gap: 16px; margin-top: clamp(38px, 5vw, 64px); }
-.detail-directory__nav button { display: grid; place-items: center; min-height: 62px; padding: 0 18px; border: 1px solid var(--svc-ink); border-radius: 0; color: var(--svc-ink); background: transparent; font: inherit; font-family: "Cormorant Garamond", serif; font-size: 16px; letter-spacing: .17em; cursor: pointer; }
+.detail-directory__nav button { display: grid; place-items: center; min-height: 62px; padding: 0 18px; border: 1px solid var(--svc-ink); border-radius: 0; color: var(--svc-ink); background: transparent; font: inherit; font-family:var(--font-main); font-size: 16px; letter-spacing: .17em; cursor: pointer; }
 .detail-directory__nav button[aria-selected="true"],
 .detail-directory__nav button:hover,
 .detail-directory__nav button:focus-visible { color: #fff; background: var(--svc-ink); }
 
 .service-view[hidden] { display: none !important; }
 .service-salon-details { display: grid; gap: clamp(28px, 4vw, 52px); margin-top: 48px; }
-.service-salon-detail { display: grid; grid-template-columns: minmax(210px, .42fr) minmax(0, 1fr); gap: clamp(34px, 6vw, 96px); padding: clamp(30px, 4vw, 58px); border: 1px solid rgba(255,255,255,.68); background-image: linear-gradient(90deg, rgba(248,245,239,.9), rgba(248,245,239,.78)), var(--salon-card-image); background-position: center; background-size: cover; box-shadow: inset 0 0 0 1px rgba(42,39,35,.06); }
-.service-salon-detail:nth-child(1) { --salon-card-image: url("assets/salon-lounge.webp"); background-position: 50% 53%; }
-.service-salon-detail:nth-child(2) { --salon-card-image: url("assets/esthetic-facial.webp"); background-position: 50% 48%; }
-.service-salon-detail__number { margin: 0 0 14px; font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: .18em; color: #8a8376; }
-.service-salon-detail h3 { margin: 0; font-family: "Shippori Mincho", serif; font-size: clamp(25px, 2.8vw, 42px); font-weight: 400; line-height: 1.35; letter-spacing: .04em; }
+.service-salon-detail { display: grid; grid-template-columns: minmax(250px, .72fr) minmax(0, 1.28fr); gap: clamp(44px, 8vw, 132px); padding: clamp(38px, 5vw, 72px); border: 1px solid var(--svc-line); background: rgba(255,255,255,.42); }
+.service-salon-detail > header,
+.service-salon-detail > div { min-width: 0; }
+.service-salon-detail > header::before,
+.service-salon-detail > div::before { display: block; margin: 0 0 clamp(28px, 3vw, 42px); padding-bottom: 16px; border-bottom: 1px solid var(--svc-line); font-size: clamp(14px, 1.2vw, 18px); font-weight: 400; letter-spacing: .08em; }
+.service-salon-detail > header::before { content: "RESERVE +    |    ご予約"; }
+.service-salon-detail > div::before { content: "SALON INFO +    |    住所・営業時間"; }
+.service-salon-detail__number { margin: 0 0 14px; font-family:var(--font-main); font-size: 12px; letter-spacing: .18em; color: #8a8376; }
+.service-salon-detail h3 { margin: 0; font-family:var(--font-main); font-size: clamp(25px, 2.8vw, 42px); font-weight: 400; line-height: 1.35; letter-spacing: .04em; }
 .service-salon-detail__brand { margin: 15px 0 0; font-size: 13px; line-height: 1.85; color: var(--svc-muted); }
-.service-salon-detail__social { display: inline-block; margin-top: 24px; padding-bottom: 6px; border-bottom: 1px solid var(--svc-ink); font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: .14em; }
+.service-salon-detail__actions { display: grid; gap: 14px; margin-top: clamp(28px, 4vw, 54px); }
+.service-salon-detail__tel,
+.service-salon-detail__social { display: grid; place-items: center; min-height: 60px; padding: 14px 22px; border-radius: 999px; text-align: center; font-size: clamp(13px, 1.05vw, 16px); font-weight: 400; letter-spacing: .08em; transition: color .25s ease, background-color .25s ease, border-color .25s ease; }
+.service-salon-detail__tel { border: 1px solid var(--svc-ink); color: #fff; background: var(--svc-ink); }
+.service-salon-detail__social { border: 1px solid #a49175; color: var(--svc-ink); background: #ded4c5; }
+.service-salon-detail__tel:hover,
+.service-salon-detail__tel:focus-visible { color: var(--svc-ink); background: transparent; }
+.service-salon-detail__social:hover,
+.service-salon-detail__social:focus-visible { color: #fff; border-color: var(--svc-ink); background: var(--svc-ink); }
 .service-salon-facts { margin: 0; border-top: 1px solid var(--svc-line); }
 .service-salon-facts__row { display: grid; grid-template-columns: 100px minmax(0, 1fr); gap: 20px; padding: 15px 0; border-bottom: 1px solid var(--svc-line); }
-.service-salon-facts dt { margin: 0; font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: .14em; color: #8a8376; }
+.service-salon-facts dt { margin: 0; font-family:var(--font-main); font-size: 12px; letter-spacing: .14em; color: #8a8376; }
 .service-salon-facts dd { margin: 0; font-size: 13px; line-height: 1.85; }
-.service-salon-access { margin-top: 30px; }
-.service-salon-access__address { margin: 0 0 15px; font-family: "Shippori Mincho", serif; font-size: clamp(15px, 1.3vw, 19px); line-height: 1.85; }
-.service-salon-access ul { margin: 0; padding: 0; list-style: none; color: var(--svc-muted); }
-.service-salon-access li { position: relative; padding: 5px 0 5px 18px; font-size: 13px; line-height: 1.75; }
-.service-salon-access li::before { content: "—"; position: absolute; left: 0; }
+.service-salon-access { margin-top: 22px; }
+.service-salon-access__address,
+.service-salon-access ul { display: none; }
 .service-salon-access__map { display: inline-block; margin-top: 20px; padding-bottom: 6px; border-bottom: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; }
 
 .detail-section { padding-block: clamp(76px, 9vw, 140px); border-top: 1px solid var(--svc-line); }
 .detail-section--tint { background: var(--svc-tint); }
 .detail-about { display: grid; grid-template-columns: minmax(240px, .55fr) minmax(0, 1fr); gap: clamp(38px, 7vw, 120px); align-items: start; }
 .detail-section__head { display: grid; grid-template-columns: minmax(240px, .55fr) minmax(0, 1fr); gap: clamp(38px, 7vw, 120px); align-items: start; }
-.detail-section__title { margin: 0; font-family: "Cormorant Garamond", serif; font-size: clamp(31px, 3.6vw, 56px); font-weight: 400; line-height: 1.1; letter-spacing: .03em; }
+.detail-section__title { margin: 0; font-family:var(--font-main); font-size: clamp(31px, 3.6vw, 56px); font-weight: 400; line-height: 1.1; letter-spacing: .03em; }
 .service-tags { display: flex; flex-wrap: wrap; gap: 0; margin: 35px 0 0; padding: 0; border-top: 1px solid var(--svc-line); list-style: none; }
 .service-tags li { padding: 14px 22px 14px 0; margin-right: 22px; border-bottom: 1px solid var(--svc-line); font-size: 13px; color: var(--svc-muted); }
 
 .available-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin-top: 48px; border-top: 1px solid var(--svc-line); border-left: 1px solid var(--svc-line); }
 .available-grid--single { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
 .available-card { display: flex; flex-direction: column; min-height: 310px; padding: clamp(28px, 3.5vw, 52px); border-right: 1px solid var(--svc-line); border-bottom: 1px solid var(--svc-line); }
-.available-card__area { margin: 0 0 18px; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .18em; color: #8a8376; }
-.available-card h3 { margin: 0 0 20px; font-family: "Shippori Mincho", serif; font-size: clamp(18px, 1.55vw, 24px); font-weight: 400; line-height: 1.65; }
+.available-card__area { margin: 0 0 18px; font-family:var(--font-main); font-size: 13px; letter-spacing: .18em; color: #8a8376; }
+.available-card h3 { margin: 0 0 20px; font-family:var(--font-main); font-size: clamp(18px, 1.55vw, 24px); font-weight: 400; line-height: 1.65; }
 .available-card p { margin: 0; font-size: 13px; line-height: 1.95; color: var(--svc-muted); }
 .available-card__actions { display: flex; flex-wrap: wrap; gap: 18px 28px; margin-top: auto; padding-top: 28px; }
 .svc-text-link { align-self: flex-start; padding-bottom: 5px; border-bottom: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; }
@@ -138,8 +148,8 @@
 .detail-mens .price-block:nth-child(1) { --price-card-image: url("assets/mens-face.webp"); background-position: 50% 38%; }
 .detail-jagua .price-block:nth-child(1) { --price-card-image: url("assets/jagua-decollete.webp"); background-position: 50% 44%; }
 .price-block__meta { position: sticky; top: 130px; }
-.price-block__area { margin: 0 0 12px; font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: .18em; color: #8a8376; }
-.price-block h3 { margin: 0; font-family: "Shippori Mincho", serif; font-size: clamp(18px, 1.6vw, 25px); font-weight: 400; line-height: 1.65; }
+.price-block__area { margin: 0 0 12px; font-family:var(--font-main); font-size: 13px; letter-spacing: .18em; color: #8a8376; }
+.price-block h3 { margin: 0; font-family:var(--font-main); font-size: clamp(18px, 1.6vw, 25px); font-weight: 400; line-height: 1.65; }
 .price-list { border-top: 1px solid var(--svc-ink); }
 .price-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 25px; padding: 17px 0; border-bottom: 1px solid var(--svc-line); font-size: 13px; line-height: 1.7; }
 .price-row strong { font-weight: 400; white-space: nowrap; }
@@ -153,11 +163,11 @@
 .reservation-grid--single { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
 .reservation-card { padding: clamp(28px, 3.5vw, 48px); border-right: 1px solid var(--svc-line); border-bottom: 1px solid var(--svc-line); }
 .reservation-card > span { display: block; margin: 0 0 10px; font-size: 12px; letter-spacing: .16em; color: #8a8376; }
-.reservation-card > strong { display: block; font-family: "Cormorant Garamond", serif; font-size: clamp(24px, 2.4vw, 38px); font-weight: 400; letter-spacing: .04em; }
+.reservation-card > strong { display: block; font-family:var(--font-main); font-size: clamp(24px, 2.4vw, 38px); font-weight: 400; letter-spacing: .04em; }
 .reservation-card > small { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 58px; margin-top: 25px; padding: 15px 18px; border: 1px solid var(--svc-ink); font-size: 12px; letter-spacing: .08em; transition: background .3s ease, color .3s ease; }
 .reservation-card:hover > small { color: #fff; background: var(--svc-ink); }
 .reservation-card__area { margin: 0 0 10px; font-size: 12px; letter-spacing: .16em; color: #8a8376; }
-.reservation-card h3 { margin: 0; font-family: "Shippori Mincho", serif; font-size: clamp(17px, 1.4vw, 22px); font-weight: 400; line-height: 1.6; }
+.reservation-card h3 { margin: 0; font-family:var(--font-main); font-size: clamp(17px, 1.4vw, 22px); font-weight: 400; line-height: 1.6; }
 .reservation-card .reserve-link { margin-top: 24px; }
 .reservation-card__sub { display: inline-block; margin-top: 15px; padding-bottom: 5px; border-bottom: 1px solid var(--svc-ink); font-size: 12px; }
 
@@ -166,9 +176,9 @@
 .other-service-link:nth-child(odd) { padding-right: 28px; }
 .other-service-link:nth-child(even) { padding-left: 28px; }
 .other-service-link > span:first-child { font-size: 12px; color: var(--svc-muted); }
-.other-service-link strong { font-family: "Cormorant Garamond", serif; font-size: clamp(19px, 2vw, 30px); font-weight: 400; }
+.other-service-link strong { font-family:var(--font-main); font-size: clamp(19px, 2vw, 30px); font-weight: 400; }
 .other-services__links { border-top: 1px solid var(--svc-line); }
-.other-services__links a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--svc-line); font-family: "Cormorant Garamond", serif; font-size: clamp(19px, 2vw, 30px); }
+.other-services__links a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--svc-line); font-family:var(--font-main); font-size: clamp(19px, 2vw, 30px); }
 .other-services__links a span { transition: transform .3s ease; }
 .other-services__links a:hover span { transform: translateX(5px); }
 
@@ -212,7 +222,10 @@
   .detail-section__head, .detail-about { grid-template-columns: 1fr; gap: 28px; }
   .available-grid, .available-grid--single { grid-template-columns: 1fr; }
   .available-card { min-height: 280px; }
-  .service-salon-detail { grid-template-columns: 1fr; gap: 30px; padding: 28px 20px; }
+  .service-salon-detail { grid-template-columns: 1fr; gap: 48px; padding: 32px 20px; }
+  .service-salon-detail > header::before,
+  .service-salon-detail > div::before { margin-bottom: 26px; white-space: pre-wrap; }
+  .service-salon-detail__actions { margin-top: 28px; }
   .service-salon-facts__row { grid-template-columns: 82px minmax(0, 1fr); gap: 14px; }
   .price-grid { gap: 70px; }
   .price-block { grid-template-columns: 1fr; gap: 26px; padding: 28px 20px; }
