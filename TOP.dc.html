@@ -32,9 +32,9 @@
   [data-hero] { position: relative; overflow: hidden; background: #fff; }
   .hero__art { position: relative; display: none; width: 100%; }
   .hero__slider { position: relative; width: 100%; background: #fff; }
-  .hero__art--pc .hero__slider { height: 100svh; min-height: 720px; }
-  .hero__art--tablet .hero__slider { height: min(133.34vw, 1200px); }
-  .hero__art--mobile .hero__slider { height: 177.68vw; min-height: 640px; }
+  .hero__art--pc .hero__slider { --hero-canvas-height: max(100svh, 720px); height: var(--hero-canvas-height); }
+  .hero__art--tablet .hero__slider { --hero-canvas-height: min(133.34vw, 1200px); height: var(--hero-canvas-height); }
+  .hero__art--mobile .hero__slider { --hero-canvas-height: max(177.68vw, 640px); height: var(--hero-canvas-height); }
   @keyframes nanairoHeroWave { from { -webkit-mask-position: 0 50%; mask-position: 0 50%; } to { -webkit-mask-position: 0 -100%; mask-position: 0 -100%; } }
   .hero__slider.is-entering {
     -webkit-mask-image: url("assets/hero-wave-mask.png");
@@ -58,10 +58,10 @@
     animation: nanairoHeroWave 1.5s ease both;
   }
   .hero__layout { display: grid; grid-template-columns: 31.2% 31.2% 31.2%; gap: 3.2%; width: 100%; height: 100%; }
-  .hero__panel { display: block; min-width: 0; height: 100%; overflow: hidden; background-image: var(--hero-image); background-repeat: no-repeat; background-size: auto 100%; }
-  .hero__panel--left { background-position: left center; }
-  .hero__panel--center { background-position: center center; }
-  .hero__panel--right { height: 67.2%; background-position: right center; }
+  .hero__panel { display: block; min-width: 0; height: 100%; overflow: hidden; background-image: var(--hero-image); background-repeat: no-repeat; background-size: 100vw var(--hero-canvas-height); }
+  .hero__panel--left { background-position: left top; }
+  .hero__panel--center { background-position: center top; }
+  .hero__panel--right { height: 67.2%; background-position: right top; }
   .hero__statement { position: absolute; right: -1.2%; bottom: 1.8%; z-index: 8; margin: 0; color: #9B9A91; text-align: right; pointer-events: none; }
   .hero__statement-main { display: block; white-space: nowrap; font-family: var(--font-main); font-size: clamp(64px, 8.2vw, 148px); font-weight: 300; line-height: .92; letter-spacing: -.055em; }
   .hero__statement-sub { display: block; margin-top: clamp(12px, 1.4vw, 24px); padding-right: 2.6vw; font-size: clamp(12px, 1.18vw, 21px); font-weight: 300; letter-spacing: .08em; }
