@@ -31,11 +31,10 @@
   @media (max-width:767px) { .top-search-links { gap:12px; } .top-search-links .top-search-link { min-height:62px;padding:12px 10px !important;font-size:14px; } }
   [data-hero] { position: relative; overflow: hidden; background: #fff; }
   .hero__art { position: relative; display: none; width: 100%; }
-  .hero__image { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; object-position: 50% 50%; }
   .hero__slider { position: relative; width: 100%; background: #fff; }
-  .hero__art--pc .hero__slider { aspect-ratio: 1785 / 881; }
-  .hero__art--tablet .hero__slider { aspect-ratio: 1086 / 1448; }
-  .hero__art--mobile .hero__slider { aspect-ratio: 941 / 1672; }
+  .hero__art--pc .hero__slider { height: 100svh; min-height: 720px; }
+  .hero__art--tablet .hero__slider { height: min(133.34vw, 1200px); }
+  .hero__art--mobile .hero__slider { height: 177.68vw; min-height: 640px; }
   @keyframes nanairoHeroWave { from { -webkit-mask-position: 0 50%; mask-position: 0 50%; } to { -webkit-mask-position: 0 -100%; mask-position: 0 -100%; } }
   .hero__slider.is-entering {
     -webkit-mask-image: url("assets/hero-wave-mask.png");
@@ -50,7 +49,7 @@
   .hero__slide.is-active { z-index: 3; }
   .hero__slide.is-top { z-index: 99; }
   .hero__slide.is-entering { opacity: 0; }
-  .hero__slide.is-leaving .hero__image {
+  .hero__slide.is-leaving {
     -webkit-mask-image: url("assets/hero-wave-mask.png");
     mask-image: url("assets/hero-wave-mask.png");
     -webkit-mask-position: 0 50%; mask-position: 0 50%;
@@ -58,8 +57,16 @@
     -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
     animation: nanairoHeroWave 1.5s ease both;
   }
+  .hero__layout { display: grid; grid-template-columns: 31.2% 31.2% 31.2%; gap: 3.2%; width: 100%; height: 100%; }
+  .hero__panel { display: block; min-width: 0; height: 100%; overflow: hidden; background-image: var(--hero-image); background-repeat: no-repeat; background-size: auto 100%; }
+  .hero__panel--left { background-position: left center; }
+  .hero__panel--center { background-position: center center; }
+  .hero__panel--right { height: 67.2%; background-position: right center; }
+  .hero__statement { position: absolute; right: -1.2%; bottom: 1.8%; z-index: 8; margin: 0; color: #9B9A91; text-align: right; pointer-events: none; }
+  .hero__statement-main { display: block; white-space: nowrap; font-family: var(--font-main); font-size: clamp(64px, 8.2vw, 148px); font-weight: 300; line-height: .92; letter-spacing: -.055em; }
+  .hero__statement-sub { display: block; margin-top: clamp(12px, 1.4vw, 24px); padding-right: 2.6vw; font-size: clamp(12px, 1.18vw, 21px); font-weight: 300; letter-spacing: .08em; }
   .hero__art--pc { display: block; }
-  .hero__header-mask { position: absolute; inset: 0; z-index: 10; pointer-events: none; }
+  .hero__header-mask { display: none; position: absolute; inset: 0; z-index: 10; pointer-events: none; }
   .hero__header-mask span { position: absolute; display: block; background: #fff; }
   .hero__header-mask span.hero__header-mask-logo {
     display: block;
@@ -93,7 +100,7 @@
   [data-hero-menu-close] { position: absolute; top: 24px; right: 24px; border: 0; padding: 10px; background: transparent; font-family:var(--font-main); font-size: 16px; letter-spacing: .12em; color: #81796E; cursor: pointer; }
   @media (prefers-reduced-motion: reduce) { .hero__slider, .hero__slide, .hero__slide .hero__image { transition: none !important; animation: none !important; -webkit-mask-image: none !important; mask-image: none !important; } }
   @media (min-width: 768px) {
-    .site-header { position: fixed; align-items: center; gap: clamp(12px,2vw,32px); padding: clamp(12px,1.5vw,22px) clamp(16px,3.2vw,52px); background: rgba(255,255,255,.94); transition: transform .64s cubic-bezier(.22,.61,.36,1),background .5s ease,padding .5s cubic-bezier(.22,.61,.36,1); }
+    .site-header { position: absolute; align-items: center; gap: clamp(12px,2vw,32px); padding: clamp(12px,1.5vw,22px) clamp(16px,3.2vw,52px); background: transparent; transition: transform .64s cubic-bezier(.22,.61,.36,1),background .5s ease,padding .5s cubic-bezier(.22,.61,.36,1); }
     .site-header__logo { margin-left: clamp(4px,2.4vw,44px); }
     .site-header__logo img { width: clamp(78px,6.6vw,108px); }
     .site-header__nav { gap: clamp(10px,1.8vw,34px); font-family:var(--font-main); font-size: clamp(9.5px,.78vw,11.5px); letter-spacing: .18em; }
@@ -105,6 +112,11 @@
     .hero__art--tablet { display: block; }
     .hero__header-mask span.hero__header-mask-logo { width: 28%; height: 9.4%; aspect-ratio: auto; border-radius: 0; overflow: visible; background: rgb(243 240 237); -webkit-mask-image: radial-gradient(ellipse 78% 78% at 38% 42%,#000 0 58%,rgba(0,0,0,.98) 70%,transparent 100%); mask-image: radial-gradient(ellipse 78% 78% at 38% 42%,#000 0 58%,rgba(0,0,0,.98) 70%,transparent 100%); }
     .hero__header-mask-nav { display: none; }
+    .hero__layout { grid-template-columns: 24% 48% 24%; gap: 2%; }
+    .hero__panel--right { height: 70%; }
+    .hero__statement { right: -2%; bottom: 3%; }
+    .hero__statement-main { font-size: clamp(58px, 9.2vw, 104px); }
+    .hero__statement-sub { padding-right: 4vw; font-size: clamp(11px, 1.5vw, 16px); }
   }
   @media (max-width: 767px) {
     .hero__art--pc { display: none; }
@@ -117,6 +129,13 @@
     .site-header__nav a { padding: 8px 0; }
     .site-header__nav a:last-child { padding: 8px clamp(6px,2vw,10px); border: 1px solid #CFC8B8; }
     .site-header__menu { display: none; }
+    .hero__layout { grid-template-columns: 24% 48% 24%; gap: 2%; padding-top: 96px; }
+    .hero__panel { height: 78%; }
+    .hero__panel--center { height: 86%; }
+    .hero__panel--right { height: 70%; }
+    .hero__statement { right: -3%; bottom: 3.5%; }
+    .hero__statement-main { font-size: clamp(42px, 12vw, 76px); }
+    .hero__statement-sub { margin-top: 10px; padding-right: 5vw; font-size: clamp(9px, 2.8vw, 13px); letter-spacing: .05em; }
   }
 </style>
 </helmet>
@@ -128,30 +147,32 @@
 
   <div class="hero__art hero__art--pc">
     <div class="hero__slider" data-hero-slider="">
-      <picture class="hero__slide is-active" data-hero-slide="0"><img class="hero__image" src="assets/hero-20260817-1.png" width="1785" height="881" alt="" aria-hidden="true" /></picture>
-      <picture class="hero__slide" data-hero-slide="1"><img class="hero__image" src="assets/hero-20260817-2.png" width="1785" height="881" alt="" aria-hidden="true" decoding="async" /></picture>
-      <picture class="hero__slide" data-hero-slide="2"><img class="hero__image" src="assets/hero-20260817-3.png" width="1785" height="881" alt="" aria-hidden="true" decoding="async" /></picture>
-      <picture class="hero__slide" data-hero-slide="3"><img class="hero__image" src="assets/hero-20260817-4.png" width="1785" height="881" alt="" aria-hidden="true" decoding="async" /></picture>
+      <div class="hero__slide is-active" data-hero-slide="0" style="--hero-image:url('assets/hero-20260817-1.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
+      <div class="hero__slide" data-hero-slide="1" style="--hero-image:url('assets/hero-20260817-2.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
+      <div class="hero__slide" data-hero-slide="2" style="--hero-image:url('assets/hero-20260817-3.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
+      <div class="hero__slide" data-hero-slide="3" style="--hero-image:url('assets/hero-20260817-4.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
     </div>
   </div>
 
   <div class="hero__art hero__art--tablet">
     <div class="hero__slider" data-hero-slider="">
-      <picture class="hero__slide is-active" data-hero-slide="0"><img class="hero__image" src="assets/hero-20260817-1.png" width="1785" height="881" alt="" aria-hidden="true" /></picture>
-      <picture class="hero__slide" data-hero-slide="1"><img class="hero__image" src="assets/hero-20260817-2.png" width="1785" height="881" alt="" aria-hidden="true" decoding="async" /></picture>
-      <picture class="hero__slide" data-hero-slide="2"><img class="hero__image" src="assets/hero-20260817-3.png" width="1785" height="881" alt="" aria-hidden="true" decoding="async" /></picture>
-      <picture class="hero__slide" data-hero-slide="3"><img class="hero__image" src="assets/hero-20260817-4.png" width="1785" height="881" alt="" aria-hidden="true" decoding="async" /></picture>
+      <div class="hero__slide is-active" data-hero-slide="0" style="--hero-image:url('assets/hero-20260817-1.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
+      <div class="hero__slide" data-hero-slide="1" style="--hero-image:url('assets/hero-20260817-2.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
+      <div class="hero__slide" data-hero-slide="2" style="--hero-image:url('assets/hero-20260817-3.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
+      <div class="hero__slide" data-hero-slide="3" style="--hero-image:url('assets/hero-20260817-4.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
     </div>
   </div>
 
   <div class="hero__art hero__art--mobile">
     <div class="hero__slider" data-hero-slider="">
-      <picture class="hero__slide is-active" data-hero-slide="0"><img class="hero__image" src="assets/hero-20260817-1.png" width="1785" height="881" alt="" aria-hidden="true" /></picture>
-      <picture class="hero__slide" data-hero-slide="1"><img class="hero__image" src="assets/hero-20260817-2.png" width="1785" height="881" alt="" aria-hidden="true" decoding="async" /></picture>
-      <picture class="hero__slide" data-hero-slide="2"><img class="hero__image" src="assets/hero-20260817-3.png" width="1785" height="881" alt="" aria-hidden="true" decoding="async" /></picture>
-      <picture class="hero__slide" data-hero-slide="3"><img class="hero__image" src="assets/hero-20260817-4.png" width="1785" height="881" alt="" aria-hidden="true" decoding="async" /></picture>
+      <div class="hero__slide is-active" data-hero-slide="0" style="--hero-image:url('assets/hero-20260817-1.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
+      <div class="hero__slide" data-hero-slide="1" style="--hero-image:url('assets/hero-20260817-2.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
+      <div class="hero__slide" data-hero-slide="2" style="--hero-image:url('assets/hero-20260817-3.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
+      <div class="hero__slide" data-hero-slide="3" style="--hero-image:url('assets/hero-20260817-4.png')"><div class="hero__layout"><span class="hero__panel hero__panel--left"></span><span class="hero__panel hero__panel--center"></span><span class="hero__panel hero__panel--right"></span></div></div>
     </div>
   </div>
+
+  <p class="hero__statement" aria-hidden="true"><span class="hero__statement-main">Heart is filling</span><span class="hero__statement-sub">Update in your own Total Beauty Salon</span></p>
 
   <div class="hero__header-mask" aria-hidden="true"><span class="hero__header-mask-logo"></span><span class="hero__header-mask-nav"></span></div>
 
