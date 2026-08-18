@@ -761,6 +761,23 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
 /* ---------- Mobile: still editorial, never a repetitive card stack ---------- */
 @media (max-width: 640px) {
   :root { --ux-gutter: 18px; }
+  [data-compact-mobile-header] {
+    gap: 8px !important;
+    padding-inline: 10px !important;
+  }
+  [data-compact-mobile-header] > a:first-child { margin-left: 0 !important; }
+  [data-compact-mobile-header] [data-logo] { width: 64px !important; }
+  [data-compact-mobile-header] > nav {
+    flex: 0 1 auto;
+    justify-content: flex-start;
+    gap: clamp(7px, 2.3vw, 9px) !important;
+    min-width: 0;
+    margin-left: auto;
+    font-size: 9px !important;
+    letter-spacing: .1em !important;
+  }
+  [data-compact-mobile-header] > nav > a { flex: 0 0 auto; padding-inline: 0 !important; }
+  [data-compact-mobile-header] > nav > a:last-child { padding: 10px 7px !important; }
   section[data-screen-label]:not([data-screen-label$="HERO"]):not([data-screen-label="01 HERO"]):not([data-screen-label="01b HERO INTRO"]),
   main[data-screen-label="RESERVE NAVIGATOR"] {
     padding-top: 82px !important;
@@ -797,15 +814,16 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   }
   section[data-screen-label="03 SERVICES"] [data-service-row]::after { width: 100%; }
   section[data-screen-label="03 SERVICES"] [data-service-en] { font-size: clamp(24px, 8vw, 34px) !important; }
-  section[data-screen-label="03 SERVICES"] > div:has(> figure) {
-    grid-template-columns: repeat(6, 1fr) !important;
-    gap: 8px !important;
+  [data-page="top"] section[data-screen-label="03 SERVICES"] > div:has(> figure) {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px 12px !important;
     align-items: start;
   }
-  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure { grid-column: span 2; }
-  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(1),
-  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(4) { grid-column: span 3; }
-  section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:nth-child(even) { transform: translateY(10px); }
+  [data-page="top"] section[data-screen-label="03 SERVICES"] > div:has(> figure) figure { grid-column: auto; transform: none; }
+  [data-page="top"] section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:first-child { grid-column: 1 / -1; }
+  [data-page="top"] section[data-screen-label="03 SERVICES"] > div:has(> figure) figure > span { aspect-ratio: 1 / 1 !important; }
+  [data-page="top"] section[data-screen-label="03 SERVICES"] > div:has(> figure) figure:first-child > span { aspect-ratio: 16 / 10 !important; }
+  [data-page="top"] section[data-screen-label="03 SERVICES"] > div:has(> figure) figcaption { margin-top: 10px !important; }
   .ux-service-grid { grid-template-columns: 1fr; gap: 46px; }
   .ux-service-card,
   .ux-service-card:nth-child(n + 3),
@@ -839,7 +857,8 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   main[data-screen-label="RESERVE NAVIGATOR"] button[data-service] [data-opt-en] { font-size: 11px !important; }
   main[data-screen-label="RESERVE NAVIGATOR"] [data-booking] > div { display: grid !important; justify-items: start; }
   footer[data-screen-label="FOOTER"] { padding-top: 100px !important; }
-  footer[data-screen-label="FOOTER"] h2 { font-size: 19vw !important; }
+  footer[data-screen-label="FOOTER"] h2,
+  footer[data-screen-label="FOOTER"] [data-footer-brand] { font-size: clamp(50px, 13.8vw, 60px) !important; line-height: .92 !important; }
   footer[data-screen-label="FOOTER"] figure { width: 56vw; margin-left: auto !important; transform: translateY(26px); }
 }
 
@@ -1023,6 +1042,11 @@ section[data-screen-label]:not([data-screen-label$="HERO"]) [data-reveal="body"]
   color: #49443c !important;
   font-size: clamp(13px, 1vw, 15px) !important;
   font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  [data-page="top"] .top-services__intro { display: block !important; }
+  [data-page="top"] .top-services__copy { margin-top: clamp(20px, 2.2vw, 32px) !important; }
 }
 
 [data-page="top"] .top-salon-block [data-salon-sticky] p:last-child { color: #1d1a17; }

@@ -123,6 +123,9 @@
   .about-approach__content::before { margin-bottom: 48px; }
   .about-strengths { padding-block: 100px 0; }
   .about-strengths__intro { padding-bottom: 80px; }
+  .about-strengths__intro .about-heading { font-size: clamp(27px, 8vw, 34px); line-height: 1.5; white-space: nowrap !important; text-wrap: nowrap; }
+  .about-strengths__brand { display: none; }
+  .about-strengths__intro .pc-only-break { display: initial; }
   .strength-block { padding-block: 88px; }
   .strength-block__media { aspect-ratio: 4 / 5; }
   .strength-block--total .strength-block__media img { object-position: 62% center; }
